@@ -9,12 +9,46 @@
 
 <div style="max-width:800px; margin:0 auto; padding:24px 16px;">
 
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;">📈 STOCK BLOG</a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb;">전체 목록 →</a>
+  </nav>
+
+
   <!-- ═══════════ 포스트 헤더 ═══════════ -->
   <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
     <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">공격적 관점 · 종목 분석</div>
     <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">SK하이닉스, 하루 만에 +4% 반등 — HBM 슈퍼사이클은 아직 끝나지 않았다</h1>
     <div style="font-size:13px; color:#6b7280;">2026-07-22 · SK하이닉스 (000660) · 데이터 기준일 2026-07-21</div>
   </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)\.html$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
 
   <!-- ═══════════ 도입부 ═══════════ -->
   <p style="font-size:16px; margin:0 0 20px 0;">요즘 SK하이닉스 종목 게시판, 조용할 틈이 없으시죠? 6월 22일 298만7,000원까지 찍었던 주가가 한 달도 안 돼 고점 대비 최대 43%까지 밀렸다가, 어제(7/21) 하루 만에 +4.08% 급반등했습니다. 나스닥 ADR 상장 첫 주엔 외국인이 무섭게 팔아치우더니, 곧이어 2분기 실적 컨센서스가 상향되고 목표주가는 최고 420만원까지 나오는 상황입니다. 결론부터 말씀드리면, 저는 이 변동성을 "위기"가 아니라 "기회"로 봅니다.</p>
@@ -230,9 +264,16 @@
   </div>
 
   <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
   <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
     본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
     투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;">📈 STOCK BLOG</a> · 같은 데이터, 세 가지 시선</div>
   </footer>
 
 </div>

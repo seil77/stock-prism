@@ -9,11 +9,45 @@
 
 <div style="max-width:800px; margin:0 auto; padding:24px 16px;">
 
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;">📈 STOCK BLOG</a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb;">전체 목록 →</a>
+  </nav>
+
+
   <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
     <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">보수적 관점 · 종목 분석</div>
     <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">삼성전자, 영업이익 89조 '역대급 실적'에도 -35% 급락… 혹시 사이클 정점의 신호는 아닐까요?</h1>
     <div style="font-size:13px; color:#6b7280;">2026-07-21 · 삼성전자 (005930) · 데이터 기준일 2026-07-20</div>
   </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)\.html$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
 
   <p style="font-size:16px; margin:0 0 20px 0;">역대 최대 분기 영업이익 89조 4,000억 원을 발표한 회사의 주가가, 발표 이후 오히려 급락해 고점 대비 약 35% 빠져 있습니다. "실적이 이렇게 좋은데 왜 떨어지지?"라는 질문보다, 저는 먼저 이렇게 묻고 싶은데요. <strong>"시장은 혹시 이 실적이 '정점'이라고 말하고 있는 것은 아닐까?"</strong> 오늘은 삼성전자(005930)를 철저히 리스크 관점에서, '잃지 않는 투자'의 눈으로 뜯어보겠습니다.</p>
 
@@ -207,9 +241,16 @@
     #삼성전자 #005930 #보수적투자 #리스크관리 #반도체사이클 #HBM #관망 #손절라인
   </div>
 
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
   <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
     본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
     투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;">📈 STOCK BLOG</a> · 같은 데이터, 세 가지 시선</div>
   </footer>
 
 </div>
