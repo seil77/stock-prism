@@ -57,7 +57,46 @@
   <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
   <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
     <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 보수적 관점 투자 의견</div>
-    <div style="display:inline-block; padding:10px 36px; border-radius:999px; background:#d97706; color:#ffffff; font-size:22px; font-weight:800;">관망</div>
+    <div id="conclusion-badge" style="display:inline-block; padding:10px 36px; border-radius:999px; background:#d97706; color:#ffffff; font-size:22px; font-weight:800;">관망</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:12px; font-size:12.5px; line-height:1.9;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? badge.textContent.replace(/\s+/g, '') : '';
+      var prefix = document.createElement('span');
+      prefix.textContent = '5단계 척도  ';
+      prefix.setAttribute('style', 'color:#9ca3af; font-weight:700; margin-right:2px;');
+      box.appendChild(prefix);
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:3px 12px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
     <div style="margin-top:12px; font-size:14px; color:#374151;">기업은 A등급, 가격은 고평가 구간 — PBR 10.7배·극단적 변동성 국면에서는 7/29 실적 확인 전 신규 진입을 보류하는 것이 원금을 지키는 길입니다.</div>
   </div>
 
