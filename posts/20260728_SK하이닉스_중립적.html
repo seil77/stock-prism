@@ -173,7 +173,7 @@
        (foreign/inst/indiv/change는 부호 있는 정수, ratio는 문자열, close/volume은 정수)
        데이터를 확보하지 못한 시장은 빈 배열 []로 두면 해당 탭이 자동으로 숨겨짐. 임의값 금지.
        아래 렌더링 스크립트는 사이트 공통 로직이므로 수정 금지. -->
-  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">👥 투자자별 매매동향</h2>
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
   <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
       <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일 (이번 조회에서 통합/KRX/NXT 어느 시장도 연속 10거래일 데이터를 확보하지 못했습니다)</span>
@@ -187,7 +187,7 @@
     var raw = document.getElementById('trading-trend-data');
     var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
     var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
-    if (!MARKETS.length) return;
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
     var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
     function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
     function fmt(n) { return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }

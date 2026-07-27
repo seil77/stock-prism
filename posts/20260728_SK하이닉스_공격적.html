@@ -166,7 +166,7 @@
   </div>
 
   <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
-  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">👥 투자자별 매매동향</h2>
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
   <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
       <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
@@ -175,13 +175,13 @@
     <div id="trend-table" style="overflow-x:auto;"></div>
     <p style="font-size:12px; color:#9ca3af; margin:10px 0 0 0;">이번 조회에서는 종목 단위 10거래일 연속 매매동향 데이터를 확보하지 못했습니다. 단편적으로 확인된 자료로는 2026-07-09 무렵 외국인 1,727억원 순매수(코스피 1위), 2026-07-14 오전 외국인 27.91만주·기관 24.10만주 순매수(장중 잠정), 외국인 지분율 약 53%(2026-03-06 기준)가 있습니다.</p>
   </div>
-  <script type="application/json" id="trading-trend-data">{"통합":[], "KRX":[], "NXT":[]}</script>
+  <script type="application/json" id="trading-trend-data">{"통합":[],"KRX":[],"NXT":[]}</script>
   <script>
   (function () {
     var raw = document.getElementById('trading-trend-data');
     var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
     var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
-    if (!MARKETS.length) return;
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
     var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
     function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
     function fmt(n) { return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
