@@ -53,6 +53,15 @@
     <p style="margin:0; font-size:15px; color:#374151;">한 종목을 재무·뉴스·업종 세 갈래로 분석하고, 공격적·중립적·보수적 세 관점의 필진이 각자 결론을 내립니다.</p>
   </header>
 
+  <!-- ═══════════ 검색 ═══════════ -->
+  <div style="position:relative; margin-bottom:4px;">
+    <span style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:14px; color:#9ca3af; pointer-events:none;">🔍</span>
+    <input id="search-input" type="search" placeholder="종목명 또는 날짜로 검색 (예: 삼성전자, 2026-08)" autocomplete="off"
+      style="width:100%; box-sizing:border-box; padding:11px 14px 11px 38px; font-size:14px; color:#1f2937; background:#f9fafb; border:1px solid #e5e7eb; border-radius:10px; outline:none; font-family:inherit;"
+      onfocus="this.style.borderColor='#111827'; this.style.background='#ffffff';"
+      onblur="this.style.borderColor='#e5e7eb'; this.style.background='#f9fafb';">
+  </div>
+
   <!-- ═══════════ 포스트 목록 ═══════════ -->
   <div id="post-list">
     <p id="loading-msg" style="font-size:14px; color:#6b7280; text-align:center; padding:40px 0;">포스트 목록을 불러오는 중입니다…</p>
@@ -91,6 +100,8 @@
     '삼성화재', 'HD현대일렉트릭', '효성중공업', 'POSCO홀딩스', '고려아연'
   ];
 
+  var allGroups = null; // render()에서 채워지는 정렬된 그룹 배열 (검색 필터의 원본)
+
   function capRank(stock) {
     var i = MARKET_CAP_ORDER.indexOf(stock);
     return i === -1 ? MARKET_CAP_ORDER.length : i;
@@ -98,6 +109,10 @@
 
   function fmtDate(yyyymmdd) {
     return yyyymmdd.slice(0, 4) + '-' + yyyymmdd.slice(4, 6) + '-' + yyyymmdd.slice(6, 8);
+  }
+
+  function norm(s) {
+    return s.replace(/\s+/g, '').toLowerCase();
   }
 
   function render(files) {
@@ -119,17 +134,37 @@
       if (ra !== rb) return ra - rb;
       return ga.stock.localeCompare(gb.stock, 'ko');
     });
+
+    allGroups = keys.map(function (k) { return groups[k]; });
+    draw('');
+
+    var input = document.getElementById('search-input');
+    input.addEventListener('input', function () { draw(input.value); });
+  }
+
+  function draw(query) {
     var container = document.getElementById('post-list');
 
-    if (keys.length === 0) {
+    if (allGroups.length === 0) {
       container.innerHTML = '<p style="font-size:14px; color:#6b7280; text-align:center; padding:40px 0;">아직 게시된 포스트가 없습니다.</p>';
+      return;
+    }
+
+    var q = norm(query);
+    var list = !q ? allGroups : allGroups.filter(function (g) {
+      return norm(g.stock).indexOf(q) !== -1 ||
+             g.date.indexOf(q) !== -1 ||
+             fmtDate(g.date).indexOf(q) !== -1;
+    });
+
+    if (list.length === 0) {
+      container.innerHTML = '<p style="font-size:14px; color:#6b7280; text-align:center; padding:40px 0;">검색 결과가 없습니다.</p>';
       return;
     }
 
     var html = '';
     var lastDate = '';
-    keys.forEach(function (key) {
-      var g = groups[key];
+    list.forEach(function (g) {
       if (g.date !== lastDate) {
         lastDate = g.date;
         html += '<h2 style="font-size:15px; color:#6b7280; font-weight:700; letter-spacing:0.5px; margin:28px 0 12px 0;">' + fmtDate(g.date) + '</h2>';
