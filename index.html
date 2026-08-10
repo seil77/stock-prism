@@ -136,10 +136,20 @@
     });
 
     allGroups = keys.map(function (k) { return groups[k]; });
-    draw('');
 
+    // 상세 페이지에 다녀와도 검색어가 유지되도록 sessionStorage에 저장·복원
     var input = document.getElementById('search-input');
-    input.addEventListener('input', function () { draw(input.value); });
+    var saved = '';
+    try { saved = sessionStorage.getItem('sp-search') || ''; } catch (e) {}
+    if (saved) input.value = saved;
+    draw(saved);
+
+    function onSearch() {
+      try { sessionStorage.setItem('sp-search', input.value); } catch (e) {}
+      draw(input.value);
+    }
+    input.addEventListener('input', onSearch);
+    input.addEventListener('search', onSearch); // type=search의 ✕ 버튼 대응
   }
 
   function draw(query) {
