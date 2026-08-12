@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK하이닉스, 하루 만에 5.54% 뛰었는데 — 관망을 풀어야 할 신호일까요</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260812_SK%ED%95%98%EC%9D%B4%EB%8B%89%EC%8A%A4_%EC%A4%91%EB%A6%BD%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">중립적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">SK하이닉스, 하루 만에 5.54% 뛰었는데 — 관망을 풀어야 할 신호일까요</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-08-12 · SK하이닉스 (000660) · 데이터 기준일 2026-08-12</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">SK하이닉스가 2026년 8월 12일 하루 만에 5.54% 뛰며 150만 원대 중반을 회복했습니다. 삼성전자 장중 급등과 코스피 3거래일 연속 상승이 겹친 날인데요. 문제는 이 종목, 벌써 12거래일 연속 "관망"을 유지해온 종목이라는 겁니다. 오늘 업종 리서치는 처음으로 "긍정"으로 올라섰는데, 뉴스 감성은 오히려 "부정"으로 내려갔습니다. 신호가 엇갈리는 이 지점, 데이터로 하나씩 짚어보겠습니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 중립적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="관망" style="display:none;">관망</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">재무는 여전히 A등급, 업종도 오늘 처음 긍정으로 올라섰지만 뉴스는 부정으로 내려갔고 밸류에이션 부담(PBR 6.48배)과 상향 트리거 미충족이 발목을 잡아, 13번째 연속 관망을 유지합니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">1,504,000원</span>
+      <span style="font-size:15px; font-weight:700; color:#dc2626;">▲79,000원 (+5.54%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-08-12 KRX 장마감 기준</span>
+    </div>
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,425,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">1,452,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">1,549,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">1,440,000원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">7,359,352주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">10조 9,920억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,098조 6,605억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">50.74%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">3,002,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">244,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">14.53배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">103,521원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.30배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">349,595원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">6.48배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">231,952원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0.20%</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">3,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.00 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">3,317,917원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "08.11", "foreign": -220065, "ratio": "50.74%", "inst": 19254, "indiv": 195823, "close": 1433000, "change": 13000, "volume": 6246577}, {"date": "08.10", "foreign": -260066, "ratio": "50.77%", "inst": -3712, "indiv": 253010, "close": 1418000, "change": -4000, "volume": 5341116}, {"date": "08.07", "foreign": -209663, "ratio": "50.81%", "inst": 76740, "indiv": 341949, "close": 1466000, "change": -29000, "volume": 8811391}, {"date": "08.06", "foreign": -1337815, "ratio": "50.84%", "inst": -304184, "indiv": 1602979, "close": 1496000, "change": -172000, "volume": 8652315}, {"date": "08.05", "foreign": 515828, "ratio": "51.03%", "inst": -31020, "indiv": -485327, "close": 1616000, "change": 39000, "volume": 7947831}, {"date": "08.04", "foreign": -565703, "ratio": "50.95%", "inst": 101763, "indiv": 443050, "close": 1609000, "change": 42000, "volume": 9313219}, {"date": "08.03", "foreign": -1346195, "ratio": "51.04%", "inst": -394795, "indiv": 1740324, "close": 1521000, "change": -197000, "volume": 9174994}, {"date": "07.31", "foreign": 2652125, "ratio": "51.22%", "inst": 316761, "indiv": -3109901, "close": 1718000, "change": 396000, "volume": 18398851}, {"date": "07.30", "foreign": 360335, "ratio": "50.86%", "inst": -161369, "indiv": -226678, "close": 1359000, "change": -42000, "volume": 15831829}], "KRX": [{"date": "08.12", "foreign": 559854, "ratio": "50.82%", "inst": 193626, "indiv": -755159, "close": 1504000, "change": 79000, "volume": 4204301}, {"date": "08.11", "foreign": -210592, "ratio": "50.74%", "inst": 68354, "indiv": 133271, "close": 1425000, "change": 5000, "volume": 3817655}, {"date": "08.10", "foreign": -286575, "ratio": "50.77%", "inst": 68099, "indiv": 219485, "close": 1420000, "change": -2000, "volume": 3295283}, {"date": "08.07", "foreign": -56357, "ratio": "50.81%", "inst": 32908, "indiv": 198922, "close": 1422000, "change": -73000, "volume": 5002539}, {"date": "08.06", "foreign": -1101883, "ratio": "50.84%", "inst": -275040, "indiv": 1337421, "close": 1495000, "change": -173000, "volume": 5498295}, {"date": "08.05", "foreign": 389804, "ratio": "51.03%", "inst": -28260, "indiv": -361605, "close": 1668000, "change": 91000, "volume": 3945674}, {"date": "08.04", "foreign": -418552, "ratio": "50.95%", "inst": 18945, "indiv": 376403, "close": 1577000, "change": 10000, "volume": 5391210}, {"date": "08.03", "foreign": -1107357, "ratio": "51.04%", "inst": -288012, "indiv": 1368737, "close": 1567000, "change": -151000, "volume": 5432833}, {"date": "07.31", "foreign": 2205767, "ratio": "51.22%", "inst": 277183, "indiv": -2463959, "close": 1718000, "change": 396000, "volume": 10499619}, {"date": "07.30", "foreign": 444498, "ratio": "50.86%", "inst": -80151, "indiv": -373392, "close": 1322000, "change": -79000, "volume": 9543189}], "NXT": [{"date": "08.11", "foreign": -9473, "ratio": "50.74%", "inst": -49100, "indiv": 62552, "close": 1433000, "change": 13000, "volume": 2428922}, {"date": "08.10", "foreign": 26509, "ratio": "50.77%", "inst": -71811, "indiv": 33525, "close": 1418000, "change": -4000, "volume": 2045833}, {"date": "08.07", "foreign": -153306, "ratio": "50.81%", "inst": 43832, "indiv": 143027, "close": 1466000, "change": -29000, "volume": 3808852}, {"date": "08.06", "foreign": -235932, "ratio": "50.84%", "inst": -29144, "indiv": 265558, "close": 1496000, "change": -172000, "volume": 3154020}, {"date": "08.05", "foreign": 126024, "ratio": "51.03%", "inst": -2760, "indiv": -123722, "close": 1616000, "change": 39000, "volume": 4002157}, {"date": "08.04", "foreign": -147151, "ratio": "50.95%", "inst": 82818, "indiv": 66647, "close": 1609000, "change": 42000, "volume": 3922009}, {"date": "08.03", "foreign": -238838, "ratio": "51.04%", "inst": -106783, "indiv": 371587, "close": 1521000, "change": -197000, "volume": 3742161}, {"date": "07.31", "foreign": 446358, "ratio": "51.22%", "inst": 39578, "indiv": -645942, "close": 1718000, "change": 396000, "volume": 7899232}, {"date": "07.30", "foreign": -84163, "ratio": "50.86%", "inst": -81218, "indiv": 146714, "close": 1359000, "change": -42000, "volume": 6288640}, {"date": "07.29", "foreign": 253993, "ratio": "50.77%", "inst": 192287, "indiv": -457159, "close": 1410000, "change": -140000, "volume": 9724873}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 SK하이닉스</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">SK하이닉스의 재무제표를 보면, 2023년 적자에서 2025년까지 만들어진 반전이 꽤 극적입니다. 매출은 2023년 32.8조 원에서 2025년 97.1조 원으로 3년 만에 약 3배 늘었고, 영업이익률은 -23.59%에서 48.59%로, 2026년 2분기에는 76%까지 치솟았어요. ROE도 2년 연속 30%를 훌쩍 넘겼습니다. 부채비율은 87.52%에서 45.95%로 낮아지고 유동비율은 185.82%까지 개선돼서, 성장성·수익성·안정성이 함께 좋아지는 흔치 않은 그림입니다. 이 흐름을 근거로 재무 분석가는 등급 A를 유지했습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">다만 두 가지는 짚고 넘어가야 합니다. 첫째, 2분기 순이익률 118%는 상당 부분 키옥시아 지분 관련 평가익 같은 일회성 요인이 섞여 있어서, 실질 수익력은 영업이익률(76%) 기준으로 보는 게 더 안전합니다. 둘째, PBR이 6.48배로 재무 분석가가 자체 산출한 업종 평균(약 2.66배, 삼성전자·DB하이텍 평균 참고치)의 2.4배 수준입니다. 트레일링 PER(14.53배)은 업종 평균(15.30배)과 비슷해 절대적 고평가는 아니지만, PBR만큼은 시장이 향후 이익 성장을 상당히 프리미엄으로 얹어 반영하고 있다는 뜻이에요.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">매출액(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">97조 1,467억원 (+46.76%)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2024년 두 배 급증에 이어 고성장 지속</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">영업이익률(2025→2Q26)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">48.59% → 76%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">HBM 중심 고부가가치 믹스로 수익성 최상위권</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">44.15%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2년 연속 30%대 상회, 자본효율성 우수</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">부채비율/유동비율(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">45.95% / 185.82%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">재무 안정성 매우 견고</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER(트레일링)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">14.53배 (업종평균 15.30배)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">절대적 고평가는 아님</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">6.48배 (업종평균 추정 2.66배)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">밸류에이션 부담이 가장 큰 지표</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 성장성·수익성·안정성이 3년 연속 동반 개선, 컨센서스 목표주가(3,317,917원)는 현재가 대비 상당한 상승여력 시사, 재무등급 A.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> PBR 6.48배는 업종 평균 대비 큰 프리미엄, 2Q26 순이익 118%엔 일회성 요인 포함, 8/12 하루 +5.54% 급등은 단기 변동성이 크다는 신호이기도 함.</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">지난 한 달(7/13~8/12) SK하이닉스 관련 뉴스는 호재 8건, 악재 10건, 중립 2건으로 집계됐고, 최종 판정은 "부정"입니다. 사실 인디애나 팹 착공, 청주 M15X 투자 확대, 반도체특별법 지원 기대처럼 펀더멘털을 뒷받침하는 소식은 계속 나오고 있어요. 문제는 그 옆에 "구체적 주주환원책 부재로 삼성전자 대비 소외된다"는 프레임, 성과급 지급 방식을 둘러싼 노사 갈등, 솔리다임 나스닥 상장설에 따른 지분 희석 우려 같은 악재가 두 달 가까이 누적돼 왔다는 점입니다. 실제로 최근 한 달 새 주가가 30%대 급락했던 기록도 있고요.</p>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 인디애나 팹 8/27 착공 확정, 최태원-젠슨 황 회동 주목
+    <a href="https://v.daum.net/v/20260812201311910" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 주주환원 발표 시점 연내→3분기(9월말)로 앞당김
+    <a href="https://v.daum.net/v/20260808151041458" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 삼성전자 200조 기대 vs SK하이닉스 환원책 공백 "외면"
+    <a href="https://v.daum.net/v/20260810202851194" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 솔리다임 나스닥 상장설에 지분희석 우려로 급락
+    <a href="https://v.daum.net/v/20260806173055000" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — "적자 땐 임금조정" 회사 제안에 노조 강력 반발
+    <a href="https://v.daum.net/v/20260731180252903" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 8/12 당일엔 반도체주 전반이 강하게 반등했지만, 뉴스 감성 분석가는 이를 "과거에도 반복된 단발성 반등 패턴"으로 보고, 한 달 전체의 부정적 흐름을 뒤집을 추세 전환 근거로는 아직 이르다고 판단했습니다. 다음 핵심 변수는 3분기 중 예정된 구체 주주환원안과 성과급 노사협상 타결 여부입니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">업종 쪽 그림은 오늘 조금 달라졌습니다. 최근 1년 D램 가격이 400%, 낸드 가격이 300% 이상 오르는 사상 최고 수준의 슈퍼사이클이 카운터포인트리서치·BofA 기준 향후 18개월~2027년까지 지속될 전망이고, SK하이닉스의 3분기 D램 평균판매가격(ASP)도 전분기 대비 25% 오를 것(BofA 추정)이라는 분석이 나왔습니다. 엔비디아 차세대 HBM4 물량에서도 SK하이닉스가 최대 66~70%(추정)를 확보해 우위를 유지하고 있고요. 이런 근거로 업종 리서치는 판정을 처음으로 🟡 중립에서 🟢 긍정으로 올렸습니다.</p>
+  <p style="font-size:15px; margin:0 0 12px 0;">다만 이 긍정 판정은 "업종 전체"에 대한 것이고, SK하이닉스 개별 종목은 이 흐름에서 상대적으로 소외되고 있다는 점을 업종 리서치도 명시하고 있습니다. D램 매출 점유율이 1년 새 39%에서 26%로 낮아지며 삼성전자에 1위를 내줬고, 특별 주주환원은 "3분기 중"이라는 예고만 반복되며 삼성전자 대비 발표가 지연되고 있어요. 6월 말 고점 대비 낙폭도 SK하이닉스(-52%)가 삼성전자(-36%)보다 더 컸습니다. 업종 펀더멘털은 좋아지는데 종목 자체는 그 흐름을 온전히 따라가지 못하는 "디커플링" 구도인 셈입니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> D램·낸드 가격 사상 최고치 지속 상승 및 18개월~2027년 지속 전망, 3분기 D램 ASP +25%QoQ 전망(BofA), 엔비디아向 HBM4 물량 우위(최대 66~70%, 추정), 인디애나 팹 착공 등 장기 생산기지 확보.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> D램 매출 점유율 39%→26% 하락(삼성 1위 탈환), 특별 주주환원 지연 반복, 낙폭이 삼성전자보다 큰 디커플링, 301조·232조 관세 결과 여전히 미확정.</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 중립적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">세 분석을 저울에 올려보면 이렇습니다. 재무는 A등급으로 흔들림 없이 긍정, 업종은 오늘 처음 긍정으로 올라섰습니다. 반면 뉴스는 중립에서 부정으로 내려갔고, 밸류에이션(PBR 6.48배)은 여전히 부담스러운 수준입니다. 항목 단위로 세어보면 긍정 신호가 11개, 부정 신호가 10개로 근소하게 긍정이 많긴 하지만, 그 격차가 등급을 상향할 만큼 크지는 않습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">더 결정적인 건 저희가 이 종목을 평가할 때마다 점검해온 4가지 상향 트리거입니다 — ① 외국인 3거래일 연속 순매수, ② 컨센서스 목표주가 재상향, ③ 주주환원 구체안 발표, ④ 노사 갈등 타결. 오늘 기준으로 보면 ① 외국인은 8/12 하루만 순매수로 돌아섰을 뿐 3거래일 연속은 아니고, ② 목표주가는 3,322,083원에서 오히려 3,317,917원으로 소폭 낮아졌으며, ③ 주주환원은 "3분기 중"이라는 예고만 유지되고 있고, ④ 노사 갈등은 새로운 진전 소식이 없습니다. 4개 중 사실상 충족된 게 없거나 많아야 1개(부분 충족)인 셈이라, 하루 급등만으로 관망을 풀기엔 근거가 부족합니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">관망 — 재무A·업종긍정 vs 뉴스부정·밸류부담이 팽팽, 상향 트리거 0~1/4 충족</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기 +10.9%(1,668,000원=8/5 종가 회복) / 중기 +20.7%(1,816,000원=7/27 급락 전 종가)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">1차 1,440,000원(오늘 저가, -4.3%) 종가 이탈 시 축소 검토 / 2차 1,373,000원(8/11 저가, -8.7%)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">신규 진입은 4개 트리거 중 2개 이상 확정 후, 3% 이내 5회 분할 매수 권장</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">기존 보유자는 홀드, 신규는 포트폴리오 대비 3~5% 이내로 제한</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">외국인 순매수가 3거래일 이상 이어지는지 (8/12 하루만으로는 추세 전환으로 보기 이름)</li>
+      <li style="margin-bottom:6px;">3분기 중 예고된 구체적 주주환원안(자사주 매입·소각 규모)의 실제 발표 시점</li>
+      <li style="margin-bottom:6px;">성과급(PS) 지급 방식을 둘러싼 노사 협상 타결 여부</li>
+      <li style="margin-bottom:6px;">301조 구조적 과잉생산 조사 최종 세율(8월말 발표 예정) 및 232조 완제품 확대조사 결과</li>
+      <li style="margin-bottom:6px;">D램 매출 점유율 하락 추세의 반전 여부(삼성전자·마이크론과의 격차 변화)</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">오늘 하루만 보면 반가운 반등이었지만, 12거래일째 이어온 관망 판정을 뒤집을 만큼 뚜렷한 방향 전환은 아직 확인되지 않았습니다. 재무 펀더멘털은 꾸준히 좋고 업종도 처음으로 긍정 쪽으로 기울었지만, 종목 자체의 소외 흐름과 밸류에이션 부담은 그대로 남아있거든요. 다음 판정 때는 위에 정리한 트리거들이 얼마나 충족됐는지를 최우선으로 확인하겠습니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260812201311910" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">인디애나 팹 8/27 착공 확정, 최태원-젠슨 황 회동 주목</a> <span style="color:#6b7280;">— EBN산업경제 · 2026-08-12</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260810202851194" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성전자 200조 기대 vs SK하이닉스 환원책 공백 "외면"</a> <span style="color:#6b7280;">— 지데일리 · 2026-08-10</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260810174056342" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">中 충칭 후공정(낸드) 공장 지분 매각 검토</a> <span style="color:#6b7280;">— MTN머니투데이방송 · 2026-08-10</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260808151041458" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">주주환원 발표 시점 연내→3분기(9월말)로 앞당김</a> <span style="color:#6b7280;">— 한스경제 · 2026-08-08</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260806173055000" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">솔리다임 나스닥 상장설에 지분희석 우려로 급락</a> <span style="color:#6b7280;">— 시사저널e · 2026-08-06</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260804205200079" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">청주사업장, 반도체특별법 지원대상 포함 유력</a> <span style="color:#6b7280;">— 충청타임즈 · 2026-08-04</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260802162451512" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">중국 턱밑 추격에 HBM·차세대기술 개발 전력투구</a> <span style="color:#6b7280;">— 뉴시스 · 2026-08-02</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260731180252903" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">"적자 땐 임금조정" 회사 제안에 노조 강력 반발</a> <span style="color:#6b7280;">— 한국경제 · 2026-07-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260731163729688" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">주주 달래기 나설까…구체 환원책에 시장 이목 집중</a> <span style="color:#6b7280;">— 파이낸셜뉴스 · 2026-07-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260729213057614" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">2분기 컨콜, 투자 40조원대 후반·청주 M15X 양산 앞당김</a> <span style="color:#6b7280;">— 충청타임즈 · 2026-07-29</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260727052641609" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">WSJ "SK하이닉스 ADR 프리미엄 경고, AI 거래 과열"</a> <span style="color:#6b7280;">— 파이낸셜뉴스 · 2026-07-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260725104200974" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">한달새 주가 30%대 급락, 역대급 실적보다 우려에 쏠림</a> <span style="color:#6b7280;">— 매일경제 · 2026-07-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260724183707262" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">'3D 적층 D램' 전담 인력 확보, 고객사 공동개발</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-07-24</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260721090440613" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">美 ADR 레버리지 ETF 무더기 상장, 국장 변동성 변수</a> <span style="color:#6b7280;">— 비즈워치 · 2026-07-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260721115234795" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">채권시장 큰손으로 부상, AI메모리 현금창출력 반영</a> <span style="color:#6b7280;">— 한국금융 · 2026-07-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260719140601705" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">ADR, 국내 액티브 ETF 11개에 편입</a> <span style="color:#6b7280;">— 노컷뉴스 · 2026-07-19</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260717193820730" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">ADR 공모가 하회…월요일 국장 비상 우려 확산</a> <span style="color:#6b7280;">— 아주경제 · 2026-07-17</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260717073509772" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">성과급 절반 자사주 지급안에 노조 반발</a> <span style="color:#6b7280;">— 세계일보 · 2026-07-17</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260715143609740" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">본주-ADR 괴리율 51%까지 확대, 프리미엄 적정선 논란</a> <span style="color:#6b7280;">— 조선비즈 · 2026-07-15</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260713140813529" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">나스닥 데뷔 성공적…블룸버그 "모두가 탐내는 돈나무" 진단</a> <span style="color:#6b7280;">— 미디어펜 · 2026-07-13</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #SK하이닉스 #000660 #반도체 #HBM #메모리반도체 #관망 #주식분석 #투자전략
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
