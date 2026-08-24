@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>셀트리온, 역대급 실적에도 주가는 왜 아직 이 자리일까</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260824_%EC%85%80%ED%8A%B8%EB%A6%AC%EC%98%A8_%EC%A4%91%EB%A6%BD%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">중립적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">셀트리온, 역대급 실적에도 주가는 왜 아직 이 자리일까</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-08-24 · 셀트리온 (068270) · 데이터 기준일 2026-08-24</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">2026년 2분기 매출 1조 3,937억 원, 영업이익 4,518억 원. 셀트리온이 또 한 번 "역대 최대" 타이틀을 갈아치웠는데요. 그런데 정작 주가는 8월 11일 고점(210,500원) 이후 조정을 거치며 아직 그 자리를 회복하지 못하고 있습니다. 같은 시기 키트루다 바이오시밀러 허가 신청 소식으로 44조 원 규모 시장을 둘러싼 경쟁이 본격화됐고, 미국·유럽에서는 바이오시밀러 진입 장벽을 낮추는 법안까지 통과됐습니다. 실적과 정책은 웃고 있는데 주가는 왜 주춤한 걸까요. 오늘은 재무·뉴스·업종 세 가지 렌즈로 셀트리온을 냉정하게 뜯어보겠습니다. (참고: 셀트리온은 이번이 첫 분석으로, 과거 판정 이력은 없습니다.)</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 중립적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="분할 매수" style="display:none;">분할 매수</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">긍정 신호(20)가 부정 신호(14)보다 우세하지만, 재무제표에 남은 추세성 리스크와 정책 불확실성 탓에 일괄 매수보다는 나눠 담는 전략이 데이터에 부합합니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">194,000원</span>
+      <span style="font-size:15px; font-weight:700; color:#dc2626;">▲1,700원 (+0.88%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-08-24 KRX 장마감 기준</span>
+    </div>
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">192,300</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">194,200</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">196,800</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">192,200</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">475,525주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">923억 원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">45조 1,277억 원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">25.58%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">239,244</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">158,500</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">29.54배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">6,568원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">28.85배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">6,725원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">2.53배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">76,797원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0.37%</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">715원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.00 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">274,005원</td>
+      </tr>
+    </table>
+  </div>
+  <p style="font-size:13px; color:#6b7280; margin:0 0 24px 0;">⚠️ 8월 24일은 KRX 정규장 종가(194,000원)와 NXT 포함 통합 최종 체결가(194,100원)가 100원 갈린 날입니다. 위 카드의 대표 시세는 법정 KRX 종가 기준이며, 시가·고가·저가·거래량·대금·시총은 KRX+NXT 통합 공표값입니다. (검산: PER×EPS≈194,019원, 시총÷상장주식수≈193,979원 — 둘 다 KRX 종가와 오차 0.01% 이내)</p>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "08.24", "foreign": -34425, "ratio": "25.56%", "inst": 76187, "indiv": -41265, "close": 194100, "change": 1800, "volume": 475525}, {"date": "08.21", "foreign": -20641, "ratio": "25.58%", "inst": 37875, "indiv": -22798, "close": 192200, "change": -1900, "volume": 555699}, {"date": "08.20", "foreign": 65846, "ratio": "25.59%", "inst": -137067, "indiv": 69416, "close": 194100, "change": 0, "volume": 807664}, {"date": "08.19", "foreign": 3073, "ratio": "25.57%", "inst": -34402, "indiv": 30694, "close": 193600, "change": -1900, "volume": 578222}, {"date": "08.18", "foreign": 91570, "ratio": "25.57%", "inst": -102700, "indiv": 15305, "close": 193700, "change": -7300, "volume": 865670}, {"date": "08.14", "foreign": 93207, "ratio": "25.53%", "inst": -53602, "indiv": -50004, "close": 201500, "change": -500, "volume": 554592}, {"date": "08.13", "foreign": 184318, "ratio": "25.51%", "inst": -185537, "indiv": 5806, "close": 202000, "change": 0, "volume": 925310}, {"date": "08.12", "foreign": -22221, "ratio": "25.43%", "inst": -159204, "indiv": 208624, "close": 203000, "change": -7500, "volume": 1455752}, {"date": "08.11", "foreign": 629684, "ratio": "25.44%", "inst": 55741, "indiv": -670926, "close": 208500, "change": 7500, "volume": 1714379}, {"date": "08.10", "foreign": 199120, "ratio": "25.18%", "inst": -872, "indiv": -193226, "close": 200000, "change": 700, "volume": 861504}], "KRX": [{"date": "08.24", "foreign": -47582, "ratio": "25.56%", "inst": 73987, "indiv": -25548, "close": 194000, "change": 1700, "volume": 314860}, {"date": "08.21", "foreign": -17052, "ratio": "25.58%", "inst": 36847, "indiv": -21301, "close": 192300, "change": -1800, "volume": 354956}, {"date": "08.20", "foreign": 73490, "ratio": "25.59%", "inst": -119484, "indiv": 47409, "close": 194100, "change": 0, "volume": 484272}, {"date": "08.19", "foreign": 8763, "ratio": "25.57%", "inst": -10697, "indiv": 394, "close": 194100, "change": -1400, "volume": 375772}, {"date": "08.18", "foreign": 98603, "ratio": "25.57%", "inst": -97628, "indiv": 3208, "close": 195500, "change": -5500, "volume": 600291}, {"date": "08.14", "foreign": 77554, "ratio": "25.53%", "inst": -44218, "indiv": -39578, "close": 201000, "change": -1000, "volume": 341446}, {"date": "08.13", "foreign": 186672, "ratio": "25.51%", "inst": -190104, "indiv": 6149, "close": 202000, "change": 0, "volume": 679170}, {"date": "08.12", "foreign": 36596, "ratio": "25.43%", "inst": -163541, "indiv": 142025, "close": 202000, "change": -8500, "volume": 926438}, {"date": "08.11", "foreign": 303455, "ratio": "25.44%", "inst": 55086, "indiv": -350518, "close": 210500, "change": 9500, "volume": 886325}, {"date": "08.10", "foreign": 146491, "ratio": "25.18%", "inst": 5693, "indiv": -147393, "close": 201000, "change": 1700, "volume": 533999}], "NXT": [{"date": "08.24", "foreign": 13157, "ratio": "0.00%", "inst": 2200, "indiv": -15717, "close": 194100, "change": 1800, "volume": 160665}, {"date": "08.21", "foreign": -3589, "ratio": "25.58%", "inst": 1028, "indiv": -1497, "close": 192200, "change": -1900, "volume": 200743}, {"date": "08.20", "foreign": -7644, "ratio": "25.59%", "inst": -17583, "indiv": 22007, "close": 194100, "change": 0, "volume": 323392}, {"date": "08.19", "foreign": -5690, "ratio": "25.57%", "inst": -23705, "indiv": 30300, "close": 193600, "change": -1900, "volume": 202450}, {"date": "08.18", "foreign": -7033, "ratio": "25.57%", "inst": -5072, "indiv": 12097, "close": 193700, "change": -7300, "volume": 265379}, {"date": "08.14", "foreign": 15653, "ratio": "25.53%", "inst": -9384, "indiv": -10426, "close": 201500, "change": -500, "volume": 213146}, {"date": "08.13", "foreign": -2354, "ratio": "25.51%", "inst": 4567, "indiv": -343, "close": 202000, "change": 0, "volume": 246140}, {"date": "08.12", "foreign": -58817, "ratio": "25.43%", "inst": 4337, "indiv": 66599, "close": 203000, "change": -7500, "volume": 529314}, {"date": "08.11", "foreign": 326229, "ratio": "25.44%", "inst": 655, "indiv": -320408, "close": 208500, "change": 7500, "volume": 828054}, {"date": "08.10", "foreign": 52629, "ratio": "25.18%", "inst": -6565, "indiv": -45833, "close": 200000, "change": 700, "volume": 327505}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 셀트리온</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">숫자만 보면 셀트리온의 2026년 상반기는 나쁘지 않은 정도가 아니라 아주 좋습니다. 2분기 매출 1조 3,937억 원(전년 동기 대비 +45%), 영업이익 4,518억 원(+86.3%, 영업이익률 32.4%)으로 컨센서스를 각각 11.7%, 12.5% 웃돌았고, 1분기(매출 1조 1,450억 원)에 이어 2개 분기 연속 역대 최대 매출을 갈아치웠습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">밸류에이션도 부담스러운 수준이 아닙니다. 현재 PER 29.54배는 동일업종 평균(41.93배)은 물론, 셀트리온 자체 4개년 평균 PER(60.23배)보다도 낮습니다. PBR 역시 2.53배로 피어 4개사 평균(5.53배)의 절반 이하입니다. 2024년 3사 합병 여파로 영업이익률이 29.93%(2023)→13.83%(2024)로 급락했다가 2025년 28.07%로 거의 완전히 회복한 흐름을 감안하면, 실적 정상화 속도 대비 주가에 반영된 밸류에이션 재평가는 아직 충분치 않다는 게 재무 분석가의 판단입니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">다만 표로 정리하면 드러나지 않는 추세가 하나 있습니다. 부채비율이 2023년 16.53%에서 2025년 28.71%까지 3개년 연속 올라가고 있고, 유동비율은 반대로 202.76%에서 139.32%(2026년 6월 기준 136.42%)까지 3개년 연속 내려가고 있습니다. 절대 수준은 아직 안전권이지만, 방향이 같은 쪽으로 3년째 이어지고 있다는 점은 그냥 지나칠 신호는 아닙니다. ROE도 5.94%(2025)로 개선되긴 했으나 절대 수준 자체는 낮은 편이고, 배당수익률 0.37%로 배당 매력은 거의 없습니다.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">29.54배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">업종평균(41.93배)·자체평균(60.23배) 모두 하회 — 저평가 구간</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">2.53배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">피어평균(5.53배) 대비 절반 이하</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2Q26 영업이익률</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">32.4%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">컨센서스 대비 +12.5% 상회, 역대 최대</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">부채비율(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">28.71%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">절대 수준은 안전하나 3개년 연속 상승 추세</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">유동비율(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">139.32%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">100% 상회로 안전하나 3개년 연속 하락 추세(2026.06 136.42%)</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">5.94%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2024년 2.46%에서 회복했으나 절대 수준은 낮음</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 2분기 연속 역대 최대 실적, 업종·자체 평균 대비 뚜렷한 저평가, 낮은 절대 부채비율.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 부채비율 상승·유동비율 하락이 3개년 연속 추세로 이어지는 중, ROE·배당 매력은 여전히 낮음, ADC 신약 파이프라인은 아직 임상 단계. (재무 등급: <strong>B</strong>)</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">지난 한 달(7/26~8/25) 셀트리온 관련 뉴스는 호재 11건, 악재 3건, 중립 5건으로 집계됐습니다. 압도적으로 호재가 많았지만, 3건의 악재도 결코 가볍게 볼 내용은 아니었습니다.</p>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 2분기 매출·영업익 동반 질주(1조3937억/4518억, 역대 최대), 목표주가 줄상향(신한투자·메리츠 29만원)
+    <a href="https://www.newsway.co.kr/news/view?ud=2026072710213087843" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — ADC 신약 'CT-P73' FDA 패스트트랙 지정, 임상 중인 ADC 파이프라인 3종 전부 확보
+    <a href="https://www.etnews.com/20260813000057" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 아시아 주요국 처방 점유율 선두 유지(싱가포르 93%, 홍콩 84%), 직판 경쟁력 확대
+    <a href="https://v.daum.net/v/20260819165050480" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 고수익 제품군, 美 대형 PBM(약제급여관리업체) 등재 확대
+    <a href="https://v.daum.net/v/20260803163107924" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 삼성바이오 대비 임원보수 4.7배·임금격차 40.4배, 거버넌스 비판 확산
+    <a href="https://v.daum.net/v/20260821145224485" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 키트루다 SC(피하주사) 제형 등장으로 국산 시밀러 개발 장벽 확인(알테오젠 특허 2043년까지)
+    <a href="https://v.daum.net/v/20260817060151067" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 장애인 고용률 5년째 0%대, ESG 공약과의 괴리 지적
+    <a href="https://v.daum.net/v/20260807060005316" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 뉴스 감성 분석가는 최종 판정을 <strong>긍정</strong>으로 냈습니다. 다만 "실적·파이프라인 호재가 뉴스 흐름을 주도하는 가운데, 거버넌스·ESG 리스크가 반복 제기되고 키트루다 SC 전환이라는 기술적 장벽이 새로 확인된 점은 중장기 리스크로 주목할 필요가 있다"는 단서가 붙었습니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">셀트리온이 속한 바이오시밀러 업종은 지금 두 가지 큰 흐름이 동시에 겹치는 구간입니다. 하나는 대형 오리지널 의약품의 특허절벽입니다. 아일리아(2024년 글로벌 매출 약 14조 원)는 이미 경쟁체제로 전환됐고, 세계 매출 1위 항암제 키트루다(약 44조 원 규모)도 국내는 2028년, 미국은 2029년 물질특허 만료를 앞두고 있습니다. 다른 하나는 규제 완화입니다. 2026년 7월 21일 미국 상·하원이 각각 바이오시밀러 관련 법안을 만장일치로 통과시켰는데, 오리지널사의 특허 남용을 제한하고 상호교환성을 자동으로 부여하는 내용입니다. 유럽 EMA도 허가 문턱을 낮추는 방향이고, FDA 심사수수료도 내년 회계연도부터 6.3% 인하됩니다.</p>
+  <p style="font-size:15px; margin:0 0 12px 0;">셀트리온은 이 흐름 위에서 아시아 시장 처방 점유율 선두(램시마 싱가포르 93%, 트룩시마 태국 78% 등)를 이미 실적으로 증명하고 있고, 8월 24일에는 키트루다 바이오시밀러 국내 허가를 신청하며 44조 원 시장에 공식 도전장을 던졌습니다. 다만 이 구도가 셀트리온에만 유리한 것은 아닙니다. 스위스 산도스는 바이오시밀러 매출이 전년 대비 25% 성장했고(발표일 주가 +23.5%), 미국 암젠은 아일리아 바이오시밀러 'PAVBLU'로 셀트리온보다 먼저 시장에 진입해 매출이 121% 급증하며 선점 효과를 누리고 있습니다. 키트루다의 피하주사(SC) 제형 전환도 IV 바이오시밀러 시장 규모를 장기적으로 잠식할 수 있는 변수입니다. 게다가 미국의 의약품 관세(Section 232)가 바이오시밀러에 어떻게 적용될지는 소스마다 서술이 엇갈려 아직 확정되지 않았고, 앞서 언급한 특허덤불법도 최종 서명·발효 여부가 미확인 상태입니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 미국·유럽 동시 규제완화, 아일리아·키트루다 특허절벽 개막, 아시아 처방점유율 압도적 선두를 실적으로 입증.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 글로벌 경쟁사(산도스·암젠)도 동시에 고성장 중이라 경쟁 심화, 키트루다 SC 전환 리스크, 미 관세정책·특허덤불법 최종 발효 여부 미확정. (업종 판정: <strong>긍정</strong>)</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 중립적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">세 분석을 나란히 놓고 보면 방향은 셋 다 같은 쪽을 가리키고 있습니다. 재무는 B등급(긍정 쪽 균형), 뉴스는 긍정(11:3), 업종은 긍정입니다. 그런데 "같은 방향"이 곧 "확신"을 의미하지는 않습니다. 긍정과 부정 신호를 항목 단위로 세어보면 대략 <strong>긍정 20 : 부정 14</strong>로 긍정이 우세하지만, 부정 쪽에 담긴 항목들이 하나같이 "지금 당장은 아니지만 추세로 보면 주의가 필요한" 성격을 띠고 있다는 점이 판단을 조심스럽게 만듭니다. 부채비율·유동비율의 3개년 연속 추세, ADC 신약의 임상 단계 불확실성, 글로벌 경쟁사의 동시 고성장, 미 관세정책의 미확정 상태가 그렇습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">저평가 구간에서 실적 모멘텀과 정책 순풍이 겹쳐 있다는 점은 분명 매력적입니다. 하지만 한 번에 확신을 싣기보다는, 시차를 두고 나눠 담으며 추세 지표(부채비율·유동비율)와 정책 변수(관세·특허덤불법 발효 여부)를 확인해가는 접근이 지금 데이터가 가리키는 위치에 가장 부합합니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">분할 매수 — 긍정 신호(20)가 부정 신호(14)보다 우세하나, 부채비율·유동비율의 3개년 연속 추세와 정책 불확실성 때문에 일괄 매수보다는 분할 접근이 합리적</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기 +8% (8/11 고점 210,500원 회복 기준) / 중기 +15~20% (컨센서스 목표주가 274,005원 대비 괴리가 커, 절반 수준을 현실적 눈높이로 제시)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">185,000원 (현재가 대비 약 -4.6%, 최근 거래 지지선인 192,200~194,100원 구간 이탈 시)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">1차 매수는 현재가(194,000원) 부근에서 소량, 추가 매수는 192,200원 지지선 재이탈 여부를 확인한 뒤 눌림목에서 대응</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">포트폴리오 대비 5~7%</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">부채비율·유동비율 추세 반전 여부 — 3개년 연속 같은 방향으로 움직인 두 지표가 2026년 결산에서도 같은 방향을 이어가는지 확인이 필요합니다.</li>
+      <li style="margin-bottom:6px;">키트루다 바이오시밀러 국내 허가 진행 상황 — 8월 24일 신청한 CT-P51의 허가 절차와, 경쟁사 삼성바이오에피스(SB27, 약 2주 앞서 신청)와의 속도 차이입니다.</li>
+      <li style="margin-bottom:6px;">미국 특허덤불법(Patent Thickets)의 최종 서명·발효 여부 — 상·하원 통과 이후에도 대통령 서명 여부가 아직 미확인 상태로, 확정되면 미국 시장 진입에 구조적 호재가 됩니다.</li>
+      <li style="margin-bottom:6px;">美 Section 232 관세의 바이오시밀러 적용 여부 — 소스 간 서술이 엇갈리고 있어, 확정되는 시점에 셀트리온의 미국向 매출에 직접 영향을 줄 수 있습니다.</li>
+      <li style="margin-bottom:6px;">ADC 신약 파이프라인(CT-P73 등)의 임상 진행 경과 — FDA 패스트트랙 지정은 개발 속도를 높여주는 제도일 뿐, 임상 성공을 보장하지는 않습니다.</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">역대 최대 실적, 저평가 밸류에이션, 정책 순풍까지 — 재료만 보면 화려합니다. 하지만 재무제표 안쪽에 자리한 추세성 리스크와 아직 확정되지 않은 정책 변수들은 "지금 전부 다"라고 말하기엔 이르다는 신호를 함께 보내고 있습니다. 데이터가 가리키는 자리는 전면적인 확신도, 관망도 아닌 그 중간 — 나눠서, 지켜보면서 담는 자리입니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260824204308145" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">키트루다 시밀러 'CT-P51' 국내 품목허가 신청</a> <span style="color:#6b7280;">— 경향신문 · 2026-08-24</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260823092710389" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">일본서 스테키마 IV제형 출시, 자가면역시장 확대</a> <span style="color:#6b7280;">— 브릿지경제 · 2026-08-23</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260821145224485" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성바이오 대비 임원보수 4.7배·임금격차 40.4배</a> <span style="color:#6b7280;">— 한국금융 · 2026-08-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260819165050480" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">아시아 주요국 처방 점유율 선두, 직판 경쟁력 확대</a> <span style="color:#6b7280;">— EBN산업경제 · 2026-08-19</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260817060151067" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">키트루다 SC제형 등장, 국산 시밀러 개발 장벽 직면</a> <span style="color:#6b7280;">— 데일리안 · 2026-08-17</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260814085350314" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">항암제 '베그젤마' 연구결과 국제학술지 게재</a> <span style="color:#6b7280;">— 뉴시스 · 2026-08-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260813084853352" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">ADC 신약 'CT-P73' FDA 패스트트랙 지정</a> <span style="color:#6b7280;">— 뉴시스 · 2026-08-13</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260809100107965" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">기면증 신약 개발 초기 도전</a> <span style="color:#6b7280;">— 비즈워치 · 2026-08-09</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260808070104417" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">장남 서진석 대표 중심 경영승계 구도 재편</a> <span style="color:#6b7280;">— 더구루 · 2026-08-08</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260807060005316" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">장애인 고용률 5년째 0%대, ESG 공약과 괴리</a> <span style="color:#6b7280;">— 한스경제 · 2026-08-07</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260806080006813" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">2분기 매출·영업익 동반 질주, 하반기 성장 전망</a> <span style="color:#6b7280;">— 이투데이 · 2026-08-06</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260805165732127" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">서정진 회장, 휴가 대신 유럽 현장경영</a> <span style="color:#6b7280;">— 데일리안 · 2026-08-05</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260803163107924" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">고수익 제품군, 美 대형 PBM 등재 확대</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-03</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260801071512706" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">이탈리아서 신규 제품 직판 성과</a> <span style="color:#6b7280;">— 세계일보 · 2026-08-01</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260730113538099" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">지투지바이오와 초고농축 항체SC 기술협력</a> <span style="color:#6b7280;">— 뉴시스 · 2026-07-30</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260729163507356" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">글로벌 신약기업 전환 속도, 비만치료제 파이프라인 공개 예고</a> <span style="color:#6b7280;">— 인천일보 · 2026-07-29</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260728103733576" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">목표주가 줄상향(신한·메리츠 29만원), 북미 성장 기대</a> <span style="color:#6b7280;">— 아주경제 · 2026-07-28</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260727095602476" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">2분기 매출 1조3937억·영업익 4518억, 역대 최대 실적</a> <span style="color:#6b7280;">— 뉴스웨이 · 2026-07-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260726211157438" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">코센틱스 바이오시밀러 'CT-P55' 유럽 허가 신청</a> <span style="color:#6b7280;">— 의학신문 · 2026-07-26</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #셀트리온 #068270 #바이오시밀러 #제약주 #키트루다바이오시밀러 #ADC신약 #분할매수 #주식분석
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
