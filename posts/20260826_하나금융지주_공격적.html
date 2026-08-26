@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"코스피는 무너지는데 하나금융지주만 오른다" — 이 반등, 계속 타도 될까</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260826_%ED%95%98%EB%82%98%EA%B8%88%EC%9C%B5%EC%A7%80%EC%A3%BC_%EA%B3%B5%EA%B2%A9%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">공격적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">"코스피는 무너지는데 하나금융지주만 오른다" — 이 반등, 계속 타도 될까</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-08-27 · 하나금융지주 (086790) · 데이터 기준일 2026-08-26</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">요즘 증시 뉴스 헤드라인은 온통 코스피 급락 얘기인데요. 그런데 이상하게도 은행주, 그중에서도 하나금융지주는 8월 25~26일 이틀 연속 오르며 나 홀로 강세를 보였습니다. 반도체가 무너지는 장에서 자금이 은행주로 피신하는 '미러 로테이션'이 실제로 일어나고 있는 걸까요, 아니면 잠깐의 착시일까요. 재무·뉴스·업종 세 갈래로 뜯어본 결과와 함께, 공격적 투자자 시선에서 오늘 결론을 내려보겠습니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 공격적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="분할 매수" style="display:none;">분할 매수</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">뉴스 강한 긍정 + 재무 개선세가 업종 중립(8/27 금통위·담합 불확실성)을 아직 완전히 상쇄하지 못해, 눌림목마다 나눠 담는 분할 매수를 권합니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">133,200원</span>
+      <span style="font-size:15px; font-weight:700; color:#dc2626;">▲2,400원 (+1.83%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-08-26 KRX 장마감 기준</span>
+    </div>
+    <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">※ 8/26은 KRX 정규장 확정 종가(133,200원)와 NXT 포함 통합 최종 체결가(133,700원)가 500원 갈린 날입니다. 위 대표 시세는 법정 KRX 종가 기준이며, 아래 시가·고가·저가·거래량·대금·시총은 KRX+NXT 통합 공표값입니다.</div>
+    <!-- 지표 그리드: 라벨(회색, 좌) + 값(굵게, 우) 4쌍 × 5행. 가로줄만 사용(세로선 없음).
+         시가/고가/저가 값 색상은 전일 종가 대비로 지정: 상승 #dc2626 / 하락 #2563eb / 보합 #111827 -->
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">130,800원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">130,800원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">133,800원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">130,700원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">588,765주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">779억 원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">36조 5,458억 원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">68.23%*</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">142,500원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">80,500원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">9.18배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">14,513원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">8.30배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">16,056원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0.79배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">168,253원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">3.08%</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4,105원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.00 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">164,737원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <!-- 필진 치환 대상은 아래 #trading-trend-data 스크립트의 {{매매동향JSON}} 하나뿐.
+       JSON 형식: {"통합":[...], "KRX":[...], "NXT":[...]} — 각 배열은 최근 10거래일, 최신순.
+       행 형식: {"date":"07.27","foreign":-3319368,"ratio":"46.65%","inst":487617,"indiv":2801281,"close":254000,"change":4500,"volume":22701316}
+       (foreign/inst/indiv/change는 부호 있는 정수, ratio는 문자열, close/volume은 정수)
+       데이터를 확보하지 못한 시장은 빈 배열 []로 두면 해당 탭이 자동으로 숨겨짐. 임의값 금지.
+       아래 렌더링 스크립트는 사이트 공통 로직이므로 수정 금지. -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "08.26", "foreign": -2356, "ratio": "68.22%", "inst": 93086, "indiv": -89149, "close": 133700, "change": 2900, "volume": 588765}, {"date": "08.25", "foreign": -35602, "ratio": "68.23%", "inst": 141399, "indiv": -104895, "close": 130600, "change": 1900, "volume": 590452}, {"date": "08.24", "foreign": -105625, "ratio": "68.23%", "inst": 128113, "indiv": -22634, "close": 128600, "change": -200, "volume": 464828}, {"date": "08.21", "foreign": -71236, "ratio": "68.28%", "inst": 139923, "indiv": -64522, "close": 128400, "change": 5000, "volume": 870972}, {"date": "08.20", "foreign": 39913, "ratio": "68.31%", "inst": -147963, "indiv": 102871, "close": 123900, "change": -3600, "volume": 1027920}, {"date": "08.19", "foreign": -213592, "ratio": "68.29%", "inst": 97419, "indiv": 113766, "close": 126400, "change": -4300, "volume": 840924}, {"date": "08.18", "foreign": -60616, "ratio": "68.35%", "inst": -3857, "indiv": 64381, "close": 130600, "change": -2400, "volume": 761358}, {"date": "08.14", "foreign": 101587, "ratio": "68.37%", "inst": -54811, "indiv": -48251, "close": 132700, "change": 1700, "volume": 749263}, {"date": "08.13", "foreign": 168275, "ratio": "68.34%", "inst": -75834, "indiv": -83852, "close": 131400, "change": 3500, "volume": 1119490}, {"date": "08.12", "foreign": 66244, "ratio": "68.28%", "inst": -38446, "indiv": -24387, "close": 128800, "change": 1100, "volume": 684938}], "KRX": [{"date": "08.26", "foreign": -11837, "ratio": "68.22%", "inst": 80486, "indiv": -67040, "close": 133200, "change": 2400, "volume": 538271}, {"date": "08.25", "foreign": -52418, "ratio": "68.23%", "inst": 135447, "indiv": -81902, "close": 130800, "change": 2100, "volume": 528836}, {"date": "08.24", "foreign": -114145, "ratio": "68.23%", "inst": 130698, "indiv": -16684, "close": 128700, "change": -100, "volume": 413044}, {"date": "08.21", "foreign": -69191, "ratio": "68.28%", "inst": 135814, "indiv": -65914, "close": 128800, "change": 5400, "volume": 758877}, {"date": "08.20", "foreign": 60355, "ratio": "68.31%", "inst": -120995, "indiv": 56084, "close": 123400, "change": -4100, "volume": 931998}, {"date": "08.19", "foreign": -168418, "ratio": "68.29%", "inst": 122042, "indiv": 45083, "close": 127500, "change": -3200, "volume": 681003}, {"date": "08.18", "foreign": -31812, "ratio": "68.35%", "inst": 2466, "indiv": 29537, "close": 130700, "change": -2300, "volume": 664537}, {"date": "08.14", "foreign": 72280, "ratio": "68.37%", "inst": -35604, "indiv": -36368, "close": 133000, "change": 2000, "volume": 677841}, {"date": "08.13", "foreign": 155506, "ratio": "68.34%", "inst": -80492, "indiv": -68163, "close": 131000, "change": 3100, "volume": 1060264}, {"date": "08.12", "foreign": 63313, "ratio": "68.28%", "inst": -43649, "indiv": -16391, "close": 127900, "change": 200, "volume": 647577}], "NXT": [{"date": "08.26", "foreign": 9481, "ratio": "0.00%", "inst": 12600, "indiv": -22109, "close": 133700, "change": 2900, "volume": 50494}, {"date": "08.25", "foreign": 16816, "ratio": "68.23%", "inst": 5952, "indiv": -22993, "close": 130600, "change": 1900, "volume": 61616}, {"date": "08.24", "foreign": 8520, "ratio": "68.23%", "inst": -2585, "indiv": -5950, "close": 128600, "change": -200, "volume": 51784}, {"date": "08.21", "foreign": -2045, "ratio": "68.28%", "inst": 4109, "indiv": 1392, "close": 128400, "change": 5000, "volume": 112095}, {"date": "08.20", "foreign": -20442, "ratio": "68.31%", "inst": -26968, "indiv": 46787, "close": 123900, "change": -3600, "volume": 95922}, {"date": "08.19", "foreign": -45174, "ratio": "68.29%", "inst": -24623, "indiv": 68683, "close": 126400, "change": -4300, "volume": 159921}, {"date": "08.18", "foreign": -28804, "ratio": "68.35%", "inst": -6323, "indiv": 34844, "close": 130600, "change": -2400, "volume": 96821}, {"date": "08.14", "foreign": 29307, "ratio": "68.37%", "inst": -19207, "indiv": -11883, "close": 132700, "change": 1700, "volume": 71422}, {"date": "08.13", "foreign": 12769, "ratio": "68.34%", "inst": 4658, "indiv": -15689, "close": 131400, "change": 3500, "volume": 59226}, {"date": "08.12", "foreign": 2931, "ratio": "68.28%", "inst": 5203, "indiv": -7996, "close": 128800, "change": 1100, "volume": 37361}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 하나금융지주</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">숫자만 보면 "매출이 15% 넘게 줄었다"는 얘기에 놀랄 수 있는데요, 이건 은행지주 특유의 회계 구조 때문입니다. 이자수익·유가증권평가손익이 뒤섞이다 보니 매출액은 2024년 +17.10% → 2025년 -15.53%로 널뛰기를 하지만, 정작 영업이익률은 2025년 7.76%로 최근 3개년 중 최고치를 찍었고 순이익률도 5.85%로 같이 개선됐습니다. 표면적 매출만 보고 역성장으로 오판하면 안 되는 이유입니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">ROE는 2023년 9.01% → 2025년 9.17%로 완만히 개선돼 왔는데, 2026년 상반기 실제치는 10.62%까지 올라왔습니다. 회사가 밸류업 2.0에서 제시한 목표(연 12%)에 성큼 다가선 셈이죠. 자본건전성도 CET1(보통주자본비율) 13.21%로 관리목표(13% 이상)를 웃돌고 있고, 그룹 NIM(순이자마진)도 1.88%로 전분기 대비 +6bp 개선됐습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">다만 밸류에이션은 이미 상당히 뛰어올라 있습니다. 현재 PER 9.18배는 하나금융지주 자체 4개년(2022~2025) 평균 PER 4.58배의 약 2배 수준입니다. 동일업종 PER(8.88배)이나 피어 4개사 평균(8.68배)과 비교해도 소폭 비싼 편이고요. 반면 PBR은 0.79배로 여전히 장부가 이하 구간이라 완전히 고평가라 보긴 어렵고, "밸류업 기대가 미리 반영된 재평가 진행형" 구간으로 읽는 게 맞습니다.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE (2026 상반기)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">10.62%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년 연속 개선, 목표 12%에 근접</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">CET1</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">13.21%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">관리목표(13%) 상회, 초과분은 주주환원 재원</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">그룹 NIM</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">1.88% (+6bp)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">수익성 추가 개선 신호</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">9.18배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">업종평균(8.88배)보다 소폭 높음, 자체 평균의 약 2배로 리레이팅</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">0.79배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">여전히 장부가 이하, 저평가 요소 잔존</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">재무 건전성 등급</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">B</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">수익성·자본건전성 양호하나 밸류에이션 부담으로 A 아님</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> ROE·영업이익률·순이익률 3년 연속 개선, CET1·NIM 모두 양호, 2,500억원 규모 자사주 추가 매입·소각(8/27~10/22 예정)까지 겹쳐 밸류업 스토리가 살아있습니다.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> PER이 자체 평균의 2배까지 뛴 상태라 추가 상승 여력은 계속 점검해야 하고, 총자본비율(BIS)도 15.61%→15.26%로 소폭 둔화됐습니다.</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">지난 한 달 뉴스를 세어보면 호재 9건 대 악재 1건으로, 압도적으로 긍정적인 분위기였습니다. 가장 눈에 띄는 흐름은 '판도가 뒤집혔다'는 서사인데요. 순이익 기준으로 신한을 꺾고 우리금융을 제치며 4대 금융지주 3위 굳히기에 들어갔다는 기사가 나왔고, PBR 1배를 넘보는 은행주 랠리 속에서 하나금융지주는 연초 대비 +43.1%까지 오르기도 했습니다. 코스피가 급락한 8월 25~26일에도 4대 금융지주 평균이 12% 오르며 오히려 아웃퍼폼했다는 소식도 있었고요. 주주환원 쪽도 화제였습니다. 4대 금융지주가 동시에 사상 최대 규모의 자사주 소각에 나섰고, 하나금융지주는 특징주로 부각되며 주주환원 확대·이익구조 다변화 기대가 반영됐습니다. 반면 유일한 악재는 자회사 하나손해보험의 실적 부진입니다. 2분기 632억원, 상반기 누적 711억원의 순손실을 기록했는데, 이는 이미 작년 연간 적자(470억원)를 넘어선 수준입니다. 그룹 이익의 대부분이 은행에서 나오는 구조라 당장 큰 타격은 아니지만, 비은행 다변화 스토리에는 흠집이 나는 소식입니다.</p>
+  <!-- 원본 바로가기: 뉴스 감성 분석가가 수집한 실제 기사 URL만 사용.
+       URL이 "확인 불가"인 항목은 <a> 태그 전체를 생략 -->
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 금리상승 국면, 4대금융지주 평균 12%↑ 코스피 아웃퍼폼(8/26)
+    <a href="https://v.daum.net/v/20260826171352343" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — [특징주] 하나금융지주, 주주환원 확대·이익구조 다변화(8/23)
+    <a href="https://v.daum.net/v/20260823190505247" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 신한 꺾은 KB, 우리 제친 하나…판도 뒤집힌 빅5(8/19)
+    <a href="https://v.daum.net/v/20260819080209149" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 'PBR 1배' 넘보는 은행주(하나금융 7.4%↑, 연초대비 43.1%)(8/11)
+    <a href="https://v.daum.net/v/20260811101130457" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 4대금융지주 사상최대 자사주 소각(하나금융지주 42%↑)(7/28)
+    <a href="https://v.daum.net/v/20260728094030539" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 하나손해보험 2분기 632억 적자, 상반기 순손실 711억(8/19)
+    <a href="https://v.daum.net/v/20260819182012895" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <!-- 항목 반복 -->
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 긍정 — 호재가 악재보다 8건 많아 긍정 기준을 명확히 충족합니다. 다만 하나손보 적자 확대는 하반기에도 계속 지켜볼 필요가 있는 부분입니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">5대 금융지주가 나란히 상반기 역대 최대 실적을 냈다는 게 요즘 은행업의 가장 큰 그림입니다. 하나금융지주 상반기 순이익은 2조 4,029억원(+4.4%YoY)으로 KB(3조 8,846억원)·신한(3조 4,427억원)에 이어 3위를 지켰습니다. 게다가 최근 3개월(6~8월) 코스피가 -23.8% 급락하는 동안 4대 금융지주 평균은 오히려 +10% 올라, 코스피 대비 30%p 넘게 아웃퍼폼했습니다. 배경은 기준금리 인상 기대에 따른 예대마진 확대, 원화 강세에 따른 CET1 개선입니다. 하나금융지주만의 고유 서사도 있습니다. "기업가치 제고 계획 2.0"에서 ROE 목표를 10%→12%로 올리고 CET1 초과기준을 13.5%→13%로 낮춰(주주환원 재원 확대) 5대 지주 중 비교적 공격적인 환원 확대에 나섰습니다. 9월부터는 임직원 약 2,200명이 인천 청라 신사옥으로 이전하는 상징적 이벤트도 앞두고 있고요. 다만 비은행 계열사 안에서는 양극화가 뚜렷합니다 — 하나증권은 순이익이 155.7% 급증했지만 하나손해보험은 적자가 확대됐습니다. 물론 리스크도 분명합니다. 하나은행은 국고채 입찰담합과 LTV 정보교환담합 두 건 모두에 이름이 올라 있고, 과징금 추산액이 8/20 15조 2,000억원에서 8/26~27 9조원대로 계속 바뀌는 등 불확실성이 큽니다. 오늘(8/27) 공정위 전원회의가 열리고, 같은 날 한국은행 금통위에서 기준금리 결정(3.00% 인상 vs 2.75% 동결)도 나오는데, 이 리포트를 쓰는 시점엔 아직 결과가 나오지 않아 미확인 상태입니다. 업종 리서처는 이런 이유로 판정을 중립으로 유지했습니다. 다만 4대 지주 동반 조정 국면(8/18~24)에서도 하나금융지주 낙폭이 -1.53%로 가장 작았다는 점, 즉 상대적 방어력이 확인됐다는 점은 눈여겨볼 만합니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 5대 지주 동시 역대 최대 실적, 코스피 대비 30%p 아웃퍼폼, 밸류업 2.0·자사주소각 의무화 등 제도적 뒷받침, 동반조정 국면에서 낙폭 최소로 확인된 상대적 방어력.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 국고채·LTV 이중 담합 노출(하나은행), 8/27 금통위·공정위 결과 미확정, 3분기 증권 자회사 실적 피크아웃 우려, PBR 0.8배대로 코리아 디스카운트 완전 해소는 아직.</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 공격적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">세 갈래 신호를 겹쳐보면 재무는 밸류에이션 부담이 있는 B등급, 뉴스는 압도적 긍정, 업종은 중립입니다. 공격적으로 보더라도 "세 신호 모두 강한 긍정"이라는 적극 매수의 조건을 아직 채우지 못했습니다 — 업종 쪽이 8/27 금통위·담합 과징금이라는 두 개의 큰 변수를 안고 있어서인데요. 그래도 이 조합을 비관할 이유는 전혀 없다고 봅니다. 기관이 거의 매일 받아내는 수급, 자체 최저 낙폭으로 증명된 방어력, 8/27부터 시작되는 2,500억원 자사주 소각까지 겹쳐 있으니, 눌림목마다 발을 담그며 물량을 늘려가는 전략이 유효하다고 판단합니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">핵심은 타이밍입니다. PER이 자체 평균의 2배까지 뛴 지금 전량을 한 번에 밀어 넣는 건 리스크 관리 측면에서 좋은 판단이 아닙니다. 대신 오늘처럼 기관이 주도하는 상승일에는 소액을 태우고, 조정이 나올 때(예: 8/20 저점권 근처로의 되돌림) 추가로 담는 분할 매수 방식을 권합니다. 목표주가(164,737원)와 PBR 1배(168,253원)까지는 아직 20% 이상 여유가 있다는 점도 공격적 투자자 입장에서는 매력적인 부분입니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">분할 매수 — 뉴스 강한 긍정 + 재무 개선세가 업종 중립(금통위·담합 불확실성)을 상쇄하지 못해, 전량 베팅 대신 눌림목 분할 매수 전략 유지</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기(2~4주) +7.0% (52주 최고 142,500원 재도전) / 중기(3~6개월) +23.7%~+26.3% (컨센서스 목표가 164,737원 / PBR 1배 168,253원 기준)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">128,700원 (8/24 종가·저점 부근 — 종전 손절 126,000원에서 상향. 종가 기준 이탈 시 반등 추세 훼손으로 판단)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">기존 보유분은 유지, 신규 진입은 8/20 저점권(123,000~125,000원대) 또는 8/27 금통위·공정위 결과 발표 후 조정 시 분할 매수</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">포트폴리오 대비 5~8% 유지, 자사주 소각 개시(8/27~) 및 하나손보 3분기 실적 확인 시 3~5% 추가 매수 검토</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">8/27 한국은행 금통위 결과 — 기준금리 인상(3.00%) vs 동결(2.75%)에 따른 NIM 영향</li>
+      <li style="margin-bottom:6px;">국고채·LTV 담합 공정위 전원회의 최종 과징금 — 8/27 개시, 다음 달 초 확정 예상, 하나은행 부담분 규모</li>
+      <li style="margin-bottom:6px;">2,500억원 자사주 매입·소각 진행 상황 (8/27~10/22 예정)</li>
+      <li style="margin-bottom:6px;">하나손해보험 3분기 실적 — 상반기 711억원 손실에서 손실폭 축소 여부</li>
+      <li style="margin-bottom:6px;">52주 최고가(142,500원) 재도전 여부 — 돌파 시 추가 상승 탄력, 실패 시 단기 조정 가능성</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">세 분석을 종합하면 하나금융지주는 "이미 오른 종목"이 아니라 "계속 오를 이유가 남아있는 종목"에 가깝습니다. 다만 밸류에이션 부담과 굵직한 정책 변수들이 이번 주에 한꺼번에 몰려 있으니, 급하게 다 들어가기보다는 리듬을 타면서 나눠 담는 게 공격적이면서도 현명한 접근이라고 생각합니다. 다음 포스트에서는 8/27 금통위·공정위 결과가 반영된 이후의 그림을 다시 짚어보겠습니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <!-- 뉴스 감성 분석가가 수집한 기사 전체 목록. URL 확인 불가 항목은 링크 없이 제목만 표기 -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260826171352343" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">금리상승 국면, 4대금융지주 평균 12%↑ 코스피 아웃퍼폼</a> <span style="color:#6b7280;">— 아시아경제 · 2026-08-26</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825173111966" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하나금융 '청라시대' 개막, 인천 금융허브 이전</a> <span style="color:#6b7280;">— 한국경제 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260823190505247" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">[특징주] 하나금융지주, 주주환원 확대·이익구조 다변화</a> <span style="color:#6b7280;">— 인천일보 · 2026-08-23</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260823161637264" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">비은행 금융그룹 M&A 영토확장(두나무·코인원 소수지분)</a> <span style="color:#6b7280;">— 한국경제 · 2026-08-23</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260820090302261" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">국세청, KB국민은행 세무조사 확대("하나·메리츠 이어")</a> <span style="color:#6b7280;">— 연합인포맥스 · 2026-08-20</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260819080209149" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">신한 꺾은 KB, 우리 제친 하나…판도 뒤집힌 빅5</a> <span style="color:#6b7280;">— 한경비즈니스 · 2026-08-19</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260819182012895" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하나손해보험 2분기 632억 적자, 상반기 순손실 711억</a> <span style="color:#6b7280;">— 디지털타임스 · 2026-08-19</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260818162249924" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">역대급 실적, 금융지주 급여도 껑충(하나 증가액 5대금융 최대)</a> <span style="color:#6b7280;">— 이데일리 · 2026-08-18</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260816164650350" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">함영주 하나금융 회장 상반기 보수 19억(타 지주 대비 최고)</a> <span style="color:#6b7280;">— 한겨레 · 2026-08-16</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260814060115030" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">변동성 장세서 방어력 입증한 은행주(하나금융 2.42%↑)</a> <span style="color:#6b7280;">— 이투데이 · 2026-08-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260811101130457" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">'PBR 1배' 넘보는 은행주(하나금융 7.4%↑, 연초대비 43.1%)</a> <span style="color:#6b7280;">— EBN산업경제 · 2026-08-11</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260809180651214" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하나캐피탈 대표, 매매평가손실 감소로 순익 1000억대 회복(+7배)</a> <span style="color:#6b7280;">— 한국금융 · 2026-08-09</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260809103300540" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">순이익 늘었는데 부실채권도 최고치…은행권 건전성 경보</a> <span style="color:#6b7280;">— 브릿지경제 · 2026-08-09</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260807091141216" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">밸류업 공시 747개사 돌파(하나금융지주 주기적공시 제출)</a> <span style="color:#6b7280;">— 이코노믹리뷰 · 2026-08-07</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260805090826961" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">상반기 배당 공시 확대(하나금융지주 배당 6151억원)</a> <span style="color:#6b7280;">— 이코노믹리뷰 · 2026-08-05</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260805134313590" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하나금융, 포용금융 최고책임자(CIFO) 신설(금융권 최초)</a> <span style="color:#6b7280;">— MTN · 2026-08-05</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260731155704280" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">금융위, 5대금융지주 D-SIB 재지정(전년과 동일)</a> <span style="color:#6b7280;">— 연합인포맥스 · 2026-07-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260730094303427" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">[특징주] 금융주 동반강세, 하나금융지주 5.65%↑</a> <span style="color:#6b7280;">— 이투데이 · 2026-07-30</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260729070641642" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">2Q 실적 컨센서스 소폭 미달에도 목표가 줄상향(밸류업2.0)</a> <span style="color:#6b7280;">— 아시아경제 · 2026-07-28~29</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260728094030539" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">4대금융지주 사상최대 자사주 소각(하나금융지주 42%↑)</a> <span style="color:#6b7280;">— 신아일보 · 2026-07-28</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #하나금융지주 #086790 #은행주 #금융지주 #밸류업 #배당주 #자사주소각 #금통위
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
