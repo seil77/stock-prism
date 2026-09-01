@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼성SDI, 3일 연속 랠리 뒤 첫 조정 — 그래도 공격적으로 담아야 하는 이유</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260901_%EC%82%BC%EC%84%B1SDI_%EA%B3%B5%EA%B2%A9%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">공격적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">삼성SDI, 3일 연속 랠리 뒤 첫 조정 — 그래도 공격적으로 담아야 하는 이유</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-09-01 · 삼성SDI (006400) · 데이터 기준일 2026-09-01</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">전고체 배터리 최선두주로 8월 한 달 +43%대 급등했던 삼성SDI가 9월 첫 거래일, 드디어 숨을 골랐는데요. 장중 60만원까지 찍었다가 55만 3천원까지 밀리며 하루 만에 -1.39% 밀려났습니다. "이제 꺾이는 거 아니냐"는 걱정이 나올 법한 흐름이죠. 그런데 결론부터 말씀드리면, 저는 이 조정을 팔 자리가 아니라 담을 자리로 봅니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 공격적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="분할 매수" style="display:none;">분할 매수</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">재무 C등급이지만 2분기 연속 흑자전환·뉴스 강한 긍정·업종 중립(개별 우호) 구도가 6회 연속 유지 — 오늘 조정은 추세 훼손이 아닌 숨고르기로 판단</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">569,000원</span>
+      <span style="font-size:15px; font-weight:700; color:#2563eb;">▼8,000원 (-1.39%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-09-01 KRX 장마감 기준</span>
+    </div>
+    <div style="font-size:12px; color:#6b7280; margin:6px 0 4px 0;">※ 09.01은 KRX 정규장 종가(569,000원)와 NXT 포함 통합 최종 체결가(559,000원)가 -10,000원(-1.72%) 갈린 날입니다. 카드 대표 시세는 법정 KRX 종가 기준이며, 거래량·대금·시총·시가/고가/저가는 KRX+NXT 통합 기준입니다.</div>
+    <!-- 지표 그리드: 라벨(회색, 좌) + 값(굵게, 우) 4쌍 × 5행. 가로줄만 사용(세로선 없음).
+         시가/고가/저가 값 색상은 전일 종가 대비로 지정: 상승 #dc2626 / 하락 #2563eb / 보합 #111827 -->
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">577,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">588,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">600,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">553,000원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,196,488주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">6,953억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">45조 8,532억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">26.02%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">820,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">196,800원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,242.36배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">458원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">66.64배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">8,539원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1.84배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">308,778원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">N/A(무배당)</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">N/A(무배당)</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">3.95 (매수)</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">699,600원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "09.01", "foreign": -136554, "ratio": "25.88%", "inst": 72199, "indiv": 64405, "close": 559000, "change": -18000, "volume": 1196488}, {"date": "08.31", "foreign": -162586, "ratio": "26.02%", "inst": 55667, "indiv": 99218, "close": 584000, "change": 13000, "volume": 1540018}, {"date": "08.28", "foreign": -141095, "ratio": "26.31%", "inst": 153498, "indiv": -18531, "close": 570000, "change": 1000, "volume": 855937}, {"date": "08.27", "foreign": 260413, "ratio": "26.48%", "inst": 310471, "indiv": -559801, "close": 570000, "change": 54000, "volume": 1713426}, {"date": "08.26", "foreign": -65367, "ratio": "26.18%", "inst": 24811, "indiv": 33460, "close": 514000, "change": -5000, "volume": 396256}, {"date": "08.25", "foreign": -81509, "ratio": "26.30%", "inst": 81105, "indiv": -4815, "close": 522000, "change": 7000, "volume": 685931}, {"date": "08.24", "foreign": 2910, "ratio": "26.27%", "inst": 197789, "indiv": -201597, "close": 511000, "change": 33000, "volume": 1183278}, {"date": "08.21", "foreign": -45377, "ratio": "26.27%", "inst": -23408, "indiv": 67238, "close": 490500, "change": -9000, "volume": 675691}, {"date": "08.20", "foreign": 22392, "ratio": "26.35%", "inst": 35347, "indiv": -58645, "close": 498500, "change": 11500, "volume": 664455}, {"date": "08.19", "foreign": 19766, "ratio": "26.33%", "inst": -14239, "indiv": -5896, "close": 492500, "change": 4500, "volume": 665395}], "KRX": [{"date": "09.01", "foreign": -108811, "ratio": "25.88%", "inst": 76260, "indiv": 33457, "close": 569000, "change": -8000, "volume": 572609}, {"date": "08.31", "foreign": -125143, "ratio": "26.02%", "inst": 59995, "indiv": 61208, "close": 577000, "change": 6000, "volume": 826685}, {"date": "08.28", "foreign": -99999, "ratio": "26.31%", "inst": 156436, "indiv": -59391, "close": 571000, "change": 2000, "volume": 443235}, {"date": "08.27", "foreign": 136616, "ratio": "26.48%", "inst": 284452, "indiv": -415693, "close": 569000, "change": 53000, "volume": 940535}, {"date": "08.26", "foreign": -45435, "ratio": "26.18%", "inst": 21201, "indiv": 20590, "close": 516000, "change": -3000, "volume": 205414}, {"date": "08.25", "foreign": -50582, "ratio": "26.30%", "inst": 80461, "indiv": -31055, "close": 519000, "change": 4000, "volume": 384401}, {"date": "08.24", "foreign": -32884, "ratio": "26.27%", "inst": 184135, "indiv": -152555, "close": 515000, "change": 37000, "volume": 677653}, {"date": "08.21", "foreign": -23130, "ratio": "26.27%", "inst": -21991, "indiv": 44295, "close": 478000, "change": -21500, "volume": 286477}, {"date": "08.20", "foreign": -4811, "ratio": "26.35%", "inst": 42356, "indiv": -37304, "close": 499500, "change": 12500, "volume": 390207}, {"date": "08.19", "foreign": 16649, "ratio": "26.33%", "inst": -9956, "indiv": -6559, "close": 487000, "change": -1000, "volume": 394552}], "NXT": [{"date": "09.01", "foreign": -27743, "ratio": "0.00%", "inst": -4061, "indiv": 30948, "close": 559000, "change": -18000, "volume": 623879}, {"date": "08.31", "foreign": -37443, "ratio": "26.02%", "inst": -4328, "indiv": 38010, "close": 584000, "change": 13000, "volume": 713333}, {"date": "08.28", "foreign": -41096, "ratio": "26.31%", "inst": -2938, "indiv": 40860, "close": 570000, "change": 1000, "volume": 412702}, {"date": "08.27", "foreign": 123797, "ratio": "26.48%", "inst": 26019, "indiv": -144108, "close": 570000, "change": 54000, "volume": 772891}, {"date": "08.26", "foreign": -19932, "ratio": "26.18%", "inst": 3610, "indiv": 12870, "close": 514000, "change": -5000, "volume": 190842}, {"date": "08.25", "foreign": -30927, "ratio": "26.30%", "inst": 644, "indiv": 26240, "close": 522000, "change": 7000, "volume": 301530}, {"date": "08.24", "foreign": 35794, "ratio": "26.27%", "inst": 13654, "indiv": -49042, "close": 511000, "change": 33000, "volume": 505625}, {"date": "08.21", "foreign": -22247, "ratio": "26.27%", "inst": -1417, "indiv": 22943, "close": 490500, "change": -9000, "volume": 389214}, {"date": "08.20", "foreign": 27203, "ratio": "26.35%", "inst": -7009, "indiv": -21341, "close": 498500, "change": 11500, "volume": 274248}, {"date": "08.19", "foreign": 3117, "ratio": "26.33%", "inst": -4283, "indiv": 663, "close": 492500, "change": 4500, "volume": 270843}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 삼성SDI</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">숫자만 보면 삼성SDI는 여전히 상처투성이입니다. 2023년부터 3년 연속 두 자릿수 매출 감소, 2025년엔 연간 영업이익률 -12.98%로 적자 전환까지 했으니까요. 그런데 2분기(2026.06) 실적을 뜯어보면 얘기가 완전히 달라집니다. 영업이익률이 +5.41%로 7개 분기 만에 흑자 전환했고, 시장 컨센서스가 -356억 적자를 예상했던 자리에서 실제로는 2,038억원 흑자를 냈습니다. 서프라이즈 그 자체죠. 순이익률은 12.51%로 영업이익률의 두 배가 넘는데, 이건 삼성디스플레이 지분 매각(4조 4,500억원) 관련 영업외이익이 일부 반영됐을 가능성이 있습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">문제는 밸류에이션입니다. 트레일링 PER은 1,242배로 사실상 의미 없는 숫자지만, 추정 PER(66.64배)도 자체 4개년 평균(8.73배)의 7.6배 수준까지 올라와 있습니다. 8월 한 달 43%대 급등이 실적 개선 속도보다 빠르게 선반영됐다는 뜻이죠. 다만 PBR(1.84배)은 2차전지 피어 평균(4.82배)보다 오히려 낮아서, 자산 기준으로는 여전히 저평가 구간이라는 상반된 신호도 있습니다. 유동비율은 5개 분기 연속 하락해 76.69%까지 내려왔는데, 부채비율(77.45%)은 2024년 정점(88.24%) 대비 개선되고 있어서 레버리지는 안정, 단기 유동성은 계속 빡빡한 엇갈린 그림입니다.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2Q26 영업이익률</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">+5.41%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">7분기 만의 흑자전환, 컨센서스(-356억) 대비 대폭 서프라이즈</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2Q26 순이익률</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">+12.51%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">영업이익률의 2배 이상, 지분매각 영업외이익 일부 반영 추정</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">추정 PER</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">66.64배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">자체 4개년 평균(8.73배) 대비 7.6배, 밸류에이션 부담</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">1.84배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2차전지 피어 평균(4.82배) 대비 저평가 신호</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">유동비율(2026.06)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">76.69%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">5개 분기 연속 하락, 100% 지속 하회</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">부채비율(2026.06)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">77.45%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2024년 정점(88.24%) 이후 개선 추세</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">재무 건전성 등급</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">C</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">회복 초기 국면, 2~3개 분기 지속 확인 필요</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 2분기 연속 실적 개선(1Q26 -1,556억 → 2Q26 +2,038억), AMPC 제외해도 흑자, 3분기 영업이익 컨센서스 269% 급증.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 3년 연속 매출 감소 이력, 유동비율 100% 지속 하회, 2025~2027년 무배당 정책, 추정 PER 자체 평균 대비 7.6배 프리미엄.</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">지난 한 달 삼성SDI 뉴스는 한마디로 "호재 잔치"였습니다. 20건 중 15건이 호재, 악재는 단 2건뿐이라 호재 비율 75%, 격차는 +13건에 달합니다. 가장 큰 재료는 삼성디스플레이 지분 매각이었죠. 보유 지분 약 33%를 4조 4,499억원에 넘기면서 실탄을 확보했고, 이 돈이 미국 인디애나 ESS·LFP 라인 투자와 GM 지분 전량 인수(북미 합작사 100% 자회사화)로 곧바로 이어졌습니다.</p>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 삼성SDI, WCP 지분 직접 소유…분리막 공급망 내재화 (09-01)
+    <a href="https://v.daum.net/v/20260901092602329" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — EU, 한국 배터리 3사와 협력해 中비중 낮춰야 (09-01)
+    <a href="https://v.daum.net/v/20260901094738594" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 전고체 양산 기대…기관 삼성SDI 폭풍매수 (08-30)
+    <a href="https://v.daum.net/v/20260830165108296" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 삼성D 지분 팔아 4.45조 확보…美 투자 드라이브 (08-21)
+    <a href="https://v.daum.net/v/20260821164218810" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 삼성SDI 3분기 영업이익 전망치, 한 달새 269.1% 급증 (08-09)
+    <a href="https://v.daum.net/v/20260809181900472" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 헝가리 환경당국, 배터리 기업 점검 착수…삼성SDI 예의주시 (08-08)
+    <a href="https://v.daum.net/v/20260808000204132" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 삼성SDI, 3개월 새 주가 40%↓…주주 달래기 카드 꺼낼까 (08-04)
+    <a href="https://v.daum.net/v/20260804133102515" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 긍정. 3분기 영업이익 컨센서스가 한 달 만에 269% 뛰었고, 전고체 배터리 기대감에 기관이 몰리고 있습니다. 다만 헝가리 환경당국 점검은 8월 초 착수 이후 3주 넘게 결론이 안 나온 상태라, 이 부분만큼은 계속 지켜봐야 할 리스크입니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">2차전지 업종은 지금 "EV는 식고 ESS는 끓는다"로 요약됩니다. 미국 IRA EV 보조금이 2025년 10월 폐지되면서 2026년 미국 EV 판매는 -16% 전망까지 나오는데, 반대로 AI 데이터센터 전력수요 폭증에 힘입어 ESS 시장은 2026년 상반기 461.3GWh로 전년 대비 +71% 급성장했습니다. 여기에 9월 1일 새로 확인된 재료가 하나 더 얹혔는데, 바로 중국의 리튬이온배터리 소비세 실제 부과 개시입니다. 10년 넘게 유지되던 면제정책이 폐지되고 2%(올해)→4%(내년) 단계적으로 인상되는데, 이건 중국 업체의 저가 수출 채산성을 구조적으로 압박하는 요인이라 한국 3사에는 상대적으로 유리하게 작용할 수 있습니다. 8월 30일 트럼프 행정부가 서명한 외국산 배터리에너지저장장치(BESS) 유입 제한 행정명령도 방향성만큼은 명확합니다. 세부 관세율과 시행시점은 아직 미확정이지만, 확정되면 북미 ESS 점유율 약 20%를 가진 삼성SDI에게 반사이익 여지가 있습니다.</p>
+  <p style="font-size:15px; margin:0 0 12px 0;">다만 마냥 좋은 그림만은 아닙니다. 한국 배터리 3사의 유럽 시장 점유율이 2023년 60.4%에서 2025년 약 30%까지 절반으로 급락했다는 신규 보도(니케이 아시아, 09-01)는 경계할 대목입니다. 삼성SDI 개별로는 순수 BEV 점유율이 3.9%로 3사 중 가장 낮은데, 그 대신 전고체 배터리에서는 3사 중 가장 앞서 있고(2027년 하반기 양산 목표), 현대차그룹 공급 확대와 오늘 확인된 WCP 분리막 지분 직접 편입(공급망 내재화)까지 삼성SDI 고유의 경쟁력 강화 흐름은 계속되고 있습니다. 업종 리서처는 이 구도를 "중립"으로 판정했지만, 삼성SDI 개별 종목 관점에서는 이 중립 안에서도 상대적으로 유리한 자리를 차지하고 있다고 봅니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> ESS 시장 71~83% 고성장, 트럼프 BESS 유입 제한 행정명령, 중국 소비세 시행으로 가격 경쟁력 상대 우위, 삼성SDI 전고체 최선두.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 유럽 점유율 60.4%→30% 급락, 순수 BEV 점유율 3사 중 최저(3.9%), 45X/AMPC·232조 관세 25일 이상 미확정.</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 공격적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">오늘 조정을 어떻게 볼 것인가가 이 종목의 핵심입니다. 저는 이걸 추세 전환이 아니라 3거래일 급등 뒤 자연스러운 되돌림으로 봅니다. 근거는 명확합니다. 오늘 통합 기준 저가가 553,000원까지 밀리면서 직전 손절선(557,000원, 08.31 통합 저가)을 장중에 살짝 건드렸지만, KRX 종가는 569,000원으로 그 위에서 마감했습니다. 팔자 물량을 국내 기관·개인이 순순히 받아낸 매매동향도 확인했고요. 재무·뉴스·업종 세 축의 조합(재무 C등급 / 뉴스 강한 긍정 / 업종 명목상 중립이지만 삼성SDI엔 우호적)도 지난 일주일간 그대로 유지되고 있습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">그렇다고 무작정 밀어붙일 자리는 아닙니다. 추정 PER이 자체 평균의 7.6배에 달하는 밸류에이션 부담, 유동비율의 지속적 하락, 무배당 정책이라는 약점은 그대로 남아 있습니다. 그래서 판정은 적극 매수가 아니라 분할 매수를 유지합니다 — 공격적으로 담되, 한 번에 다 태우지는 않는다는 뜻입니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">분할 매수 — 3대 신호(재무C/뉴스긍정/업종중립) 6회 연속 불변, 오늘 조정도 추세 훼손 아닌 눌림목으로 판단</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기 +8~12% (615,000~637,000원) / 중기 컨센서스 +22.9% (699,600원) / 스트레치 52주 최고 +44.1% (820,000원)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">545,000원 (09.01 통합 저가 553,000원을 하회하는 수준으로 트레일링 하향, 급등 후 첫 조정의 변동성 폭을 감안한 완충)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">1차 현재가 부근 소액 분할 진입, 2차 545,000~553,000원 눌림목, 3차 9월 ESS 3차 입찰 결과 확인 후 추가</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">8~12% 유지 (신규 확대 트리거 없음)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">9월 ESS 3차 입찰(약 1조원) 결과 — 가격평가 비중이 60%→50%로 낮아진 첫 입찰로, 1차(삼성SDI 압도)·2차(SK온 역전)에 이은 3파전 승부처</li>
+      <li style="margin-bottom:6px;">헝가리 환경당국 점검 결과 — 8월 8일 착수 이후 9월 1일 기준 25일 넘게 미확정, 벌금·공장폐쇄 권한까지 있는 사안</li>
+      <li style="margin-bottom:6px;">3분기 실적(11월 초, 컨센서스 952억원) — AMPC·관세환급을 빼도 흑자가 유지되는지</li>
+      <li style="margin-bottom:6px;">유동비율 100% 회복 여부 — 현재 76.69%, 5개 분기 연속 하락 추세의 반전 여부</li>
+      <li style="margin-bottom:6px;">미국 45X/AMPC·무역법 232조 배터리 관세 확정 여부, 유럽 점유율(30%) 추가 하락 여부</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">3거래일 급등 뒤 첫 조정이라고 해서 겁먹을 필요는 없다고 봅니다. 오히려 오늘 같은 눌림목에서 분할로 담아가는 전략이 이 종목의 스토리(전고체 최선두 + ESS 붐 + 실적 턴어라운드)에 맞는 접근이라고 생각합니다. 다만 손절선은 반드시 지키시고, 9월 ESS 입찰과 헝가리 이슈라는 두 개의 큰 이벤트를 앞두고 있다는 점, 잊지 마세요.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260901092602329" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI, WCP 지분 직접 소유…분리막 공급망 내재화</a> <span style="color:#6b7280;">— 더구루 · 2026-09-01</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260901094738594" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">EU, 한국 배터리 3사와 협력해 中비중 낮춰야</a> <span style="color:#6b7280;">— 더구루 · 2026-09-01</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260830165108296" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">전고체 양산 기대…기관 삼성SDI 폭풍매수</a> <span style="color:#6b7280;">— 매일경제 · 2026-08-30</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260830060128270" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">ESS 3차 입찰 임박…삼성SDI·SK온 선두</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-30</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260828182110024" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI, 열폭주 대응 안전 특허 2건 美 공개</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-28</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260828144218812" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">헝가리 정권교체 속 '배터리 동맹' 굳건, 신임 투자청장 회동</a> <span style="color:#6b7280;">— 더구루 · 2026-08-28</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825155915588" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">유럽車 대응 본격화…헝가리 라인 전환 추진</a> <span style="color:#6b7280;">— 디지털데일리 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825082440496" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하루 새 8% 뛴 삼성SDI…증권가 목표주가 상향</a> <span style="color:#6b7280;">— 파이낸셜뉴스 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260824142953680" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI, ESS에 4조 붓는다…"삼성D 9조 지분 유지"</a> <span style="color:#6b7280;">— 한국경제TV · 2026-08-24</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260821164218810" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성D 지분 팔아 4.45조 확보…美 투자 드라이브</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260820154209183" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">이재용·정의선 협력 본격화…"GV90부터 로봇까지"</a> <span style="color:#6b7280;">— 조선비즈 · 2026-08-20</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260820134500185" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">LG엔솔·삼성SDI, 수익성 부담 속 ESS·차세대 배터리 투자 지속</a> <span style="color:#6b7280;">— 메트로경제 · 2026-08-20</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260818110303055" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">"ESS 폭발적 성장 시작"…실적 반등 신호</a> <span style="color:#6b7280;">— 이투데이 · 2026-08-18</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260814173327121" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI 최주선 사장, 상반기 보수 7억6600만원</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260814174551582" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI, 가동률 73%로 대폭 반등…R&D 비용 8586억원</a> <span style="color:#6b7280;">— 연합뉴스 · 2026-08-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260811142423187" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI, GM 지분 전량 인수…북미 배터리 '승부수'</a> <span style="color:#6b7280;">— 지데일리 · 2026-08-11</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260809181900472" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI 3분기 영업이익 전망치, 한 달새 269.1% 급증</a> <span style="color:#6b7280;">— 한국경제 · 2026-08-09</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260808000204132" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">헝가리 환경당국, 배터리 기업 점검 착수…삼성SDI 예의주시</a> <span style="color:#6b7280;">— 더구루 · 2026-08-08</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260806110253051" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">AI ESS 수주+한국판 IRA…삼성SDI, 국내 25조 투자 탄력</a> <span style="color:#6b7280;">— 쿠키뉴스 · 2026-08-06</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260804133102515" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성SDI, 3개월 새 주가 40%↓…주주 달래기 카드 꺼낼까</a> <span style="color:#6b7280;">— 한국금융 · 2026-08-04</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #삼성SDI #006400 #2차전지 #ESS #전고체배터리 #분할매수 #배터리주 #투자전략
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
