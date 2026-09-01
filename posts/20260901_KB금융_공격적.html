@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KB금융, 8거래일 랠리 첫 제동 — 그래도 손 놓을 때는 아니다</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260901_KB%EA%B8%88%EC%9C%B5_%EA%B3%B5%EA%B2%A9%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">공격적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">KB금융, 8거래일 랠리 첫 제동 — 그래도 손 놓을 때는 아니다</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-09-01 · KB금융 (105560) · 데이터 기준일 2026-09-01</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">KB금융이 8/20 저점(160,000원) 이후 8거래일 연속 상승하며 173,300원까지 치솟았는데요, 오늘(9/1) 드디어 첫 조정을 맞았습니다. 그것도 하필 손절선을 장중에 살짝 건드리고 올라온 하루였습니다. 8연속 랠리가 끝난 걸까요, 아니면 잠깐 숨 고르는 걸까요? 오늘 데이터로 냉정하게 따져보겠습니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 공격적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="분할 매수" style="display:none;">분할 매수</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">8연속 상승 뒤 첫 조정이지만 종가는 손절선 위, 재무·뉴스·업종 3개 신호축이 전부 그대로라 분할매수 기조를 유지합니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">171,200원</span>
+      <span style="font-size:15px; font-weight:700; color:#2563eb;">▼2,100원 (-1.21%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-09-01 KRX 장마감 기준</span>
+    </div>
+    <div style="font-size:12px; color:#9ca3af; margin-bottom:8px;">⚠️ 오늘은 KRX 정규장 확정 종가(171,200원)와 NXT 포함 통합 최종 체결가(170,500원)가 -700원(-0.41%) 갈린 날입니다. 대표 시세는 법정 KRX 종가 기준이며, 거래량·대금·시총·OHLC는 KRX+NXT 통합 기준입니다.</div>
+    <!-- 지표 그리드: 라벨(회색, 좌) + 값(굵게, 우) 4쌍 × 5행. 가로줄만 사용(세로선 없음).
+         시가/고가/저가 값 색상은 전일 종가 대비로 지정: 상승 #dc2626 / 하락 #2563eb / 보합 #111827 -->
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">173,300원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">172,600원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">173,200원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">168,900원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,388,240주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">2,373억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">60조7,225억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">79.23%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">195,900원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">105,800원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">10.82배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">15,817원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">9.31배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">18,392원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1.02배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">167,092원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">2.55%</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4,367원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.00 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">224,889원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <!-- 필진 치환 대상은 아래 #trading-trend-data 스크립트의 {{매매동향JSON}} 하나뿐.
+       JSON 형식: {"통합":[...], "KRX":[...], "NXT":[...]} — 각 배열은 최근 10거래일, 최신순.
+       행 형식: {"date":"07.27","foreign":-3319368,"ratio":"46.65%","inst":487617,"indiv":2801281,"close":254000,"change":4500,"volume":22701316}
+       (foreign/inst/indiv/change는 부호 있는 정수, ratio는 문자열, close/volume은 정수)
+       데이터를 확보하지 못한 시장은 빈 배열 []로 두면 해당 탭이 자동으로 숨겨짐. 임의값 금지.
+       아래 렌더링 스크립트는 사이트 공통 로직이므로 수정 금지. -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "09.01", "foreign": -46268, "ratio": "79.23%", "inst": -11946, "indiv": 64615, "close": 170500, "change": -2800, "volume": 1388240}, {"date": "08.31", "foreign": -50866, "ratio": "79.25%", "inst": 85539, "indiv": -34249, "close": 172500, "change": 900, "volume": 3201068}, {"date": "08.28", "foreign": 17775, "ratio": "79.26%", "inst": 153021, "indiv": -171442, "close": 170900, "change": 2800, "volume": 1051906}, {"date": "08.27", "foreign": 52134, "ratio": "79.26%", "inst": 57834, "indiv": -105253, "close": 167700, "change": 1100, "volume": 948591}, {"date": "08.26", "foreign": -12306, "ratio": "79.24%", "inst": 56291, "indiv": -43284, "close": 167000, "change": 600, "volume": 704390}, {"date": "08.25", "foreign": -12825, "ratio": "79.25%", "inst": 133098, "indiv": -123087, "close": 165800, "change": 2700, "volume": 840194}, {"date": "08.24", "foreign": -53400, "ratio": "79.25%", "inst": 72649, "indiv": -16954, "close": 162900, "change": -1400, "volume": 738416}, {"date": "08.21", "foreign": 36925, "ratio": "79.27%", "inst": 69784, "indiv": -113845, "close": 163300, "change": 3300, "volume": 1496767}, {"date": "08.20", "foreign": -138551, "ratio": "79.26%", "inst": -297980, "indiv": 432366, "close": 160300, "change": -6100, "volume": 1588610}, {"date": "08.19", "foreign": -59503, "ratio": "79.31%", "inst": -66605, "indiv": 118869, "close": 165300, "change": -3200, "volume": 1084556}], "KRX": [{"date": "09.01", "foreign": -56561, "ratio": "79.23%", "inst": -6276, "indiv": 66696, "close": 171200, "change": -2100, "volume": 1293126}, {"date": "08.31", "foreign": -46941, "ratio": "79.25%", "inst": 93635, "indiv": -45978, "close": 173300, "change": 1700, "volume": 3030441}, {"date": "08.28", "foreign": -35817, "ratio": "79.26%", "inst": 156864, "indiv": -121594, "close": 171600, "change": 3500, "volume": 880809}, {"date": "08.27", "foreign": 49730, "ratio": "79.26%", "inst": 42371, "indiv": -89127, "close": 168100, "change": 1500, "volume": 755518}, {"date": "08.26", "foreign": -8150, "ratio": "79.24%", "inst": 42974, "indiv": -33333, "close": 166600, "change": 200, "volume": 612806}, {"date": "08.25", "foreign": -34331, "ratio": "79.25%", "inst": 135031, "indiv": -100464, "close": 166400, "change": 3300, "volume": 719239}, {"date": "08.24", "foreign": -61895, "ratio": "79.25%", "inst": 79083, "indiv": -15124, "close": 163100, "change": -1200, "volume": 630055}, {"date": "08.21", "foreign": -30171, "ratio": "79.27%", "inst": 66347, "indiv": -38999, "close": 164300, "change": 4300, "volume": 1165965}, {"date": "08.20", "foreign": -84612, "ratio": "79.26%", "inst": -267834, "indiv": 349452, "close": 160000, "change": -6400, "volume": 1332300}, {"date": "08.19", "foreign": -59748, "ratio": "79.31%", "inst": -25765, "indiv": 78824, "close": 166400, "change": -2100, "volume": 912179}], "NXT": [{"date": "09.01", "foreign": 10293, "ratio": "0.00%", "inst": -5670, "indiv": -2081, "close": 170500, "change": -2800, "volume": 95114}, {"date": "08.31", "foreign": -3925, "ratio": "79.25%", "inst": -8096, "indiv": 11729, "close": 172500, "change": 900, "volume": 170627}, {"date": "08.28", "foreign": 53592, "ratio": "79.26%", "inst": -3843, "indiv": -49848, "close": 170900, "change": 2800, "volume": 171097}, {"date": "08.27", "foreign": 2404, "ratio": "79.26%", "inst": 15463, "indiv": -16126, "close": 167700, "change": 1100, "volume": 193073}, {"date": "08.26", "foreign": -4156, "ratio": "79.24%", "inst": 13317, "indiv": -9951, "close": 167000, "change": 600, "volume": 91584}, {"date": "08.25", "foreign": 21506, "ratio": "79.25%", "inst": -1933, "indiv": -22623, "close": 165800, "change": 2700, "volume": 120955}, {"date": "08.24", "foreign": 8495, "ratio": "79.25%", "inst": -6434, "indiv": -1830, "close": 162900, "change": -1400, "volume": 108361}, {"date": "08.21", "foreign": 67096, "ratio": "79.27%", "inst": 3437, "indiv": -74846, "close": 163300, "change": 3300, "volume": 330802}, {"date": "08.20", "foreign": -53939, "ratio": "79.26%", "inst": -30146, "indiv": 82914, "close": 160300, "change": -6100, "volume": 256310}, {"date": "08.19", "foreign": 245, "ratio": "79.31%", "inst": -40840, "indiv": 40045, "close": 165300, "change": -3200, "volume": 172377}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 KB금융</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">KB금융 재무제표를 뜯어보면 사실 숫자 자체는 나무랄 데가 없습니다. 2023~2025년 매출은 살짝 줄었는데(-4.52%) 영업이익률은 8.24%→10.49%, 순이익률은 5.84%→7.19%, ROE는 8.39%→9.98%로 3년 연속 개선됐어요. 은행업 특성상 매출 총액보다 이런 수익성 지표가 훨씬 중요한데, 전부 좋은 방향으로 가고 있다는 얘기입니다. 여기에 자본비율도 CET1 13.74%·BIS 15.91%로 금융당국 규제 기준을 크게 웃도는 우량 수준이고요.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">문제는 밸류에이션이에요. 현재 PER 10.82배는 동일업종 평균(9.18배)·피어 단순평균(8.64배)·자체 4개년 평균(6.08배)을 전부 웃돕니다. PBR도 1.02배로 4대 금융지주 중 유일하게 장부가를 넘어섰죠. 8거래일 연속 오른 만큼 밸류에이션 부담이 쌓인 상태라는 걸 재무 분석가도 B등급으로 짚어줬습니다. 부채비율이 2023년 1,120.62%→2025년 1,211.73%(2026.03분기 1,257.11%)로 계속 늘어나는 점도 은행업 특성을 감안해도 방향성은 계속 지켜볼 대목입니다.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">9.98%(2025) → 10.25%(2026.03분기)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">피어 5개사 중 최상위, 3년 연속 개선</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">10.82배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">업종평균(9.18배)·자체평균(6.08배) 대비 프리미엄</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">1.02배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">4대 지주 중 유일하게 1배 상회</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">CET1 / BIS</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">13.74% / 15.91%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">규제기준 크게 상회하는 우량 자본비율</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">부채비율</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">1,211.73%(2025)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년 연속 확대 추세, 은행업 특성 감안해도 모니터링 필요</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 영업이익률·순이익률·ROE 3년 연속 개선, 자본비율 우량, 대규모 자사주 소각(2조3천억+6천억) 등 적극적 주주환원.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> PER·PBR이 업종·피어·자체 과거 평균을 모두 상회하는 밸류에이션 부담, 부채비율 지속 확대, 매출 감소와 이익 증가 사이 괴리의 지속 가능성 미확인.</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">최근 한 달(8/2~9/1) 뉴스 17건을 분류해보니 호재 8건, 악재 1건, 중립 8건으로 여전히 <strong>긍정</strong> 판정입니다. 다만 어제(8/31)까지의 격차(호재11:악재1)보다는 오늘 조금 좁아졌는데, 이건 뉴스 감성이 나빠졌다기보다 집계 창(rolling window)이 하루 앞으로 밀리면서 8월 초 기사 몇 건이 표본에서 빠진 영향이 큽니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">가장 굵직한 호재는 역시 실적입니다. 상반기 순이익 3조8,846억원(+13.1%)에 ROE·CIR·NPL비율·연체율까지 5개 핵심 지표 전부 4대 금융지주 1위 — 그야말로 리딩금융 굳히기입니다. 여기에 신종자본증권 수요예측에 모집액의 1.93배(5,200억원)가 몰리며 시장 신뢰를 재확인했고, 인도네시아 KB뱅크 정상화, WM·요양 연계 신탁수수료 3배 성장 같은 신사업 성과도 이어졌습니다. 반대로 확인된 악재는 금감원이 9월 중순 KB금융·국민은행에 본검사를 착수한다는 소식입니다. ELS 약 8조원 규모 판매 중 불완전판매 적발 정황, 이사회 독립성·CEO 선임 절차까지 겨냥한다고 하니 가볍게 볼 사안은 아닙니다. 차기 회장 레이스는 양종희·이재근·권광석 3파전으로 압축돼 9/11 최종 결정을 앞두고 있는데, 아직 결과가 나오지 않아 중립 처리했습니다.</p>
+  <!-- 원본 바로가기: 뉴스 감성 분석가가 수집한 실제 기사 URL만 사용.
+       URL이 "확인 불가"인 항목은 <a> 태그 전체를 생략 -->
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 상반기 순익 3조8,846억(+13.1%), ROE·CIR·NPL·연체율 4대금융 1위
+    <a href="https://v.daum.net/v/20260803000246890" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 신종자본증권 수요예측 5,200억 몰림(1.93배 초과청약)
+    <a href="https://v.daum.net/v/20260825151203039" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 금감원, 9월 KB금융·국민은행 본검사 착수(ELS·지배구조 타깃)
+    <a href="https://v.daum.net/v/20260829054045359" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 긍정 — 실적 모멘텀과 자본시장 신뢰는 여전히 견고하지만, 9월 한 달은 회장 인선·금감원 본검사라는 두 개의 이벤트 리스크가 동시에 걸린 달이라는 점을 기억해두셔야 합니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">은행업 전체로 눈을 넓혀보면 한국은행이 8/27 기준금리를 2.75%→3.00%로 2연속 인상했습니다. 시장은 이걸 "이자이익 개선 신호"로 받아들이고 있어서 최근 5거래일(8/24~31) KB금융+6.25%를 비롯해 하나금융+5.91%, 우리금융+5.79%, 신한지주+5.42% — 코스피 상승률(+1.84%)의 3배 가까이 은행주가 아웃퍼폼했습니다. 밸류업 프로그램(배당소득 분리과세, 자사주 소각 의무화)도 계속 업종 리레이팅을 밀어주고 있고요. 다만 "기준금리 인상 = NIM 개선"이 자동으로 성립하지는 않는다는 점이 함정입니다. 저비용 조달 경쟁 때문에 실제 순이자마진은 오히려 눌리고 있거든요. 게다가 국고채 입찰담합 공정위 전원회의가 9월 초 최종 과징금을 확정할 예정인데(최근 추산치 9조원대, 하나증권은 "우려보다 작을 것"으로 전망), LTV담합 과징금 2,720억원은 이미 확정돼 4대 은행이 행정소송 중입니다. 가계대출 총량규제도 완화(1.5%→3%)한다면서 예외조항만 늘어나는 "누더기" 규제 상태라 원화대출 연체율은 9년7개월래 최고치를 찍었습니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 기준금리 2연속 인상+밸류업·자사주소각으로 업종 전체 리레이팅, 5대 지주 상반기 비이자이익 +27.6%YoY 급성장.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 국고채담합 과징금 미확정, LTV담합 행정소송, 가계대출 규제 혼선, 연체율 9년7개월래 최고.</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 공격적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">솔직히 말씀드리면 오늘 하루만 보면 겁먹을 법한 그림입니다. 8연속 상승 뒤 첫 조정, 저가는 손절선을 살짝 뚫었고, 그동안 랠리를 이끌던 기관마저 오늘은 외국인과 함께 팔았으니까요. 하지만 저희가 매번 강조하는 원칙은 "가격이 흔들렸다고 신호까지 흔들린 건 아니다"입니다. 재무 B등급·뉴스 긍정·업종 중립이라는 3개 축은 어제와 완전히 동일하고, 종가는 여전히 손절선 위에서 마감했습니다. 하루치 매도 물량으로 랠리 전체의 방향을 뒤집어 판단하는 건 성급합니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">그렇다고 이걸 가볍게 넘길 일도 아닙니다. 손절선이 장중에 뚫린 건 이번이 처음이고, 8일간 쌓인 상승분의 밸류에이션 부담(PER 10.82배)이 실제로 눈에 보이는 조정 압력으로 나타난 셈이니까요. 그래서 저희는 등급은 그대로 유지하되, 손절 라인을 오늘 저가보다 더 아래로 넉넉하게 다시 그어 여유를 확보하는 쪽을 택했습니다. 9월 한 달은 국고채담합 확정, 회장 인선(9/11), 금감원 본검사 착수까지 이벤트가 몰려 있어 변동성이 커질 구간이라는 점도 감안했습니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">분할 매수 — 3신호(재무B/뉴스긍정/업종중립) 불변, 종가는 손절선 방어 성공</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기(2~4주) +5~8%(179,800~184,900원) / 중기(3~6개월) 컨센서스 목표주가(224,889원) 기준 +31.4%</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">168,000원(하향, 트레일링 확대 — 오늘 저가 168,900원이 기존 손절선 169,000원을 근소하게 하회한 만큼 여유폭 확보)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">현재가(171,200원) 부근 1차 분할 진입, 168,000~169,000원대 재조정 시 2차 추가 매수</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">포트폴리오 대비 8~12% 유지(재무·뉴스·업종 3신호 불변, 신규 확대·축소 근거 없음)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">외국인·기관 동시 순매도가 하루로 끝나는지, 이틀 이상 이어지는지(내일 수급이 추세 전환 여부의 핵심)</li>
+      <li style="margin-bottom:6px;">국고채담합 최종 과징금 규모(9월 초 공정위 전원회의 확정 예정, 최근 추산치 9조원대 — 홍콩ELS 패턴처럼 더 축소될지 주시)</li>
+      <li style="margin-bottom:6px;">9/11 차기 회장 최종 확정(양종희 vs 이재근 vs 권광석)</li>
+      <li style="margin-bottom:6px;">9월 중순 금감원 본검사 결과(ELS 불완전판매·지배구조 관련 제재 수위)</li>
+      <li style="margin-bottom:6px;">168,000원 손절선 종가 기준 이탈 여부</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">KB금융은 펀더멘털 자체는 여전히 4대 금융지주 중 가장 탄탄합니다. 오늘의 조정은 8일 연속 랠리 뒤에 오는 자연스러운 숨 고르기로 볼 여지가 큽니다만, 밸류에이션이 이미 높아진 구간인 만큼 무리한 추격 매수보다는 손절 라인을 지키며 분할로 접근하는 게 공격적 투자자에게도 합리적인 선택이라고 봅니다. 다음 거래일 수급을 꼭 확인하시길 바랍니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <!-- 뉴스 감성 분석가가 수집한 기사 전체 목록. URL 확인 불가 항목은 링크 없이 제목만 표기 -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260831160110262" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">회장 최종 3파전, 9/11 결정 앞두고 대세론·변수 공존</a> <span style="color:#6b7280;">— 시사저널 · 2026-08-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260829054045359" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">금감원, 9월 KB금융·국민은행 본검사 착수(ELS·지배구조 타깃)</a> <span style="color:#6b7280;">— 세계일보 · 2026-08-29</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260827201409866" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">차기 회장 후보 3인 압축 확정(양종희·이재근·권광석)</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825151203039" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">신종자본증권 수요예측 5,200억 몰림(1.93배 초과청약)</a> <span style="color:#6b7280;">— 이코노믹리뷰 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260821085327848" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">글로벌 ESG지수 FTSE4Good 16년 연속 편입</a> <span style="color:#6b7280;">— 아시아경제 · 2026-08-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260820135909719" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">인도네시아 KB뱅크 정상화 가시화, 금융그룹 승부수</a> <span style="color:#6b7280;">— 에너지경제 · 2026-08-20</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260820040010179" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">신종자본증권 2,700억 발행 확정(자본적정성 관리)</a> <span style="color:#6b7280;">— 한국금융 · 2026-08-20</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260812160307158" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">"회장선임부터 금감원검사까지 숨가쁜 9월" 종합 프리뷰</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-12</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260830075100747" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">롯데카드 매각전, KB금융은 인수 참여 의향 없음</a> <span style="color:#6b7280;">— 매일경제 · 2026-08-30</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260808162113124" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">전북 KB금융타운 등 지역상권·지역투자 확대</a> <span style="color:#6b7280;">— 세계일보 · 2026-08-08</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260807174650013" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">신종자본증권 최대 4,000억 발행 계획(초기 검토)</a> <span style="color:#6b7280;">— 이데일리 · 2026-08-07</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260806063030345" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">비용 늘어도 CIR 개선…증권 호황 효과</a> <span style="color:#6b7280;">— IB토마토 · 2026-08-06</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260805154109288" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">계열사 체질개선으로 리딩금융 굳히기(상반기 순익 +13.1%)</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-05</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260804110021590" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">WM·요양 연계 신탁수수료 3배↑, '골든라이프' 시너지</a> <span style="color:#6b7280;">— 한국금융 · 2026-08-04</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260803000246890" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">상반기 순익 3.9조, ROE·CIR·NPL·연체율 4대금융 1위</a> <span style="color:#6b7280;">— 한국금융 · 2026-08-03</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260802083202134" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">2분기 실적발표 후 증권사 15곳 중 5곳 목표주가 상향</a> <span style="color:#6b7280;">— 연합인포맥스 · 2026-08-02</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260802140214661" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">KB국민은행, 아마존·구글클라우드 연계 AI 데이터망 구축</a> <span style="color:#6b7280;">— 전자신문 · 2026-08-02</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #KB금융 #금융주 #은행주 #배당주 #리딩금융 #자사주소각 #금리인상 #분할매수
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
