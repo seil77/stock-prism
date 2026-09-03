@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼성생명, 급락 하루 만에 손절선 탈환 — 공격적 관점</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260903_%EC%82%BC%EC%84%B1%EC%83%9D%EB%AA%85_%EA%B3%B5%EA%B2%A9%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">공격적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">삼성생명, 급락 하루 만에 손절선 탈환 — 관망 접고 다시 담을 타이밍입니다</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-09-03 · 삼성생명 (032830) · 데이터 기준일 2026-09-03</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">어제(9/2) 삼성생명이 하루 만에 -5.01% 급락하면서 "손절선이 뚫렸다"고 관망으로 한 단계 내려앉았던 거 기억하시나요? 그런데 딱 하루 만에 +3.06% 반등하면서 그 손절선을 다시 위로 뚫고 올라왔습니다. 어제 팔았던 사람이라면 오늘 다시 사야 하나 고민되는 그림인데요, 오늘은 이 반등이 "그냥 반등"인지 "재진입 신호"인지를 공격적으로 파헤쳐 보겠습니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 공격적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="분할 매수" style="display:none;">분할 매수</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">손절선 재돌파 + 뉴스 축 사상 최강 긍정(+12건 격차)이 겹쳤습니다. 관망에서 재상향, 지금부터 나눠 담는 구간입니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">303,000원</span>
+      <span style="font-size:15px; font-weight:700; color:#dc2626;">▲9,000원 (+3.06%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-09-03 KRX 장마감 기준</span>
+    </div>
+    <div style="font-size:12px; color:#6b7280; margin:4px 0 10px 0;">⚠️ 9/3은 KRX 정규장 종가(303,000원)와 NXT 포함 통합 최종 체결가(301,000원)가 갈린 날입니다. 대표 시세는 법정 KRX 종가 기준이며, 시가·고가·저가·거래량·대금·시총은 KRX+NXT 통합 공표값 기준입니다.</div>
+    <!-- 지표 그리드: 라벨(회색, 좌) + 값(굵게, 우) 4쌍 × 5행. 가로줄만 사용(세로선 없음).
+         시가/고가/저가 값 색상은 전일 종가 대비로 지정: 상승 #dc2626 / 하락 #2563eb / 보합 #111827 -->
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">294,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">295,500원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">311,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">294,500원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">445,200주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,350억 원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">60조 6,000억 원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">23.16%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">518,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">143,600원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">21.11배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">14,356원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">19.16배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">15,812원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0.67배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">452,324원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1.75%</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">5,300원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">3.85 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">402,538원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "09.03", "foreign": 59623, "ratio": "23.18%", "inst": -2250, "indiv": -56988, "close": 301000, "change": 7000, "volume": 445200}, {"date": "09.02", "foreign": -25743, "ratio": "23.16%", "inst": -19109, "indiv": 47323, "close": 290500, "change": -19000, "volume": 344047}, {"date": "09.01", "foreign": -35015, "ratio": "23.18%", "inst": 58519, "indiv": -22643, "close": 302000, "change": -4000, "volume": 364741}, {"date": "08.31", "foreign": -20905, "ratio": "23.20%", "inst": 20422, "indiv": 2703, "close": 304000, "change": -6000, "volume": 508333}, {"date": "08.28", "foreign": -9617, "ratio": "23.21%", "inst": 44357, "indiv": -38572, "close": 307000, "change": 0, "volume": 336024}, {"date": "08.27", "foreign": -18707, "ratio": "23.21%", "inst": 113, "indiv": 18984, "close": 307500, "change": -2000, "volume": 416833}, {"date": "08.26", "foreign": 167999, "ratio": "23.22%", "inst": 72561, "indiv": -236049, "close": 307000, "change": 22000, "volume": 1299352}, {"date": "08.25", "foreign": -36601, "ratio": "23.14%", "inst": -45075, "indiv": 77210, "close": 289500, "change": 4000, "volume": 507577}, {"date": "08.24", "foreign": -177008, "ratio": "23.17%", "inst": -69028, "indiv": 254613, "close": 290000, "change": -38500, "volume": 1038468}, {"date": "08.21", "foreign": -263166, "ratio": "23.27%", "inst": 201584, "indiv": 49289, "close": 311500, "change": 14500, "volume": 1622781}], "KRX": [{"date": "09.03", "foreign": 39031, "ratio": "23.18%", "inst": -2336, "indiv": -36664, "close": 303000, "change": 9000, "volume": 360074}, {"date": "09.02", "foreign": -10272, "ratio": "23.16%", "inst": -17477, "indiv": 29234, "close": 294000, "change": -15500, "volume": 269923}, {"date": "09.01", "foreign": -36735, "ratio": "23.18%", "inst": 59855, "indiv": -22176, "close": 309500, "change": 3500, "volume": 306643}, {"date": "08.31", "foreign": -20052, "ratio": "23.20%", "inst": 23584, "indiv": -1544, "close": 306000, "change": -4000, "volume": 440735}, {"date": "08.28", "foreign": -23792, "ratio": "23.21%", "inst": 45101, "indiv": -24174, "close": 310000, "change": 3000, "volume": 273414}, {"date": "08.27", "foreign": -6535, "ratio": "23.21%", "inst": -4254, "indiv": 11039, "close": 307000, "change": -2500, "volume": 293798}, {"date": "08.26", "foreign": 97261, "ratio": "23.22%", "inst": 66540, "indiv": -160534, "close": 309500, "change": 24500, "volume": 1073963}, {"date": "08.25", "foreign": -37618, "ratio": "23.14%", "inst": -43395, "indiv": 78927, "close": 285000, "change": -500, "volume": 361895}, {"date": "08.24", "foreign": -133435, "ratio": "23.17%", "inst": -60603, "indiv": 194055, "close": 285500, "change": -43000, "volume": 714630}, {"date": "08.21", "foreign": -237510, "ratio": "23.27%", "inst": 207311, "indiv": 22613, "close": 328500, "change": 31500, "volume": 1038229}], "NXT": [{"date": "09.03", "foreign": 20592, "ratio": "0.00%", "inst": 86, "indiv": -20324, "close": 301000, "change": 7000, "volume": 85126}, {"date": "09.02", "foreign": -15471, "ratio": "23.16%", "inst": -1632, "indiv": 18089, "close": 290500, "change": -19000, "volume": 74124}, {"date": "09.01", "foreign": 1720, "ratio": "23.18%", "inst": -1336, "indiv": -467, "close": 302000, "change": -4000, "volume": 58098}, {"date": "08.31", "foreign": -853, "ratio": "23.20%", "inst": -3162, "indiv": 4247, "close": 304000, "change": -6000, "volume": 67598}, {"date": "08.28", "foreign": 14175, "ratio": "23.21%", "inst": -744, "indiv": -14398, "close": 307000, "change": 0, "volume": 62610}, {"date": "08.27", "foreign": -12172, "ratio": "23.21%", "inst": 4367, "indiv": 7945, "close": 307500, "change": -2000, "volume": 123035}, {"date": "08.26", "foreign": 70738, "ratio": "23.22%", "inst": 6021, "indiv": -75515, "close": 307000, "change": 22000, "volume": 225389}, {"date": "08.25", "foreign": 1017, "ratio": "23.14%", "inst": -1680, "indiv": -1717, "close": 289500, "change": 4000, "volume": 145682}, {"date": "08.24", "foreign": -43573, "ratio": "23.17%", "inst": -8425, "indiv": 60558, "close": 290000, "change": -38500, "volume": 323838}, {"date": "08.21", "foreign": -25656, "ratio": "23.27%", "inst": -5727, "indiv": 26676, "close": 311500, "change": 14500, "volume": 584552}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 삼성생명</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">숫자만 놓고 보면 삼성생명은 "덩치는 계속 커지는데 체중계 숫자(수익성)는 살짝 아쉬운" 모습입니다. 매출은 2024년 +9.21%, 2025년 +9.92%로 2년 연속 두 자릿수에 근접한 성장을 이어가고 있는데요, 반면 영업이익률은 2023년 7.75% → 2025년 6.95%로 3년 연속 완만히 미끄러지고 있습니다. 순이익률은 6.5~6.7% 박스권에서 안정적이니 크게 걱정할 수준은 아니지만, "성장은 하는데 마진은 못 늘린다"는 인상은 지울 수 없습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">진짜 눈여겨봐야 할 건 밸류에이션입니다. 현재 PER 21.11배는 업종 평균(16.68배)은 물론 자체 4개년 평균(9.13배)의 약 2.3배에 달합니다. 재무 분석가는 이를 "재평가 부담이 지속 중"이라고 표현했는데요, 공격적으로 봐도 이 숫자는 부담스러운 게 사실입니다. 다만 PBR은 0.67배로 순자산가치보다 낮게 거래되고 있는데, 이건 2026년 상반기 자기자본이 삼성전자 지분 평가이익(약 77.2조 원)으로 65조 원에서 147조 원으로 2.3배 급증한 회계적 효과가 크다는 점을 감안해야 합니다. 쉽게 말해 "손익 기준으로는 비싸 보이는데 자산 기준으로는 싸 보이는" 이중적인 그림이고, 삼성전자 주가가 출렁이면 이 재무지표들도 같이 출렁일 수 있다는 뜻입니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">건전성 면에서는 확실히 우량합니다. K-ICS(신지급여력비율)가 2026년 6월 말 208%로 규제기준(100%)과 업계 평균(약 207.7%)을 웃돌고 있어, 자본이 부족해서 흔들릴 걱정은 크지 않은 회사입니다. 다만 ROE는 확정 3개년 4.95~5.76%에서 2026년 컨센서스 3.19%로 뚜렷이 낮아질 전망이라, 자본은 커졌는데 그만큼 이익이 못 따라가는 자본효율성 저하는 경계 포인트입니다. 참고로 유동비율은 보험사 회계 구조상(장기 투자자산 위주) 산출 자체가 불가능해 N/A인데, 이건 재무 부실 신호가 아니라 업종 특성이니 K-ICS로 대신 봐주시면 됩니다.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">21.11배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">업종(16.68배)·자체 4개년 평균(9.13배) 대비 크게 고평가</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">0.67배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">BPS 452,324원 — 삼성전자 지분평가익 반영, 단순 저평가 해석 주의</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">2025 4.96% → 2026E 3.19%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">자기자본 급증 대비 이익 성장 둔화 전망</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">K-ICS</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">208% (2026.06 잠정)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">규제기준·업계평균 상회, 자본건전성 우수</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">매출 성장률</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">2025년 +9.92%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2년 연속 9%대 성장</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">영업이익률</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">6.95%(2025)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년 연속 완만히 하락</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">재무 등급</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">B</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">성장·건전성은 강점, 밸류에이션·자본구조 변동성이 발목</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 매출 2년 연속 9%대 성장, K-ICS 208%로 업계 최우량권 자본건전성<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> PER 자체 평균 대비 2.3배, ROE 하락 전망, 자기자본이 삼성전자 주가에 연동돼 변동성 확대</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">이번 한 달 삼성생명 뉴스는 한마디로 "호재 폭격"입니다. 최근 20건 중 13건이 호재, 악재는 단 1건, 격차는 +12건으로 이 종목을 지켜본 8월 내내 가장 큰 폭입니다. 가장 큰 임팩트는 오늘(9/3) 나온 소식입니다. 삼성전자 배당 약 3조 원을 삼성생명·삼성화재가 해외 M&A 실탄으로 쓴다는 내용인데요, 삼성생명은 미국 프린시플파이낸셜그룹(PFG) 지분 인수를 검토 중이라고 합니다. 여기에 자사주 소각이 내년 이후로 미뤄지면서 유배당보험 계약자 배당 부담이 줄었다는 소식(8/25), 올해 순이익 4.3조 원 전망(8/24)까지 삼성전자發 호재가 겹겹이 쌓였습니다. 아시아·태평양 20대 보험사 중 주가상승률 1위(연초 대비 +97.7%, 8/10)라는 기록도 눈에 띕니다.</p>
+  <!-- 원본 바로가기: 뉴스 감성 분석가가 수집한 실제 기사 URL만 사용.
+       URL이 "확인 불가"인 항목은 <a> 태그 전체를 생략 -->
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 삼전 배당 3조원, 삼성생명·화재 해외 M&A 실탄 확보 (9/3)
+    <a href="https://v.daum.net/v/20260903170749503" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 亞太 20대 보험사 중 주가상승률 1위(+97.7%) (8/10)
+    <a href="https://v.daum.net/v/20260810143802336" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 상반기 순익 1.89조원(+35.8%), 투자손익이 견인 (8/14)
+    <a href="https://v.daum.net/v/20260814100407464" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 2분기 순익 9.1% 감소, 삼성화재에 역전당해 (8/13)
+    <a href="https://v.daum.net/v/20260813172328596" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 긍정 😊 — 호재 13 : 악재 1 : 중립 6, 격차 +12건으로 최근 관찰 이력 중 가장 강한 긍정 신호입니다. 다만 2분기 단독 실적에서 보험손익이 -35.9%로 부진하고 투자손익으로 메꾸는 구조라는 점은 계속 지켜봐야 합니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">업종 리서처는 삼성생명이 속한 생명보험업을 🟡 중립으로 판정했습니다. 이유는 명확한 이중구조 때문인데요. 삼성생명 등 생보 빅3의 자산 기준 시장점유율은 삼성전자 지분가치 급등 덕에 15년 만에 최고 수준(60%대)까지 올라갔지만, 정작 실제 영업력을 보여주는 원수보험료 기준 점유율은 48.7%로 2022년 이후 처음 50%가 무너졌습니다. "자산은 사상 최대, 본업 경쟁력은 후퇴"라는 모순이 업종 전체 통계로도 확인된 셈입니다. 업권 전반의 해약환급금은 상반기 36조 4,692억 원으로 전년 대비 45.4% 급증했고, 생보 22개사 합산 보험손익은 26.2% 감소했습니다. 순이익 자체는 늘었지만(+17.7%YoY) 전부 투자손익이 견인한 결과라, 금리·주가에 기대는 손익 체력이 구조적 약점으로 남아있습니다. 규제 쪽에서는 금융위가 금산법 10% 룰 완화를 명시적으로 차단(8/31)했는데, 역설적으로 이는 삼성전자가 자사주 소각보다 배당 중심 주주환원을 이어갈 유인이 되어 삼성생명의 배당재원 확대에는 오히려 우호적으로 작용하고 있습니다. 다만 삼성생명법(계열사 지분 시가평가 전환)이 통과되면 삼성전자 지분 강제매각 이슈가 불거질 수 있어 아직 국회 심의를 지켜봐야 하는 변수입니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> K-ICS·기본자본비율 업계 최우량권, 삼성전자 배당·M&A 실탄 확대라는 개별 호재<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 업권 전체 해약 급증·보험손익 악화, 원수보험료 점유율 50% 붕괴, 금산법·삼성생명법 등 규제 불확실성</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 공격적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">어제 손절선(295,000원)이 뚫리면서 관망으로 물러섰지만, 딱 하루 만에 KRX 종가가 303,000원까지 올라오며 그 선을 다시 위로 넘어섰습니다. 재무(B등급)와 업종(중립) 축은 그대로인데, 뉴스 축만 놓고 보면 오늘 나온 삼성전자 배당 3조 원 M&A 소식까지 더해지며 이번 연재 통틀어 가장 강한 긍정 신호(+12건 격차)가 확인됐습니다. 공격적 관점에서는 "3중 완벽 정렬"을 기다리다 이미 오른 뒤 뒤늦게 따라 들어가는 것보다, 가격 신호(재돌파)와 뉴스 신호(사상 최강 호재) 두 개가 겹친 지금부터 나눠 담는 게 맞다고 봅니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">물론 PER 21.11배는 업종·자체 평균 대비 여전히 부담스럽고, 어제 -5%·오늘 +3%처럼 하루 단위로 방향이 뒤집히는 변동성 장세라는 점은 분명한 리스크입니다. 그래서 "몰빵"이 아니라 "분할"로 접근합니다. 자기자본이 삼성전자 주가에 연동돼 있다는 구조도 기억해두세요 — 삼성전자가 흔들리면 삼성생명도 같이 흔들립니다. 이건 리스크이자 동시에 삼성전자 강세장에서는 레버리지가 걸리는 지렛대이기도 합니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">분할 매수 — 손절선(295,000원) 재돌파 + 뉴스 축 사상 최강 긍정(+12건 격차)으로 관망에서 재상향</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기(1개월) +6~10%(321,000~333,000원) / 중기(6~12개월) +25~35%(379,000~409,000원, 컨센서스 목표주가 402,538원 부근)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">295,000원 (오늘 재돌파한 구 손절선을 신규 지지선으로 전환, 재붕괴 시 즉시 손절)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">1차 지금(303,000원대) 소량 진입 → 2차 295,000~300,000원 눌림목 재접근 시 추가 매수 → 3차 3분기 실적에서 보험영업이익(본업) 반등 확인 후</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">재진입 4~6% (기존 포지션은 전량 정리된 상태 — 신규 재진입 기준)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">295,000원 손절선 재방어 여부 — 오늘 재돌파했지만 하루 만에 다시 뚫린 전례(9/1→9/2)가 있어 다음 거래일 확인이 중요합니다.</li>
+      <li style="margin-bottom:6px;">외국인·기관 동반 매수 전환 여부 — 오늘은 외국인만 순매수, 기관은 소폭 순매도였습니다. 둘 다 사는 날이 오면 신뢰도가 한층 높아집니다.</li>
+      <li style="margin-bottom:6px;">3분기 실적에서 보험영업이익(본업) 반등 여부 — 2분기 -35.9%YoY 부진이 일회성인지 추세인지가 핵심 변수입니다.</li>
+      <li style="margin-bottom:6px;">삼성전자 프린시플파이낸셜그룹(PFG) M&A 성사 여부 — 최대 8조 원 규모 해외 M&A 패키지의 실제 진행 상황.</li>
+      <li style="margin-bottom:6px;">업종 판정 중립→긍정 전환 여부 — 원수보험료 점유율 반등, 해약환급금 증가세 둔화 등이 확인되면 3신호 완전 정렬로 적극 매수 상향도 검토할 수 있습니다.</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">지금까지 삼성생명을 공격적 관점에서 짚어봤는데요, 어제의 급락이 "회사가 망가져서"가 아니라 변동성 장세 속 일시적 이탈이었다는 게 오늘 반등으로 다시 확인된 셈입니다. 손절선은 명확히 정해두고, 나눠서 접근하시길 권합니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260903170749503" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼전 배당 3조원, 삼성생명·화재 해외 M&A 실탄 확보</a> <span style="color:#6b7280;">— 에너지경제 · 2026-09-03</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260901093905047" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성생명 태국, 보험금 청구 서비스 확대</a> <span style="color:#6b7280;">— 더구루 · 2026-09-01</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260827060334733" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼전 주주환원에 2.55조 배당, 보험주 방어주 부상</a> <span style="color:#6b7280;">— 세계일보 · 2026-08-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260827113410615" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성생명 AI CX 글쓰기 시스템, 과기정통부장관상</a> <span style="color:#6b7280;">— 헤럴드경제 · 2026-08-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825050718130" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼전 자사주소각 내년 이후로 연기, 배당부담 완화</a> <span style="color:#6b7280;">— 한겨레 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825151751382" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">보험금신탁 1조 눈앞, 삼성생명 8000억 독주</a> <span style="color:#6b7280;">— 아주경제 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260824004410317" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼성전자 지분가치, 주주환원 방식 갈림길</a> <span style="color:#6b7280;">— 국민일보 · 2026-08-24</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260824104837614" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼전 배당 2조 잭팟 기대, 올해 순익 4.3조 전망</a> <span style="color:#6b7280;">— 쿠키뉴스 · 2026-08-24</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260821161134641" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">초고수 순매수 2위, 삼성생명 10.81% 급등</a> <span style="color:#6b7280;">— EBN산업경제 · 2026-08-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260815080104090" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">1년 새 주가 134% 급등, 환원 보따리 변수</a> <span style="color:#6b7280;">— 뉴스웨이 · 2026-08-15</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260815090054831" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">'한번에내는연금보험' 신상품 출시</a> <span style="color:#6b7280;">— 아주경제 · 2026-08-15</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260814100407464" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">상반기 순익 1.89조(+35.8%), 투자손익이 견인</a> <span style="color:#6b7280;">— 여성경제신문 · 2026-08-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260813172328596" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">2분기 순익 9.1% 감소, 삼성화재에 역전당해</a> <span style="color:#6b7280;">— 비즈워치 · 2026-08-13</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260812145430531" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">'New플러스원 건강보험' 7년납 개정 출시</a> <span style="color:#6b7280;">— 한스경제 · 2026-08-12</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260810143802336" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">亞太 20대 보험사 중 주가상승률 1위(+97.7%)</a> <span style="color:#6b7280;">— 연합인포맥스 · 2026-08-10</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260810181127442" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">종신보험 판매 둔화, 투자 부문이 성장 견인</a> <span style="color:#6b7280;">— 디지털타임스 · 2026-08-10</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260807112127088" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">보험사 특허 경쟁, 배타적사용권 4건 획득</a> <span style="color:#6b7280;">— 아이뉴스24 · 2026-08-07</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260806083841913" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">설계사·FC 영업현장 대상 AI 역량강화 교육 도입</a> <span style="color:#6b7280;">— 파이낸셜뉴스 · 2026-08-06</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260804090410793" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">보험업계 최초 생체인증 '페이스키' 도입</a> <span style="color:#6b7280;">— 이코노믹리뷰 · 2026-08-04</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260804165009934" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">뉴욕·런던 법인 재인수, 글로벌 영토 확장</a> <span style="color:#6b7280;">— 디지털타임스 · 2026-08-04</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #삼성생명 #032830 #보험주 #생명보험 #삼성전자지분 #배당주 #금융주 #분할매수
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
