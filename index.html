@@ -78,7 +78,13 @@
 
 <script>
 (function () {
-  var API_URL = 'https://api.github.com/repos/seil77/stock-prism/contents/posts';
+  // 예전에는 GitHub Contents API(api.github.com/.../contents/posts)를 브라우저에서
+  // 직접 호출했으나, 이 API는 디렉터리당 최대 1,000개 파일까지만 반환한다.
+  // posts/ 파일 수가 1,000개를 넘어서면서(2026-09-03 기준 1,059개) 최신 날짜의
+  // 포스트 다수가 대문에서 사라지는 문제가 발생해, 같은 오리진의 정적
+  // manifest.json(파일명 배열, scripts/build_post_manifest.py가 발행 시 자동 생성)을
+  // 읽는 방식으로 바꿨다 — 1,000개 제한도 API 호출 빈도 제한도 없다.
+  var MANIFEST_URL = 'posts/manifest.json';
   var PERSPECTIVES = {
     '공격적': { color: '#dc2626', desc: '성장 가능성에 무게' },
     '중립적': { color: '#4b5563', desc: '양쪽 근거를 저울에' },
@@ -119,11 +125,11 @@
     // 파일명 규칙: YYYYMMDD_종목명_관점.html
     var groups = {}; // key: date_stock
     files.forEach(function (f) {
-      var m = /^(\d{8})_(.+)_(공격적|중립적|보수적)\.html$/.exec(f.name);
+      var m = /^(\d{8})_(.+)_(공격적|중립적|보수적)\.html$/.exec(f);
       if (!m) return;
       var key = m[1] + '_' + m[2];
       if (!groups[key]) groups[key] = { date: m[1], stock: m[2], views: {} };
-      groups[key].views[m[3]] = 'posts/' + encodeURIComponent(f.name);
+      groups[key].views[m[3]] = 'posts/' + encodeURIComponent(f);
     });
 
     // 최신 날짜 먼저, 같은 날짜 안에서는 시가총액 순위 순서
@@ -203,7 +209,7 @@
       '<p style="font-size:14px; color:#6b7280; text-align:center; padding:40px 0;">목록을 불러오지 못했습니다. 잠시 후 새로고침해 주시거나, <a href="https://github.com/seil77/stock-prism/tree/main/posts" style="color:#2563eb;">GitHub에서 직접 보기</a>를 이용해 주세요.</p>';
   }
 
-  fetch(API_URL)
+  fetch(MANIFEST_URL)
     .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
     .then(function (data) { if (!Array.isArray(data)) throw new Error('bad'); render(data); })
     .catch(fail);
