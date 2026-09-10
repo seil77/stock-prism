@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼성바이오로직스, 손절선까지 건드린 하루</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260910_%EC%82%BC%EC%84%B1%EB%B0%94%EC%9D%B4%EC%98%A4%EB%A1%9C%EC%A7%81%EC%8A%A4_%EC%A4%91%EB%A6%BD%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">중립적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">삼성바이오로직스, 손절선까지 건드린 하루 — 유상증자·노사갈등 속 관망은 여전히 유효할까</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-09-10 · 삼성바이오로직스 (207940) · 데이터 기준일 2026-09-10</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">삼성바이오로직스가 9월 10일 -2.00% 하락하며 1,423,000원에 마감했는데요. 장중 저가(1,414,000원)가 지난 회차에 잡아둔 손절선(1,420,000원)을 실제로 밀고 내려간 건 이 종목을 추적해온 이래 처음 있는 일입니다. 같은 날 노조가 2차 파업을 언급하고 나섰다는 소식도 함께 들려왔습니다. 3조 원 규모 유상증자와 폴리펩타이드그룹 인수라는 대형 이벤트를 앞두고, 재무·업종·뉴스 세 갈래 신호가 오늘은 어떻게 갈렸는지 데이터로 짚어보겠습니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 중립적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="관망" style="display:none;">관망</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">매출·이익률·ROE가 3년 연속 개선되는 재무 우량주라는 큰 그림은 그대로지만, 손절선이 장중 실제로 뚫리고 노사갈등이 다시 격화 조짐을 보이면서 방향성 없는 관망 구간이 이어지고 있습니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">1,423,000원</span>
+      <span style="font-size:15px; font-weight:700; color:#2563eb;">▼29,000원 (-2.00%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-09-10 KRX 장마감 기준</span>
+    </div>
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,452,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">1,447,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">1,447,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">1,414,000원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">70,311주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,001억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">65조 8,720억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">13.14%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,987,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">982,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">39.31배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">36,202원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">35.15배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">40,487원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">7.87배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">180,839원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0%(추정, 무배당)</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0원(추정)</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.00 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,997,143원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "09.09", "foreign": 5412, "ratio": "13.14%", "inst": -5770, "indiv": 291, "close": 1442000, "change": 2000, "volume": 31243}, {"date": "09.08", "foreign": 1764, "ratio": "13.13%", "inst": -9908, "indiv": 8138, "close": 1448000, "change": -18000, "volume": 38981}, {"date": "09.07", "foreign": 7618, "ratio": "13.12%", "inst": -4092, "indiv": -3225, "close": 1463000, "change": 16000, "volume": 39926}, {"date": "09.04", "foreign": -2839, "ratio": "13.06%", "inst": -5258, "indiv": 8130, "close": 1452000, "change": -25000, "volume": 57874}, {"date": "09.03", "foreign": -1158, "ratio": "13.07%", "inst": -3913, "indiv": 4325, "close": 1466000, "change": -35000, "volume": 41336}, {"date": "09.02", "foreign": 4254, "ratio": "13.07%", "inst": -4660, "indiv": 382, "close": 1491000, "change": -29000, "volume": 43085}, {"date": "09.01", "foreign": 6647, "ratio": "13.11%", "inst": -2256, "indiv": -4339, "close": 1501000, "change": -17000, "volume": 36679}, {"date": "08.31", "foreign": 6079, "ratio": "13.10%", "inst": -1232, "indiv": -6191, "close": 1504000, "change": 18000, "volume": 101272}, {"date": "08.28", "foreign": -19199, "ratio": "13.13%", "inst": -8696, "indiv": 27887, "close": 1492000, "change": -102000, "volume": 168316}], "KRX": [{"date": "09.10", "foreign": 20674, "ratio": "13.19%", "inst": -27651, "indiv": 6586, "close": 1423000, "change": -29000, "volume": 60397}, {"date": "09.09", "foreign": 5096, "ratio": "13.14%", "inst": -5602, "indiv": 555, "close": 1452000, "change": 12000, "volume": 25981}, {"date": "09.08", "foreign": 2320, "ratio": "13.13%", "inst": -10041, "indiv": 7617, "close": 1440000, "change": -26000, "volume": 30465}, {"date": "09.07", "foreign": 7502, "ratio": "13.12%", "inst": -6039, "indiv": -1423, "close": 1466000, "change": 19000, "volume": 32116}, {"date": "09.04", "foreign": -2643, "ratio": "13.06%", "inst": -5671, "indiv": 8315, "close": 1447000, "change": -30000, "volume": 45399}, {"date": "09.03", "foreign": -368, "ratio": "13.07%", "inst": -4053, "indiv": 3743, "close": 1477000, "change": -24000, "volume": 34227}, {"date": "09.02", "foreign": 3956, "ratio": "13.07%", "inst": -4289, "indiv": 260, "close": 1501000, "change": -19000, "volume": 36243}, {"date": "09.01", "foreign": 5905, "ratio": "13.11%", "inst": -2343, "indiv": -3540, "close": 1520000, "change": 2000, "volume": 29197}, {"date": "08.31", "foreign": 4960, "ratio": "13.10%", "inst": -864, "indiv": -5349, "close": 1518000, "change": 32000, "volume": 86767}, {"date": "08.28", "foreign": -15272, "ratio": "13.13%", "inst": -8253, "indiv": 23174, "close": 1486000, "change": -108000, "volume": 111160}], "NXT": [{"date": "09.09", "foreign": 316, "ratio": "13.14%", "inst": -168, "indiv": -264, "close": 1442000, "change": 2000, "volume": 5262}, {"date": "09.08", "foreign": -556, "ratio": "13.13%", "inst": 133, "indiv": 521, "close": 1448000, "change": -18000, "volume": 8516}, {"date": "09.07", "foreign": 116, "ratio": "13.12%", "inst": 1947, "indiv": -1802, "close": 1463000, "change": 16000, "volume": 7810}, {"date": "09.04", "foreign": -196, "ratio": "13.06%", "inst": 413, "indiv": -185, "close": 1452000, "change": -25000, "volume": 12475}, {"date": "09.03", "foreign": -790, "ratio": "13.07%", "inst": 140, "indiv": 582, "close": 1466000, "change": -35000, "volume": 7109}, {"date": "09.02", "foreign": 298, "ratio": "13.07%", "inst": -371, "indiv": 122, "close": 1491000, "change": -29000, "volume": 6842}, {"date": "09.01", "foreign": 742, "ratio": "13.11%", "inst": 87, "indiv": -799, "close": 1501000, "change": -17000, "volume": 7482}, {"date": "08.31", "foreign": 1119, "ratio": "13.10%", "inst": -368, "indiv": -842, "close": 1504000, "change": 18000, "volume": 14505}, {"date": "08.28", "foreign": -3927, "ratio": "13.13%", "inst": -443, "indiv": 4713, "close": 1492000, "change": -102000, "volume": 57156}, {"date": "08.27", "foreign": 19, "ratio": "13.22%", "inst": 506, "indiv": -541, "close": 1593000, "change": -6000, "volume": 5931}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 삼성바이오로직스</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">숫자만 놓고 보면 삼성바이오로직스는 흠잡을 데 없는 성장주입니다. 매출은 2024년 3조 4,971억 원에서 2025년 4조 5,570억 원으로 30.31% 늘었고, 영업이익률은 30.14%(2023)→37.78%(2024)→45.41%(2025)로 3년 연속 올랐습니다. 순이익률도 같은 기간 23.21%→39.16%로 동행 상승했고요. ROE는 2025년 19.44%로 전년(10.45%) 대비 거의 두 배가 됐습니다. 부채비율은 63.23%→48.44%로 낮아지고 유동비율은 132.81%→174.04%로 높아지며, 성장·수익성·안정성이 한꺼번에 개선되는 흔치 않은 그림입니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">밸류에이션 부담도 얼핏 완화된 듯 보입니다. 현재 PER(39.31배)은 자체 4개년 평균(88.56배)의 45% 수준에 불과하고, 목표주가(1,997,143원) 대비로는 +40.3%의 상승 여력이 남아있다는 계산도 나옵니다. 다만 절대 수준으로 보면 PER 39.31배·PBR 7.87배는 여전히 높은 편이고, 참고 피어 평균(PBR 3.66배)과 비교하면 약 2.2배의 프리미엄이 붙어 있습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">여기에 08.28 발표된 약 3조 원 규모 유상증자(신주 227만 주, 기존 발행주식의 약 4.90% 희석)와, 그 조달 자금 2조 7,062억 원이 투입되는 폴리펩타이드그룹 인수(국내 제약·바이오 사상 최대 M&A)가 09.30 증권신고서 효력발생을 시작으로 11월 신주상장까지 단계적으로 진행됩니다. 그리고 오늘, 장중 저가(1,414,000원)가 직전 손절선(1,420,000원)을 6,000원(0.42%) 차로 실제 하회했습니다 — 이 종목을 추적해온 26회차 중 손절선이 근접만이 아니라 실제로 뚫린 건 이번이 처음입니다(종가는 회복해 마감).</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">매출 성장률(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">+30.31%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">2024년 역성장 후 강한 반등</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">영업이익률(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">45.41%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년 연속 상승, 이익 레버리지 뚜렷</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">19.44%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">전년 대비 거의 2배</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">부채비율(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">48.44%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년 연속 하락, 안정성 개선</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER / PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">39.31배 / 7.87배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">자체 과거 평균보단 낮지만 절대 수준은 여전히 높음</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">배당수익률</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">0%(추정)</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">무배당</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 매출·이익률·ROE·재무안정성이 3년 연속 동시 개선, PER이 자체 과거 평균의 절반 이하로 완화, 목표주가 대비 +40.3% 여력, 21개 증권사 전원 매수의견(4.00)<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> PER·PBR 절대 수준 여전히 높음(피어 대비 2.2배 프리미엄), 3조 원 유상증자發 지분 희석과 M&A 실행 리스크가 11월까지 이어짐, 손절선 실제 이탈(첫 사례), 무배당</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">뉴스 감성 분석가가 최근 한 달(8/11~9/10) 기사 18건을 분류한 결과, 호재 3건·악재 6건·중립 9건으로 최종 판정은 "부정"입니다. 사실 이 종목은 최근 몇 주간 긍정↔중립↔부정을 계속 오갔는데요(9/7 긍정 → 9/8 부정 → 9/9 중립 → 9/10 다시 부정), 오늘로 또 한 번 부정 쪽으로 넘어갔습니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">가장 눈에 띄는 악재는 셋입니다. 첫째, 09.10 "노조 2차파업 협박, 내부 비판 확산" 기사로, 09.08 1차 사후조정에서 좁혀지는 듯했던 임금 인상률 격차(노사 각각 0.3%p 차이)가 업종 분석가 확인 기준 다시 9.5% vs 6.2%로 벌어졌다는 정황이 함께 나왔습니다. 둘째, 08.28 발표된 3조 원 유상증자를 둘러싼 소액주주 반발이 09.03·09.05까지도 가라앉지 않고 있다는 점입니다. 셋째, 6공장 이사회 승인이 가동률 하락(상반기 69.9%) 속에 지연되고 있고, 상반기 신규수주도 전년 대비 17% 수준으로 급감했다는 보도(09.02)입니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">반면 호재도 무게감이 있습니다. 2분기 매출 1조 3,200억 원·영업이익 5,864억 원으로 역대 최대 실적을 냈다는 소식(09.08), 스위스 폴리펩타이드그룹 2.7조 원 공개매수에 본격 착수했다는 소식(08.31), 하반기 실적이 셀트리온과 함께 반등할 것이란 전망(08.13)입니다. 다만 뉴스 분석가는 이 세 개의 호재가 유상증자·노사갈등·증설지연이라는 세 축의 악재를 상쇄하기엔 아직 부족하다고 판정했습니다.</p>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 파업 중에도 2분기 역대 최대실적 (09.08)
+    <a href="https://v.daum.net/v/20260908165634487" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 폴리펩타이드 2.7조 공개매수 착수 (08.31)
+    <a href="https://v.daum.net/v/20260831171409506" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 하반기 실적 셀트리온과 반등 전망 (08.13)
+    <a href="https://v.daum.net/v/20260813080651190" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 노조 2차파업 협박, 내부 비판 확산 (09.10)
+    <a href="https://v.daum.net/v/20260910152552486" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 추가 유증 없다지만 논란 지속 (09.05)
+    <a href="https://v.daum.net/v/20260905070012562" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 3조 유증 배경 두고 주주 반발 (09.03)
+    <a href="https://v.daum.net/v/20260903135124625" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 6공장 승인 지연, 수주 급감 (09.02)
+    <a href="https://v.daum.net/v/20260902171351561" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 3조 유상증자 결정, 발표당일 급락 (08.28)
+    <a href="https://v.daum.net/v/20260828085707560" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 가동률 하락 속 6공장 증설 논란 (08.25)
+    <a href="https://v.daum.net/v/20260825065030654" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 부정 😟 — 09.15 노사 2차 사후조정 결과와 11/9~10 구주주청약 흥행 여부가 다음 변곡점입니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">업종 분석가는 삼성바이오로직스가 속한 바이오 CDMO·바이오시밀러 업종을 12거래일 연속 🟢 긍정으로 판정했습니다. 다만 이번 회차는 "매우 긍정"이 아니라 "신중한 낙관"이라는 단서가 붙습니다.</p>
+  <p style="font-size:15px; margin:0 0 12px 0;">긍정 쪽 근거부터 보면, 삼성바이오로직스는 상반기 매출 2조 5,780억 원(+28.0%)·영업이익률 45.3%로 창사 이래 처음 반기 영업이익 1조 원을 돌파했고, 오늘(09.10) 유럽 제약사와 3,508억 원 규모 신규 CMO 계약을 체결하며 창립 이래 누적 수주액이 약 30조 원에 도달했다고 공시했습니다. 상반기 내내 이어지던 "수주 공백기" 우려가 하반기 들어 조금씩 완화되는 신호로 볼 수 있습니다. 정책 환경도 우호적입니다 — 미국 232조 관세에서 바이오시밀러는 명시적으로 제외됐고, 한국 CDMO 특별법(12월 시행)은 인허가 기간을 절반 이하로 줄여주며, 미·EU·일·한 4개 지역이 동시에 임상시험 규제를 완화하고 있습니다.</p>
+  <p style="font-size:15px; margin:0 0 12px 0;">반대쪽 근거도 만만치 않습니다. 평균 가동률이 2024년 75.2%→2025년 70.9%→2026년 상반기 69.9%로 3년 연속 하락했고, 6공장 이사회 승인은 계속 지연되고 있습니다. 3조 원 유상증자를 둘러싼 주주가치 희석 논란도 진행형이고, 노사갈등은 사후조정 절차에서 오히려 파행을 겪으며 임금 인상률 격차가 노사 각각 9.5% vs 6.2%로 벌어졌다는 게 이번 회차에 새로 확인된 내용입니다. 여기에 경쟁사 동향도 참고할 만한데, 중국 우시바이오로직스의 연간 IND(임상시험계획) 신청 건수가 한국 바이오텍 전체를 합친 것의 3배에 달한다는 지적이 나오며, 세계 1위 생산능력과 별개로 초기 개발단계 고객을 붙잡는 CDO 영역에서는 중국 CDMO에 밀린다는 평가도 새로 부각됐습니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 반기 영업이익 첫 1조 원 돌파, 09.10 신규 3,508억 원 계약으로 누적 수주 30조 원 도달(수주 공백 완화 신호), 미·EU·일·한 규제완화·관세 우대 등 정책 환경 우호적<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 가동률 3년 연속 하락(69.9%), 6공장 승인 장기 지연, 노사갈등 파행(임금격차 재확대), 중국 CDMO의 CDO 영역 경쟁력 부각</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 중립적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">세 분석을 저울에 올려보면, 재무와 업종 두 축은 구조적으로 여전히 긍정적입니다. 3년 연속 이익률·ROE·재무안정성이 동반 개선되는 기업은 흔치 않고, 업종도 12거래일 연속 긍정 판정을 유지하고 있습니다. 문제는 이 두 축이 가리키는 방향과 별개로, 오늘 새로 확인된 세 가지 신호 — 뉴스 감성의 명시적 부정 재전환, 노사갈등의 파행성 격화(임금격차 재확대), 그리고 손절선의 실제(장중) 이탈 — 이 동시에 겹쳤다는 점입니다.</p>
+  <p style="font-size:15px; margin:0 0 14px 0;">특히 손절선 이탈은 이번 시리즈에서 처음 있는 일입니다. 26회차 동안 여러 번 손절선에 근접했지만(0.2%, 1.1%, 1.27% 차 등) 실제로 뚫린 적은 없었는데, 오늘 장중 저가(1,414,000원)가 직전 손절선(1,420,000원)을 6,000원 차로 실제 하회했습니다. 종가는 회복해 마감했지만, 이 사실 자체는 무시하기 어렵습니다. 신호를 긍정·부정으로 나눠 세어보면 재무 7(긍정) : 6(부정), 뉴스 3(호재) : 6(악재), 업종 4(긍정) : 5(부정) 안팎으로, 총합은 대략 긍정 14 : 부정 17로 부정이 근소 우세합니다. 다만 재무 A등급·업종 긍정이라는 구조적 뼈대 자체가 무너진 건 아니어서, 비중 축소로 완전히 넘어가기보다는 관망을 유지하되 경계 수위를 한 단계 높이는 게 맞다고 판단했습니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">관망 — 재무·업종은 구조적으로 견조하나, 손절선 실제 이탈·노사갈등 재점화·뉴스 재부정 전환이 겹쳐 신호 혼재</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기 +3~5% (1,465,690~1,494,150원) · 중기 +15~20% (1,636,450~1,707,600원)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">1,390,000원 (직전 1,420,000원을 오늘 저가가 실제 하회해 선제 하향, 오늘 저가 대비 약 -1.7%)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">신규 진입 보류. 9/15 노사 2차 사후조정 결과와 09.30 유상증자 증권신고서 효력발생을 확인한 뒤 재검토. 눌림목은 1,390,000~1,410,000원대</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">신규 0~3% (기존 보유자는 손절선 재설정만 반영, 신규 확대는 보류)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">신규 손절선(1,390,000원) 방어 여부 — 오늘 기존 손절선이 실제로 뚫렸던 만큼 최우선 확인 사항입니다.</li>
+      <li style="margin-bottom:6px;">9/15 노사 2차 사후조정 결과 및 2차 파업 실제 강행 여부 — 임금격차가 왜 다시 9.5% vs 6.2%로 벌어졌는지, 절차가 파행으로 굳어지는지 확인이 필요합니다.</li>
+      <li style="margin-bottom:6px;">유상증자 09.30 증권신고서 효력발생 및 11/9~10 구주주청약 흥행 여부 — 흥행 부진 시 추가 주가 압박 가능성이 있습니다.</li>
+      <li style="margin-bottom:6px;">폴리펩타이드그룹 공개매수(9/15~10/12) 진행 상황 — 국내 제약·바이오 사상 최대 M&A의 실행 리스크입니다.</li>
+      <li style="margin-bottom:6px;">하반기 신규수주 회복 및 가동률(69.9%) 반등 여부 — 오늘 3,508억 원 신규 계약이 일회성인지 추세의 시작인지가 관건입니다.</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">세 분석 모두를 종합했을 때, 지금은 확신을 갖고 베팅할 구간이라기보다는 몇 가지 굵직한 이벤트(임단협, 유상증자, M&A 클로징)를 통과하며 방향이 정해지길 기다리는 구간에 가깝습니다. 재무 펀더멘털을 믿고 장기 보유하는 투자자라면 오늘의 조정 자체가 큰 위협은 아니겠지만, 신규 진입을 고민 중이라면 손절선 이탈이라는 새로운 신호가 나온 만큼 서두르지 않는 편이 낫다고 봅니다. 다음 관건은 역시 9/15 노사 사후조정 결과와 유상증자 일정의 순조로운 진행 여부입니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260910152552486" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">노조 2차파업 협박, 내부 비판 확산</a> <span style="color:#6b7280;">— 헤럴드경제 · 2026-09-10</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260909070215721" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하반기 신입 공채 개막</a> <span style="color:#6b7280;">— 헤럴드경제 · 2026-09-09</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260908165634487" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">파업 중에도 2분기 역대 최대실적</a> <span style="color:#6b7280;">— 시사저널e · 2026-09-08</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260908172251744" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">노사 사후조정 견해차, 15일 재조정</a> <span style="color:#6b7280;">— EBN산업경제 · 2026-09-08</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260905070012562" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">추가 유증 없다지만 논란 지속</a> <span style="color:#6b7280;">— 시사저널e · 2026-09-05</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260903135124625" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">3조 유증 배경 두고 주주 반발</a> <span style="color:#6b7280;">— 한국금융 · 2026-09-03</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260903153307364" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">3조 유증 배경 두고 주주 반발(속보)</a> <span style="color:#6b7280;">— 뉴스웨이 · 2026-09-03</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260902171351561" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">6공장 승인 지연, 수주 급감</a> <span style="color:#6b7280;">— 시사저널e · 2026-09-02</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260902093908542" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">삼바 출신 민호성, 메디포스트行</a> <span style="color:#6b7280;">— 비즈워치 · 2026-09-02</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260831171409506" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">폴리펩타이드 2.7조 공개매수 착수</a> <span style="color:#6b7280;">— 비즈워치 · 2026-08-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260831143750084" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">폴리펩타이드 2.7조 공개매수 착수(속보)</a> <span style="color:#6b7280;">— 머니투데이 · 2026-08-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260828085707560" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">3조 유상증자 결정, 발표당일 급락</a> <span style="color:#6b7280;">— 조선일보 · 2026-08-28</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260828140152181" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">3조 유상증자 결정, 발표당일 급락(속보)</a> <span style="color:#6b7280;">— 머니투데이 · 2026-08-28</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260827220206543" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">SK이터닉스와 재생에너지 MOU</a> <span style="color:#6b7280;">— 수소신문 · 2026-08-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260827091852142" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">노동부 중재로 추석전 타결 모색</a> <span style="color:#6b7280;">— 아시아경제 · 2026-08-27</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825065030654" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">가동률 하락 속 6공장 증설 논란</a> <span style="color:#6b7280;">— IB토마토 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825101329503" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">브랜드지수 셀트리온 이어 2위</a> <span style="color:#6b7280;">— 뉴스1 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260822121350254" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">G-BIO Week 참가, 파트너링 모색</a> <span style="color:#6b7280;">— 전자신문 · 2026-08-22</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260820085349801" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">모더나 급등에 동반 강세(섹터)</a> <span style="color:#6b7280;">— 서울경제 · 2026-08-20</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260818162814178" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">노사갈등 100일, 사후조정 합의</a> <span style="color:#6b7280;">— 시사위크 · 2026-08-18</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260813080651190" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하반기 실적 셀트리온과 반등 전망</a> <span style="color:#6b7280;">— 머니투데이 · 2026-08-13</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #삼성바이오로직스 #207940 #CDMO #바이오시밀러 #유상증자 #노사갈등 #관망 #주식분석
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
