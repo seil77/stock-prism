@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>현대모비스, 코스피 급락에 4%대 밀렸다 — 숫자는 정말 나빠졌을까</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script id="sp-theme">
+(function(){
+  var KEY='sp-theme';
+  var st=document.createElement('style');
+  st.textContent=
+    'html.sp-dark,html.sp-dark body{background:#0d1117 !important;}'+
+    'html.sp-dark body>*:not(#sp-theme-btn){filter:invert(0.93) hue-rotate(180deg);}'+
+    'html.sp-dark body>*:not(#sp-theme-btn) img{filter:invert(1) hue-rotate(180deg);}'+
+    '#sp-theme-btn{position:fixed;right:16px;bottom:16px;z-index:9999;width:44px;height:44px;border-radius:50%;border:1px solid #d1d5db;background:#ffffff;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.18);padding:0;}'+
+    'html.sp-dark #sp-theme-btn{background:#1f2937;border-color:#4b5563;}';
+  document.head.appendChild(st);
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  var pref=saved();
+  var dark=pref?pref==='dark':!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches);
+  var btn=null;
+  function apply(){document.documentElement.classList.toggle('sp-dark',dark);if(btn)btn.textContent=dark?'☀️':'🌙';}
+  apply();
+  function makeBtn(){
+    btn=document.createElement('button');
+    btn.id='sp-theme-btn';
+    btn.setAttribute('aria-label','다크모드 전환');
+    btn.onclick=function(){dark=!dark;try{localStorage.setItem(KEY,dark?'dark':'light');}catch(e){}apply();};
+    document.body.appendChild(btn);
+    apply();
+  }
+  if(document.body){makeBtn();}else{document.addEventListener('DOMContentLoaded',makeBtn);}
+})();
+</script>
+<link rel="canonical" href="https://stockprism.xyz/posts/20260914_%ED%98%84%EB%8C%80%EB%AA%A8%EB%B9%84%EC%8A%A4_%EC%A4%91%EB%A6%BD%EC%A0%81">
+</head>
+<body style="margin:0; padding:0; background:#ffffff; font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; color:#1f2937; line-height:1.8;">
+
+<div style="max-width:800px; margin:0 auto; padding:24px 16px;">
+
+  <!-- ═══════════ 사이트 공통: 상단 브랜드 바 (수정·삭제 금지) ═══════════ -->
+  <nav style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:12px; margin-bottom:20px;">
+    <a href="../index.html" style="text-decoration:none; font-size:13px; letter-spacing:1px; color:#6b7280; font-weight:700;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a>
+    <a href="../index.html" style="text-decoration:none; font-size:12px; color:#2563eb; position:relative; top:0.13em;">전체 목록 →</a>
+  </nav>
+
+
+  <!-- ═══════════ 포스트 헤더 ═══════════ -->
+  <header style="border-bottom:2px solid #111827; padding-bottom:20px; margin-bottom:24px;">
+    <div style="font-size:13px; letter-spacing:1px; color:#6b7280; margin-bottom:8px;">중립적 관점 · 종목 분석</div>
+    <h1 style="margin:0 0 10px 0; font-size:28px; line-height:1.4;">현대모비스, 코스피 급락에 4%대 밀렸다 — 숫자는 정말 나빠졌을까</h1>
+    <div style="font-size:13px; color:#6b7280;">2026-09-14 · 현대모비스 (012330) · 데이터 기준일 2026-09-14</div>
+  </header>
+
+  <!-- ═══════════ 사이트 공통: 관점 전환 탭 — 파일명(YYYYMMDD_종목_관점.html)을 자동 파싱하므로 채울 값 없음 (수정·삭제 금지) ═══════════ -->
+  <div id="viewpoint-tabs" style="display:none; gap:8px; margin:0 0 24px 0; flex-wrap:wrap;"></div>
+  <script>
+  (function () {
+    var CONF = { '공격적': '#dc2626', '중립적': '#4b5563', '보수적': '#2563eb' };
+    var box = document.getElementById('viewpoint-tabs');
+    if (!box) return;
+    var file = '';
+    try { file = decodeURIComponent(location.pathname.split('/').pop()); } catch (e) { return; }
+    var m = /^(\d{8}_.+)_(공격적|중립적|보수적)(?:\.html)?$/.exec(file);
+    if (!m) return;
+    box.style.display = 'flex';
+    ['공격적', '중립적', '보수적'].forEach(function (p) {
+      var c = CONF[p], cur = (p === m[2]);
+      var el = document.createElement(cur ? 'span' : 'a');
+      el.textContent = p + ' 관점';
+      if (!cur) el.href = encodeURIComponent(m[1] + '_' + p + '.html');
+      el.setAttribute('style',
+        'flex:1; min-width:110px; text-align:center; padding:9px 14px; border-radius:999px;' +
+        'font-size:13px; font-weight:800; text-decoration:none; border:1.5px solid ' + c + ';' +
+        (cur ? 'background:' + c + '; color:#ffffff;' : 'background:#ffffff; color:' + c + ';'));
+      box.appendChild(el);
+    });
+  })();
+  </script>
+
+
+  <!-- ═══════════ 도입부 ═══════════ -->
+  <p style="font-size:16px; margin:0 0 20px 0;">2026년 9월 14일, 코스피가 미국發 금리 우려와 반도체 속도조절론이 겹치며 3%대 급락했습니다. 삼성전자(-4.24%), SK하이닉스(-7.12%) 같은 대형주가 동반 급락한 이날, 현대모비스도 -4.45% 하락하며 39만 7천 원에 장을 마쳤습니다. 그런데 같은 날 나온 재무·뉴스·업종 세 분석가의 리포트를 뜯어보면, 주가만큼 분위기가 나쁜 건 아니었습니다. 오늘은 급락한 주가와 상대적으로 담담한 펀더멘털 사이의 간극을 균형 있게 짚어보겠습니다.</p>
+
+  <!-- ═══════════ 한눈에 보는 결론 ═══════════ -->
+  <!-- 판정 배지 색상: 적극 매수 #16a34a / 분할 매수 #65a30d / 관망 #d97706 / 비중 축소 #ea580c / 매도 #dc2626 -->
+  <div style="background:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; padding:20px 24px; margin-bottom:28px; text-align:center;">
+    <div style="font-size:13px; color:#6b7280; margin-bottom:10px;">이 글의 결론 — 중립적 관점 투자 의견</div>
+    <div id="conclusion-badge" data-rating="관망" style="display:none;">관망</div>
+    <!-- ═══════════ 사이트 공통: 5단계 판정 척도 — 배지 텍스트를 자동 인식해 현재 단계 강조 (수정·삭제 금지) ═══════════ -->
+    <div id="rating-scale" style="margin-top:6px; font-size:17px; line-height:2.0;"></div>
+    <script>
+    (function () {
+      var SCALE = [
+        { name: '적극 매수', color: '#16a34a' },
+        { name: '분할 매수', color: '#65a30d' },
+        { name: '관망',      color: '#d97706' },
+        { name: '비중 축소', color: '#ea580c' },
+        { name: '매도',      color: '#dc2626' }
+      ];
+      var box = document.getElementById('rating-scale');
+      if (!box) return;
+      var badge = document.getElementById('conclusion-badge');
+      var current = badge ? (badge.getAttribute('data-rating') || badge.textContent).replace(/\s+/g, '') : '';
+      SCALE.forEach(function (s, i) {
+        var cur = (s.name.replace(/\s+/g, '') === current);
+        var el = document.createElement('span');
+        el.textContent = s.name;
+        el.setAttribute('style',
+          'display:inline-block; white-space:nowrap;' +
+          (cur
+            ? 'font-weight:800; color:#ffffff; background:' + s.color + ';' +
+              'padding:5px 18px; border-radius:999px;'
+            : 'font-weight:700; color:' + s.color + '; opacity:0.42;'));
+        box.appendChild(el);
+        if (i < SCALE.length - 1) {
+          var sep = document.createElement('span');
+          sep.textContent = cur || SCALE[i + 1].name.replace(/\s+/g, '') === current ? '  ' : ' · ';
+          sep.setAttribute('style', 'color:#d1d5db; margin:0 3px;');
+          box.appendChild(sep);
+        }
+      });
+    })();
+    </script>
+    <div style="margin-top:12px; font-size:14px; color:#374151;">재무 7:6, 뉴스 11:7(diff+4), 업종 명시적 중립(세부6:7)으로 합산 긍정 24:부정 20이지만, 오늘 손절선(398,000원)이 저가·종가 모두에서 실이탈해 관망을 유지합니다.</div>
+  </div>
+
+  <!-- ═══════════ 기준가 정보 ═══════════ -->
+  <!-- 등락색상: 상승 빨강 #dc2626 / 하락 파랑 #2563eb / 보합 #6b7280 (한국식 색상) -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📌 오늘의 주가 한눈에 보기</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px;">
+      <span style="font-size:28px; font-weight:800; color:#111827;">397,000원</span>
+      <span style="font-size:15px; font-weight:700; color:#2563eb;">▼18,500원 (-4.45%)</span>
+      <span style="font-size:12px; color:#6b7280;">2026-09-14 KRX 장마감 기준</span>
+    </div>
+    <!-- 지표 그리드: 라벨(회색, 좌) + 값(굵게, 우) 4쌍 × 5행. 가로줄만 사용(세로선 없음).
+         시가/고가/저가 값 색상은 전일 종가 대비로 지정: 상승 #dc2626 / 하락 #2563eb / 보합 #111827 -->
+    <table style="width:100%; border-collapse:collapse; font-size:13px; margin-top:14px; table-layout:fixed;">
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">전일</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">415,500원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">415,500원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">고가</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#dc2626; border-bottom:1px solid #f3f4f6;">417,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">저가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#2563eb; border-bottom:1px solid #f3f4f6;">395,000원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">거래량</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">333,118주</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">대금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1,330억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">시총</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">35조 6,588억원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">외인소진율</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">38.10%</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최고</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">822,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">52주 최저</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">283,000원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">9.96배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">EPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">39,873원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정PER</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">8.68배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">추정EPS</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">45,720원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">PBR</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">0.68배</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">BPS</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">583,823원</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">배당수익률</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">1.64%</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">주당배당금</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">6,500원</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">투자의견</td>
+        <td style="padding:9px 18px 9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">4.00 매수</td>
+        <td style="padding:9px 8px 9px 0; color:#9ca3af; border-bottom:1px solid #f3f4f6;">목표주가</td>
+        <td style="padding:9px 0; text-align:right; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">735,200원</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 투자자별 매매동향 ═══════════ -->
+  <!-- 필진 치환 대상은 아래 #trading-trend-data 스크립트의 {{매매동향JSON}} 하나뿐.
+       JSON 형식: {"통합":[...], "KRX":[...], "NXT":[...]} — 각 배열은 최근 10거래일, 최신순.
+       행 형식: {"date":"07.27","foreign":-3319368,"ratio":"46.65%","inst":487617,"indiv":2801281,"close":254000,"change":4500,"volume":22701316}
+       (foreign/inst/indiv/change는 부호 있는 정수, ratio는 문자열, close/volume은 정수)
+       데이터를 확보하지 못한 시장은 빈 배열 []로 두면 해당 탭이 자동으로 숨겨짐. 임의값 금지.
+       아래 렌더링 스크립트는 사이트 공통 로직이므로 수정 금지. -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;" id="trend-title">👥 투자자별 매매동향</h2>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+      <span style="font-size:12px; color:#6b7280;">단위: 주 · 최근 10거래일</span>
+      <div id="trend-tabs" style="display:flex; gap:4px; background:#f3f4f6; border-radius:8px; padding:3px;"></div>
+    </div>
+    <div id="trend-table" style="overflow-x:auto;"></div>
+  </div>
+  <script type="application/json" id="trading-trend-data">{"통합": [{"date": "09.14", "foreign": 17096, "ratio": "38.10%", "inst": -64408, "indiv": 50373, "close": 397000, "change": -18500, "volume": 333118}, {"date": "09.11", "foreign": 35955, "ratio": "38.06%", "inst": -21525, "indiv": -17953, "close": 416000, "change": 500, "volume": 303082}, {"date": "09.10", "foreign": 173102, "ratio": "38.02%", "inst": -211263, "indiv": 31739, "close": 415500, "change": -2000, "volume": 470217}, {"date": "09.09", "foreign": 24659, "ratio": "37.82%", "inst": -23856, "indiv": -2877, "close": 416000, "change": 1000, "volume": 338963}, {"date": "09.08", "foreign": 22895, "ratio": "37.80%", "inst": -148939, "indiv": 125684, "close": 418000, "change": -14000, "volume": 440464}, {"date": "09.07", "foreign": 42417, "ratio": "37.79%", "inst": 29152, "indiv": -72034, "close": 434000, "change": 12000, "volume": 334894}, {"date": "09.04", "foreign": -23111, "ratio": "37.74%", "inst": -7983, "indiv": 30811, "close": 423500, "change": 0, "volume": 351305}, {"date": "09.03", "foreign": 90050, "ratio": "37.77%", "inst": -11828, "indiv": -78602, "close": 418000, "change": 2500, "volume": 483308}, {"date": "09.02", "foreign": -17458, "ratio": "37.67%", "inst": -172723, "indiv": 190805, "close": 408500, "change": -35000, "volume": 714080}, {"date": "09.01", "foreign": -70490, "ratio": "37.69%", "inst": -75650, "indiv": 144772, "close": 439000, "change": -14500, "volume": 466329}], "KRX": [{"date": "09.14", "foreign": 42846, "ratio": "38.10%", "inst": -57328, "indiv": 16506, "close": 397000, "change": -18500, "volume": 200470}, {"date": "09.11", "foreign": 34369, "ratio": "38.06%", "inst": -16082, "indiv": -22492, "close": 415500, "change": 0, "volume": 227443}, {"date": "09.10", "foreign": 168918, "ratio": "38.02%", "inst": -206446, "indiv": 33415, "close": 415500, "change": -2000, "volume": 379924}, {"date": "09.09", "foreign": 32889, "ratio": "37.82%", "inst": -31366, "indiv": -3715, "close": 417500, "change": 2500, "volume": 210500}, {"date": "09.08", "foreign": 42961, "ratio": "37.80%", "inst": -151862, "indiv": 108104, "close": 415000, "change": -17000, "volume": 289488}, {"date": "09.07", "foreign": 28468, "ratio": "37.79%", "inst": 16830, "indiv": -45611, "close": 432000, "change": 10000, "volume": 212732}, {"date": "09.04", "foreign": -16919, "ratio": "37.74%", "inst": -10684, "indiv": 27618, "close": 422000, "change": -1500, "volume": 228188}, {"date": "09.03", "foreign": 67611, "ratio": "37.77%", "inst": -12628, "indiv": -54623, "close": 423500, "change": 8000, "volume": 354549}, {"date": "09.02", "foreign": 11906, "ratio": "37.67%", "inst": -160713, "indiv": 149550, "close": 415500, "change": -28000, "volume": 463596}, {"date": "09.01", "foreign": -31907, "ratio": "37.69%", "inst": -71462, "indiv": 101870, "close": 443500, "change": -10000, "volume": 287607}], "NXT": [{"date": "09.14", "foreign": -25750, "ratio": "0.00%", "inst": -7080, "indiv": 33867, "close": 397000, "change": -18500, "volume": 132648}, {"date": "09.11", "foreign": 1586, "ratio": "38.06%", "inst": -5443, "indiv": 4539, "close": 416000, "change": 500, "volume": 75639}, {"date": "09.10", "foreign": 4184, "ratio": "38.02%", "inst": -4817, "indiv": -1676, "close": 415500, "change": -2000, "volume": 90293}, {"date": "09.09", "foreign": -8230, "ratio": "37.82%", "inst": 7510, "indiv": 838, "close": 416000, "change": 1000, "volume": 128463}, {"date": "09.08", "foreign": -20066, "ratio": "37.80%", "inst": 2923, "indiv": 17580, "close": 418000, "change": -14000, "volume": 150976}, {"date": "09.07", "foreign": 13949, "ratio": "37.79%", "inst": 12322, "indiv": -26423, "close": 434000, "change": 12000, "volume": 122162}, {"date": "09.04", "foreign": -6192, "ratio": "37.74%", "inst": 2701, "indiv": 3193, "close": 423500, "change": 0, "volume": 123117}, {"date": "09.03", "foreign": 22439, "ratio": "37.77%", "inst": 800, "indiv": -23979, "close": 418000, "change": 2500, "volume": 128759}, {"date": "09.02", "foreign": -29364, "ratio": "37.67%", "inst": -12010, "indiv": 41255, "close": 408500, "change": -35000, "volume": 250484}, {"date": "09.01", "foreign": -38583, "ratio": "37.69%", "inst": -4188, "indiv": 42902, "close": 439000, "change": -14500, "volume": 178722}]}</script>
+  <script>
+  (function () {
+    var raw = document.getElementById('trading-trend-data');
+    var data; try { data = JSON.parse(raw.textContent); } catch (e) { return; }
+    var MARKETS = ['통합', 'KRX', 'NXT'].filter(function (m) { return Array.isArray(data[m]) && data[m].length; });
+    if (!MARKETS.length) { var tt = document.getElementById('trend-title'); if (tt) tt.style.display = 'none'; var tb = document.getElementById('trend-table'); if (tb) tb.parentNode.style.display = 'none'; return; }
+    var tabsBox = document.getElementById('trend-tabs'), tableBox = document.getElementById('trend-table');
+    function num(n) { return Math.abs(n).toLocaleString('ko-KR'); }
+    function fmt(n) { if (n === null || n === undefined) return 'N/A'; return n > 0 ? '+' + num(n) : n < 0 ? '-' + num(n) : '0'; }
+    function color(n) { if (n === null || n === undefined) return '#9ca3af'; return n > 0 ? '#dc2626' : n < 0 ? '#2563eb' : '#6b7280'; }
+    function render(mkt) {
+      var h = '<table style="width:100%; border-collapse:collapse; font-size:13px; white-space:nowrap;"><tr>' +
+        ['날짜','외국인','보유율','기관','개인','종가','전일비','거래량'].map(function (t, i) {
+          return '<th style="padding:8px 6px; text-align:' + (i === 0 ? 'left' : 'right') + '; color:#6b7280; font-weight:700; border-bottom:1px solid #e5e7eb;">' + t + '</th>';
+        }).join('') + '</tr>';
+      data[mkt].forEach(function (r) {
+        var ch = r.change > 0 ? '▲' + num(r.change) : r.change < 0 ? '▼' + num(r.change) : '보합';
+        h += '<tr>' +
+          '<td style="padding:9px 6px; font-weight:700; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.date + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.foreign) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.foreign) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + (r.ratio || '-') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.inst) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.inst) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.indiv) + '; border-bottom:1px solid #f3f4f6;">' + fmt(r.indiv) + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:800; color:#111827; border-bottom:1px solid #f3f4f6;">' + r.close.toLocaleString('ko-KR') + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; font-weight:700; color:' + color(r.change) + '; border-bottom:1px solid #f3f4f6;">' + ch + '</td>' +
+          '<td style="padding:9px 6px; text-align:right; color:#374151; border-bottom:1px solid #f3f4f6;">' + r.volume.toLocaleString('ko-KR') + '</td>' +
+          '</tr>';
+      });
+      tableBox.innerHTML = h + '</table>';
+      Array.prototype.forEach.call(tabsBox.children, function (b) {
+        var cur = b.textContent === mkt;
+        b.style.background = cur ? '#ffffff' : 'transparent';
+        b.style.color = cur ? '#111827' : '#9ca3af';
+        b.style.boxShadow = cur ? '0 1px 2px rgba(0,0,0,0.08)' : 'none';
+      });
+    }
+    MARKETS.forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      b.setAttribute('style', 'border:0; cursor:pointer; padding:5px 14px; border-radius:6px; font-size:13px; font-weight:700; background:transparent; color:#9ca3af; font-family:inherit;');
+      b.onclick = function () { render(m); };
+      tabsBox.appendChild(b);
+    });
+    render(MARKETS.indexOf('KRX') >= 0 ? 'KRX' : MARKETS[0]);
+  })();
+  </script>
+
+  <!-- ═══════════ 재무 분석 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">💰 재무로 본 현대모비스</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">현대모비스의 재무 구조는 이번에도 "건전하지만 저렴하지는 않다"는 평가로 요약됩니다. 부채비율이 2023~2025년 내내 43~44%대에서 안정적으로 유지되고 있고, 유동비율도 최근 분기(211.02%) 기준 200%를 훌쩍 넘어 단기 채무 상환 능력에는 문제가 없습니다. 매출도 2024년 일시 역성장(-3.40%) 이후 2025년 +6.78%로 반등했고, 영업이익률은 2023년 3.87%에서 2025년 5.49%까지 3년 연속 개선되는 흐름을 보였습니다.<br><br>
+  다만 순이익률(2024년 7.09%→2025년 6.00%)과 ROE(9.35%→7.68%)는 같은 기간 오히려 하락해, 영업이익률 개선과 반대 방향으로 움직였습니다. 재무 분석가도 이 괴리의 정확한 원인을 규명하지 못했다고 밝혔는데요(영업외손익 요인으로 추정). 밸류에이션 측면에서는 PER 9.96배가 자체 4개년 평균(7.25배)과 업종 평균(8.57배)을 모두 소폭 상회해 여전히 완만한 프리미엄 구간에 있는 반면, PBR은 0.68배로 장부가 대비로는 저평가 구간입니다. 컨센서스는 매수 의견(4.00)에 목표주가 735,200원으로, 오늘 종가(397,000원) 대비 괴리율이 85%를 넘습니다 — 다만 이 목표주가는 09-11 기준으로 형성된 수치라는 점은 감안할 필요가 있습니다.</p>
+  <table style="width:100%; border-collapse:collapse; font-size:14px; margin-bottom:12px;">
+    <tr style="background:#f3f4f6;">
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">지표</th>
+      <th style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">값</th>
+      <th style="padding:8px 12px; text-align:left; border:1px solid #e5e7eb;">해석</th>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PER</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">9.96배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">업종평균(8.57배)·자체4개년평균(7.25배) 소폭 상회</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">PBR</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">0.68배</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">장부가 대비 저평가 구간</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">영업이익률(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">5.49%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년 연속 개선(3.87%→5.49%)</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">순이익률(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">6.00%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">전년(7.09%) 대비 하락, 영업이익률과 방향 엇갈림</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">ROE(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">7.68%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">전년(9.35%) 대비 하락</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">부채비율(2025)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">43.05%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">3년간 43~44%대 안정</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">유동비율(2026.06)</td>
+      <td style="padding:8px 12px; text-align:right; border:1px solid #e5e7eb;">211.02%</td>
+      <td style="padding:8px 12px; border:1px solid #e5e7eb;">200% 상회하나 2025년말(232.55%) 대비 하락 추세</td>
+    </tr>
+  </table>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 매출 반등(+6.78%)과 3년 연속 영업이익률 개선, 43~44%대 안정된 부채비율, 200% 상회하는 유동비율, PBR 저평가, 컨센서스 매수 의견.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> PER 프리미엄 지속, 순이익률·ROE의 원인 불명 하락, 유동비율 하락 추세, 완성차(현대차·기아) 판매 실적에 연동되는 캡티브 구조, 자사주 소각(5,000억 규모) 완료 결과보고서 미확인. (재무분석가 자체 집계: 긍정 7 : 부정 6)</p>
+
+  <!-- ═══════════ 뉴스 흐름 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">📰 최근 한 달, 뉴스는 어땠나</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">지난 15차(09.11) 리포트에서는 호재와 악재의 격차가 diff+1(8:7)까지 좁혀지며 "노사갈등 신규 악재로 톤이 가라앉는 것 아니냐"는 우려가 있었습니다. 이번 회차(08.15~09.14, 21건 분석)에서는 호재 11건, 악재 7건, 중립 3건으로 diff가 다시 +4까지 벌어졌습니다. 가장 큰 호재 축은 로보틱스 사업의 구체적 진전입니다 — 슬로바키아 노바키 전동화 신공장 정식 가동, R&D 테크데이에서 로봇 액추에이터 2종 첫 공개, 아틀라스용 로봇손 후속개발까지 이어지며 "신성장동력"이라는 말이 점점 구체적인 그림으로 채워지고 있습니다.<br><br>
+  동시에 놓치면 안 되는 악재도 있습니다. 09-14 당일 확인된 상반기 외부(비계열) 고객 수주가 연간 목표의 8.2%에 그쳤다는 소식은 "2033년까지 비계열 매출 40%"라는 다변화 전략의 실행력에 의문을 던집니다. 여기에 09-11 노조에 보낸 경고문 공문으로 격화된 노사갈등(램프사업 매각을 둘러싼 갈등), 09-09 중국발 로봇 부품사의 저가 공세 우려, 09-07 램프 핵심 협력사의 손실보전 4천억 원 요구까지 — 신성장동력인 로보틱스조차 본업과 똑같이 중국발 경쟁 압력에 노출돼 있다는 점은 냉정하게 봐야 할 대목입니다.</p>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 슬로바키아 노바키 전동화 신공장 가동 (09-04)
+    <a href="https://v.daum.net/v/20260904060346781" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 로봇 액추에이터 2종 첫 공개, R&D 테크데이 (09-10)
+    <a href="https://v.daum.net/v/20260910113901207" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 美 지프페스트 참여, 스텔란티스 접점 확대 (09-13)
+    <a href="https://v.daum.net/v/20260913091853086" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 로봇손 후속개발, 아틀라스 액추에이터 (09-06)
+    <a href="https://v.daum.net/v/20260906155950878" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; font-size:14px;">
+    <strong style="color:#16a34a;">호재</strong> — 비핵심자산 매각, 로보틱스·반도체 재원 확보 (08-29)
+    <a href="https://v.daum.net/v/20260829090101120" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 상반기 외부고객수주 목표대비 8.2% 그침 (09-14)
+    <a href="https://v.daum.net/v/20260914105100313" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 노사갈등 격화, 노조에 경고문 공문 (09-11)
+    <a href="https://v.daum.net/v/20260911172406847" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 저PBR 숨은그림찾기, 중국발 로봇경쟁 심화 (09-09)
+    <a href="https://v.daum.net/v/20260909135447426" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 램프 핵심협력사 비상경영, 손실보전 4천억 요구 (09-07)
+    <a href="https://v.daum.net/v/20260907114800339" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <div style="margin-bottom:8px; padding:10px 14px; background:#fef2f2; border-left:4px solid #dc2626; border-radius:6px; font-size:14px;">
+    <strong style="color:#dc2626;">악재</strong> — 램프매각 갈등, 노조 CEO 겨냥 기습집회 (08-26)
+    <a href="https://v.daum.net/v/20260826123650670" target="_blank" rel="noopener" style="font-size:12px; color:#2563eb; text-decoration:none; margin-left:6px; white-space:nowrap;">원본 바로가기 ↗</a>
+  </div>
+  <p style="font-size:14px; margin:12px 0 0 0;"><strong>시장 심리:</strong> 뉴스 감성 분석가는 "긍정"(호재11:악재7, diff+4)으로 판정했습니다. 09-14 주가 급락은 코스피 전반의 위험회피 심리(반도체 업종 동반 조정)에 연동된 것으로, 현대모비스 고유의 악재성 뉴스에 기인한 것은 아니라는 분석입니다.</p>
+
+  <!-- ═══════════ 업종 이야기 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🏭 업종 큰 그림</h2>
+  <p style="font-size:15px; margin:0 0 12px 0;">업종 리서처는 이번에도 🟡 중립(관망) 판정을 유지했습니다. 세부적으로 보면 긍정 6건·부정 7건으로 근소하게 부정 쪽으로 기울어 있는데요. 긍정 요인으로는 2분기 영업이익이 완성차 모기업(현대차 영업이익 -21%) 대비 오히려 +12.1% 성장하며 "디커플링"을 보인 점, A/S 부문 영업이익률이 27.8%로 2010년 이후 최고치를 기록한 점, 유럽 전동화 신공장 가동, 로봇 액추에이터 사업의 구체화, 그리고 미-캐나다 관세전쟁 국면에서 캐나다 생산기지가 없는 현대차그룹이 반사이익을 보는 구도가 꼽힙니다. 2027년 국내 전기차 보조금 지원 대수가 30만대→43만대로 늘어나는 점도 우호적입니다.<br><br>
+  반대편에는 앞서 언급한 외부고객 수주 부진(목표 대비 8.2%)과 여전히 높은 캡티브 비중(81.4%), 순환출자 구조에 따른 지배구조 디스카운트로 인한 PBR 저평가 지속, 램프사업 매각을 둘러싼 노사갈등 격화, 로봇사업조차 중국 저가경쟁에 노출된 점이 있습니다. 특히 09-14 새로 확인된 트럼프 대통령의 "중국차 미국 현지생산 허용 가능" 발언은 현재로선 실현 가능성이 낮지만, 현실화될 경우 현대차·기아라는 현대모비스의 최대 캡티브 고객군이 직접 경쟁 압력을 받게 되는 잠재 리스크로 새롭게 등장했습니다. 원/달러 환율이 7월 고점 대비 약 -14% 급락하며 완성차 채산성에 부담을 주는 점도 캡티브 비중이 높은 현대모비스에는 간접적으로 부정적입니다.</p>
+  <p style="font-size:14px; margin:0;"><span style="color:#16a34a; font-weight:700;">긍정:</span> 2Q 영업이익 +12.1%YoY(모기업 대비 견조), A/S 영업이익률 27.8% 최고치, 유럽 신공장 가동, 로봇 액추에이터 사업 구체화, 미-캐나다 관세전쟁 반사이익 구도, 2027년 EV 보조금 확대.<br>
+  <span style="color:#dc2626; font-weight:700;">위험:</span> 외부고객 수주 8.2% 부진, 캡티브 비중 81.4% 지속, 지배구조 디스카운트, 램프매각 노사갈등 격화, 로봇사업도 중국 저가경쟁 노출, 트럼프 중국차 미국생산 허용 시사(신규), 원화 초강세 마진압박. (업종분석가 자체 집계: 긍정 6 : 부정 7, 판정은 명시적 중립)</p>
+
+  <!-- ═══════════ 종합 의견 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚖️ 그래서, 중립적 관점의 결론은</h2>
+  <p style="font-size:15px; margin:0 0 14px 0;">세 분석을 단순 합산하면 긍정 24 : 부정 20으로 숫자상 긍정이 우세합니다(재무 7:6, 뉴스 11:7, 업종 6:7). 지난 회차(09.11, 20:20 정확한 팽팽)보다는 확실히 긍정 쪽으로 무게가 옮겨간 셈이고, 특히 뉴스 diff가 +1에서 +4로 뚜렷하게 확대된 점이 주된 원인입니다. 오늘의 -4.45% 급락도 코스피 전체가 3%대로 밀린 날 나온 동반 하락이라, 현대모비스만의 고유 악재로 보기는 어렵습니다.<br><br>
+  그럼에도 관망을 유지하는 이유는 가격 신호 때문입니다. 지난 15차에서 잡아둔 손절선(398,000원)을 오늘 저가(395,000원)와 종가(397,000원) 모두가 밀고 내려갔습니다. 펀더멘털·뉴스·업종 판정이 나쁘지 않다는 것과, 실제 주가가 이미 기존 방어선 아래로 밀렸다는 것은 별개의 사실입니다. 숫자가 개선됐다고 해서 가격 붕괴를 무시하고 비중을 늘릴 근거로 삼기는 아직 이르다고 판단해, 손절선을 큰 폭으로 하향 조정하면서 관망을 유지합니다.</p>
+  <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 22px; margin-bottom:16px;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <tr style="background:#111827; color:#ffffff;">
+        <th style="padding:10px 14px; text-align:left; width:30%;">항목</th>
+        <th style="padding:10px 14px; text-align:left;">내용</th>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">투자 의견</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">관망 — 재무·뉴스·업종 합산은 긍정 우세(24:20)로 개선됐으나, 오늘 손절선(398,000원)이 저가·종가 모두에서 실이탈해 가격 신호가 더 보수적</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">목표 수익률</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">단기 +3~5%(408,900~416,850원) · 중기 +10~15%(436,700~456,550원)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">손절 라인</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">385,000원(구 398,000원 — 오늘 저가 395,000원이 2.5% 폭으로 실이탈, 재하향)</td>
+      </tr>
+      <tr style="background:#f9fafb;">
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">진입 타이밍</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">385,000원 부근 눌림목 방어 확인 또는 400,000원선 회복 후 신중히 검토</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb; font-weight:700;">포지션 크기</td>
+        <td style="padding:10px 14px; border:1px solid #e5e7eb;">신규 0~3% (기존 보유분 추가는 385,000원 방어 확인 후)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ═══════════ 체크포인트 ═══════════ -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">⚠️ 앞으로 지켜봐야 할 것들</h2>
+  <div style="background:#fffbeb; border:1px solid #fcd34d; border-radius:12px; padding:18px 22px; font-size:14px;">
+    <ol style="margin:0; padding-left:20px;">
+      <li style="margin-bottom:6px;">385,000원 신규 손절선 방어 여부 — 오늘 398,000원선이 저가·종가 모두에서 실이탈한 직후 조정한 값, 재이탈 시 비중축소 재검토</li>
+      <li style="margin-bottom:6px;">뉴스 diff+4(호재11:악재7) 유지·확대 여부 — 지난 회차 diff+1에서 급확대된 수치라 일시적인지 추세인지 확인 필요</li>
+      <li style="margin-bottom:6px;">상반기 외부고객 수주 부진(목표대비 8.2%) 하반기 개선 여부 — "2033년 비계열 매출 40%" 전략의 실행 리스크</li>
+      <li style="margin-bottom:6px;">램프사업(2조원) 매각 본계약 체결 여부 — 7개월 넘게 표류 중, 노사갈등 경고문 공문까지 격화</li>
+      <li style="margin-bottom:6px;">트럼프 대통령의 중국차 미국 현지생산 허용 발언 구체화 여부, 美 301조 추가관세(9/24 전후 발표 예정)</li>
+    </ol>
+  </div>
+
+  <!-- ═══════════ 마무리 ═══════════ -->
+  <p style="font-size:15px; margin:24px 0 0 0;">오늘 하루만 보면 4%대 급락에 손절선까지 깨진 우울한 하루였지만, 재무·뉴스·업종을 나눠 보면 생각보다 담담한 숫자들이었습니다. 이런 날일수록 가격의 공포와 데이터의 온도차를 나눠서 보는 게 중요하다고 생각합니다. 다음 회차에서는 385,000원 방어 여부와 뉴스 흐름이 이번 개선세를 이어가는지를 우선적으로 짚어보겠습니다.</p>
+
+  <!-- ═══════════ 참고 기사 ═══════════ -->
+  <!-- 뉴스 감성 분석가가 수집한 기사 전체 목록. URL 확인 불가 항목은 링크 없이 제목만 표기 -->
+  <h2 style="font-size:21px; border-left:5px solid #111827; padding-left:12px; margin:32px 0 14px 0;">🔗 참고 기사</h2>
+  <ul style="margin:0; padding-left:20px; font-size:14px;">
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260914105100313" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">상반기 외부고객수주 목표대비 8.2%그침</a> <span style="color:#6b7280;">— 시사저널e · 2026-09-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260914171303463" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">로봇부품 경쟁, HL만도와 격돌</a> <span style="color:#6b7280;">— 이투데이 · 2026-09-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260914154205013" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">외국인 순매수 유입</a> <span style="color:#6b7280;">— 매일경제 · 2026-09-14</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260913091853086" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">美 지프페스트 참여, 스텔란티스 접점 확대</a> <span style="color:#6b7280;">— 더구루 · 2026-09-13</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260913080350069" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">개인 순매수 상위 5위 편입</a> <span style="color:#6b7280;">— 한국경제TV · 2026-09-13</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260912050021450" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">보스턴다이내믹스 몸값, 그룹 지배구조 이슈</a> <span style="color:#6b7280;">— 이투데이 · 2026-09-12</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260911172406847" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">노사갈등 격화, 노조에 경고문 공문</a> <span style="color:#6b7280;">— 중부일보 · 2026-09-11</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260910113901207" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">로봇 액추에이터 2종 첫 공개(R&D 테크데이)</a> <span style="color:#6b7280;">— SBS Biz · 2026-09-10</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260909135447426" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">저PBR 숨은그림찾기, 중국발 로봇경쟁 심화</a> <span style="color:#6b7280;">— 한국금융 · 2026-09-09</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260907114800339" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">램프 핵심협력사 비상경영, 손실보전 4천억 요구</a> <span style="color:#6b7280;">— SBS Biz · 2026-09-07</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260906155950878" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">로봇손 후속개발, 아틀라스 액추에이터</a> <span style="color:#6b7280;">— 메트로경제 · 2026-09-06</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260904060346781" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">슬로바키아 노바키 전동화 신공장 가동</a> <span style="color:#6b7280;">— 세계일보 · 2026-09-04</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260831121150630" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">로봇 양산 준비 본격화(R&D→구매·품질)</a> <span style="color:#6b7280;">— 뉴시스 · 2026-08-31</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260829090101120" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">비핵심자산 매각, 로보틱스·반도체 재원 확보</a> <span style="color:#6b7280;">— MTN · 2026-08-29</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260828155250873" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">협력사에 5,000억원 금융지원(하나銀·기보 협업)</a> <span style="color:#6b7280;">— 서울경제 · 2026-08-28</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260826202451241" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">임단협 잠정합의안 도출(기본급10만원+성과급400%)</a> <span style="color:#6b7280;">— 더팩트 · 2026-08-26</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260826123650670" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">램프매각 갈등, 노조 CEO 겨냥 기습집회</a> <span style="color:#6b7280;">— 데일리안 · 2026-08-26</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260825145051048" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">램프사업부 매각 또 연기, 본계약 표류</a> <span style="color:#6b7280;">— 뉴스토마토 · 2026-08-25</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260821063232055" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">하청노동자 쟁의조정 신청, 중노위 조정 방치</a> <span style="color:#6b7280;">— 매일노동뉴스 · 2026-08-21</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260819111951102" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">현대차 10년만 전면파업, 모비스 계열사 동참 예고</a> <span style="color:#6b7280;">— 더팩트 · 2026-08-19</span></li>
+    <li style="margin-bottom:6px;"><a href="https://v.daum.net/v/20260818180104195" target="_blank" rel="noopener" style="color:#2563eb; text-decoration:none;">로봇테마 부품주 상승(+4.96%)</a> <span style="color:#6b7280;">— 이투데이 · 2026-08-18</span></li>
+  </ul>
+
+  <!-- ═══════════ 태그 ═══════════ -->
+  <div style="margin-top:28px; font-size:13px; color:#2563eb;">
+    #현대모비스 #자동차부품 #로보틱스 #저PBR #배당주 #코스피급락 #관망 #밸류에이션
+  </div>
+
+  <!-- ═══════════ 면책고지 ═══════════ -->
+  <p style="margin-top:20px; font-size:12px; color:#9ca3af; line-height:1.6;">⚠️ 본 포스트는 정보 제공을 목적으로 작성되었으며 특정 종목의 매수·매도를 권유하지 않습니다. 투자 판단과 그에 따른 책임은 전적으로 투자자 본인에게 있으며, 과거 데이터와 분석이 미래 수익을 보장하지 않습니다.</p>
+
+  <!-- ═══════════ 사이트 공통: 하단 내비 (수정·삭제 금지) ═══════════ -->
+  <div style="margin-top:36px; text-align:center;">
+    <a href="../index.html" style="display:inline-block; text-decoration:none; padding:10px 28px; border-radius:999px; border:1.5px solid #111827; color:#111827; font-size:14px; font-weight:700;">← 전체 목록으로</a>
+  </div>
+
+  <footer style="margin-top:28px; padding:16px; border-top:1px solid #d1d5db; font-size:12px; color:#6b7280; text-align:center;">
+    본 포스트는 정보 제공 목적으로 작성되었으며, 특정 종목의 매수·매도를 권유하지 않습니다.
+    투자에 대한 최종 판단과 책임은 투자자 본인에게 있습니다. 과거 데이터와 분석은 미래 수익을 보장하지 않습니다.
+      <div style="margin-top:10px;"><a href="../index.html" style="color:#6b7280; text-decoration:none; font-weight:700; letter-spacing:1px;"><img src="logo-mark.png" alt="STOCK PRISM" style="height:1.8em; vertical-align:middle; margin-right:6px;"><span style="position:relative; top:0.13em;">STOCK PRISM</span></a><span style="position:relative; top:0.13em;"> · 같은 데이터, 세 가지 시선</span></div>
+  </footer>
+
+</div>
+</body>
+</html>
